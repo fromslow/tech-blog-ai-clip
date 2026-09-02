@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T07:16:26.615754+00:00",
+  "generatedAt": "2026-09-02T23:30:39.223779+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -55,9 +55,71 @@
       "name": "컬리",
       "color": "#5F0080",
       "home": "https://helloworld.kurly.com"
+    },
+    {
+      "id": "musinsa",
+      "name": "무신사",
+      "color": "#1A1A1A",
+      "home": "https://medium.com/musinsa-tech"
+    },
+    {
+      "id": "hyperconnect",
+      "name": "하이퍼커넥트",
+      "color": "#8B5CF6",
+      "home": "https://hyperconnect.github.io"
+    },
+    {
+      "id": "coupang",
+      "name": "쿠팡",
+      "color": "#E4002B",
+      "home": "https://medium.com/coupang-engineering"
+    },
+    {
+      "id": "gccompany",
+      "name": "여기어때",
+      "color": "#FF3D77",
+      "home": "https://techblog.gccompany.co.kr"
+    },
+    {
+      "id": "nhn",
+      "name": "NHN",
+      "color": "#0E9AA7",
+      "home": "https://meetup.nhncloud.com"
     }
   ],
   "posts": [
+    {
+      "source": "gccompany",
+      "sourceName": "여기어때",
+      "color": "#FF3D77",
+      "title": "비주얼 디자이너는 AI로 어떤 문제까지 도전해볼 수 있을까?",
+      "url": "https://techblog.gccompany.co.kr/%EB%B9%84%EC%A3%BC%EC%96%BC-%EB%94%94%EC%9E%90%EC%9D%B4%EB%84%88%EB%8A%94-ai%EB%A1%9C-%EC%96%B4%EB%96%A4-%EB%AC%B8%EC%A0%9C%EA%B9%8C%EC%A7%80-%EB%8F%84%EC%A0%84%ED%95%B4%EB%B3%BC-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-ef5b98da24b5?source=rss----18356045d353---4",
+      "date": "2026-09-02T00:49:09+00:00",
+      "summary": "글. 한동현(Noah) / Product Brand Designer 안녕하세요, 여기어때 플랫폼 디자인팀의 노아입니다. 플랫폼 디자인팀은 여기어때의 프로덕트와 인터널 브랜딩 전반에서 일관된 디자인을 만들어가고 있어요. AI를 활용하면서 비주얼 디자이너가 할 수 있는 일도 점점 넓어지고 있는데요. 이제는 그래픽을 만드는 것을 넘어, 브랜드와 사용자 경험을 일관되게 전달하는 방법까지 고민하게 되었어요. 여기어때에서는 서비스와 브랜드를 소개하기 위해 다양한 소개서와 세일즈 덱을 만들고 있어요. 이런 자",
+      "author": "여기어때 UX Center",
+      "tags": [
+        "AI",
+        "생성형 AI"
+      ],
+      "image": "thumbs/563207c7c51afa22.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "통합임베딩으로 개인화 푸시 CTR +21.3%를 만든 과정",
+      "url": "https://techblog.musinsa.com/%ED%86%B5%ED%95%A9%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9C%BC%EB%A1%9C-%EA%B0%9C%EC%9D%B8%ED%99%94-%ED%91%B8%EC%8B%9C-ctr-21-3-%EB%A5%BC-%EB%A7%8C%EB%93%A0-%EA%B3%BC%EC%A0%95-08bd63623aff?source=rss----f107b03c406e---4",
+      "date": "2026-08-31T22:01:01+00:00",
+      "summary": "유저를 한 번 이해하고, 모든 결정이 공유하는 Layer 0 1편: MATCH란 무엇인가 2편: MATCH Console & MAI 3편: 통합임베딩으로 개인화 푸시 안녕하세요. 무신사 Core-E Personalization 팀에서 개인화 모델을 개발하고 있는 오승모, 방효석입니다. 이 시리즈에서는 MATCH를 중심으로 데이터를 더 나은 결정으로 바꾸는 방법을 이야기해 왔습니다. 운영자가 규칙을 직접 만드는 대신 모델이 유저 단위의 결정을 만들고, 여러 결정의 우선순위를 시스템이 판단하는 과정도",
+      "author": "Seungmo Oh",
+      "tags": [
+        "AI",
+        "임베딩"
+      ],
+      "image": "thumbs/b5a91c9935474d94.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
     {
       "source": "kakao",
       "sourceName": "카카오",
@@ -135,6 +197,82 @@
       "firstSeen": "2026-08-26T01:00:00+00:00"
     },
     {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "AI Native 조직은 도메인 지식을 어떻게 공유하는가",
+      "url": "https://techblog.musinsa.com/ai-native-%EC%A1%B0%EC%A7%81%EC%9D%80-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A7%80%EC%8B%9D%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B3%B5%EC%9C%A0%ED%95%98%EB%8A%94%EA%B0%80-f2e3de607df3?source=rss----f107b03c406e---4",
+      "date": "2026-08-25T08:01:02+00:00",
+      "summary": "표준 위에 얹는 시맨틱 레이어 사람과 여러 AI가 같은 코드를 다루는 시대에, ‘우리 조직만의 도메인 지식’을 모든 에이전트가 함께 읽게 만드는 법. 표준 기반 Core와 조직 특화 Overlay로 이뤄진 2층 시맨틱 레이어를 만들고, 그게 언제 통하고 언제 위험한지 150개 질문으로 비교해본 이야기. 자신만만하게 틀리는 AI 낯선 레거시 코드 한 조각을 AI에게 던져본 적 있으신가요. “이 엔티티, 업무적으로 뭐야?” 돌아온 답은 대개 이렇습니다. 큰 틀은 맞고, 우리 조직 이야기로 들어가면 무",
+      "author": "Kyungjae Lee",
+      "tags": [
+        "AI",
+        "LLM"
+      ],
+      "image": "thumbs/d016c110b0e56b8e.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "gccompany",
+      "sourceName": "여기어때",
+      "color": "#FF3D77",
+      "title": "SRE 업무에 AI 녹여내기 — 2편: Alert Adviser로 장애 원인 분석 자동화",
+      "url": "https://techblog.gccompany.co.kr/sre-%EC%97%85%EB%AC%B4%EC%97%90-ai-%EB%85%B9%EC%97%AC%EB%82%B4%EA%B8%B0-2%ED%8E%B8-alert-adviser%EB%A1%9C-%EC%9E%A5%EC%95%A0-%EC%9B%90%EC%9D%B8-%EB%B6%84%EC%84%9D-%EC%9E%90%EB%8F%99%ED%99%94-a8c8e83c2c92?source=rss----18356045d353---4",
+      "date": "2026-08-24T05:42:17+00:00",
+      "summary": "SRE 업무에 AI 녹여내기 — 2편: Alert Adviser로 장애 원인 분석 자동화 글. 구혜준(Hazel) / SRE팀 이 글은 2부작입니다. (1/2) AI는 읽고, 코드는 계산합니다 — Smart RI Calc (2/2) 틀린 걸 없애기보다, 틀린 게 보이게 — Alert Adviser (현재 글) 안녕하세요, 여기어때컴퍼니 SRE팀에서 클라우드 엔지니어링 업무를 담당하고 있는 헤이즐입니다. 1편(Smart RI Calc)에 이어, 이번 글에서는 Grafana 알림을 AI가 분석해 원인",
+      "author": "Hazel Koo",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/9a6520f8371df5ee.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "gccompany",
+      "sourceName": "여기어때",
+      "color": "#FF3D77",
+      "title": "SRE 업무에 AI 녹여내기 — 1편: Smart RI Calc로 인프라 비용 산정 자동화",
+      "url": "https://techblog.gccompany.co.kr/sre-%EC%97%85%EB%AC%B4%EC%97%90-ai-%EB%85%B9%EC%97%AC%EB%82%B4%EA%B8%B0-1%ED%8E%B8-smart-ri-calc%EB%A1%9C-%EC%9D%B8%ED%94%84%EB%9D%BC-%EB%B9%84%EC%9A%A9-%EC%82%B0%EC%A0%95-%EC%9E%90%EB%8F%99%ED%99%94-e6a2bf863087?source=rss----18356045d353---4",
+      "date": "2026-08-24T05:41:16+00:00",
+      "summary": "SRE 업무에 AI 녹여내기 — 1편: Smart RI Calc로 인프라 비용 산정 자동화 글. 구혜준(Hazel) / SRE팀 이 글은 2부작입니다. (1/2) AI는 읽고, 코드는 계산합니다 — Smart RI Calc (현재 글) (2/2) 틀린 걸 없애기보다, 틀린 게 보이게 — Alert Adviser 안녕하세요, 여기어때컴퍼니 SRE팀에서 클라우드 엔지니어링 업무를 담당하고 있는 헤이즐입니다. SRE팀은 반복되는 수작업을 줄이고 운영 생산성을 높이기 위해 AI와 코드 자동화를 실무에 다",
+      "author": "Hazel Koo",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/a9f4e2ad2d4b8df4.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "양자 시대를 대비하는 개발자의 암호학 가이드(PQC-ML-KEM)",
+      "url": "https://meetup.nhncloud.com/posts/421",
+      "date": "2026-08-24T03:54:26+00:00",
+      "summary": "[![NHN Cloud_meetup banner_quantum-era-cryptography_202608_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetup%20bannerquantumeracryptography202608900.png)](https://www.nhncloud.com/kr) ## 들어가며 현재 웹 통신의 대부분은 HTTPS 프로토콜을 사용하고 있습니다. HTTPS는 TLS(Transport Lay",
+      "author": "",
+      "tags": [
+        "머신러닝"
+      ],
+      "image": "thumbs/b45cbe223d0dcd74.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "코딩만 빨라졌다고요? 아뇨, 일하는 방식이 다 뜯어고쳐졌습니다.",
+      "url": "https://techblog.musinsa.com/%EC%BD%94%EB%94%A9%EB%A7%8C-%EB%B9%A8%EB%9D%BC%EC%A1%8C%EB%8B%A4%EA%B3%A0%EC%9A%94-%EC%95%84%EB%87%A8-%EC%9D%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D%EC%9D%B4-%EB%8B%A4-%EB%9C%AF%EC%96%B4%EA%B3%A0%EC%B3%90%EC%A1%8C%EC%8A%B5%EB%8B%88%EB%8B%A4-8de60dd4eb4a?source=rss----f107b03c406e---4",
+      "date": "2026-08-24T00:43:55+00:00",
+      "summary": "9월 18일, 무신사 패턴 ’26 테크 컨퍼런스 — MUSINSA PATTERN ’26 Tech Conference QA 엔지니어가 눈에 불을 켜기 전, AI가 먼저 이전 빌드와 기획 문서를 정답지 삼아 새 빌드를 ‘ 자동 채점 ’ 합니다. 운영 서버에 쏟아지는 트래픽을 슬쩍 기록해 뒀다가 새 빌드에 그대로 쏴보고, 달라진 부분만 사람이 슥? 확인하죠. Figma 시안 하나를 던져주면 4개 플랫폼의 UI 코드가 뚝 딱 나옵니다. 게다가 팀마다 바퀴를 재발명하듯 따로 만들던 대용량 조회 시스템은 전",
+      "author": "팀 무신사",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/dc945bd95f5acd4f.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
       "source": "toss",
       "sourceName": "토스",
       "color": "#3182F6",
@@ -171,7 +309,7 @@
       "title": "보안 업무를 위한 AI 에이전트 플랫폼 「SAGE」 개발기 1편: 판단은 사람에게 남기는 설계",
       "url": "https://techblog.lycorp.co.jp/ko/ai-agent-platform-sage-dev-log-part-1",
       "date": "2026-08-18T05:00:00+00:00",
-      "summary": "안녕하세요. 사내 보안 업무에 AI를 접목하는 일을 하고 있는 Security Development Division(LINE Plus Security R&D)팀입니다.이 글은 사내...",
+      "summary": "참고: 이 글을 최초 발행한 시점에는 보안 상담 어시스턴트가 파일럿 운영 중이었으나 2026년 9월 1일 정식 릴리스해 실 운영 중입니다. 이에 맞춰 2026년 9월 2일에 본문을...",
       "author": "",
       "tags": [
         "AI",
@@ -179,6 +317,21 @@
       ],
       "image": "thumbs/591f726589f9a22a.jpg",
       "firstSeen": "2026-08-18T05:00:00+00:00"
+    },
+    {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "바겐세일은 끝난다",
+      "url": "https://meetup.nhncloud.com/posts/420",
+      "date": "2026-08-12T00:45:26+00:00",
+      "summary": "[![NHN Cloud_meetup banner_coding_202608_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetup%20bannercoding202608900%281%29.png)](https://www.nhncloud.com/kr) > 본 콘텐츠는 작성자가 사내 게시판에 공유한 글을 가공한 것으로, 작성자의 의도와 맥락을 충실히 전달하기 위해 원문의 문장 스타일을 그대로 유지하였습니다. --- 우리는 ",
+      "author": "",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/d116f0f87f80000c.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
     },
     {
       "source": "naver",
@@ -292,6 +445,22 @@
       "firstSeen": "2026-08-03T15:00:00+00:00"
     },
     {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "AI와 개발하기: 숨은 결정을 드러내기",
+      "url": "https://meetup.nhncloud.com/posts/419",
+      "date": "2026-08-02T23:51:00+00:00",
+      "summary": "[![NHN Cloud_meetup banner_hidden decisions_202607_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetup%20bannerhidden%20decisions202607900.png)](https://www.nhncloud.com/kr) ## 들어가며 AI 시대의 개발은 코드를 직접 얼마나 잘 쓰느냐보다, AI가 만든 산출물이 내 의도와 맞는지 얼마나 구조적으로 검증할 수 있느냐의",
+      "author": "",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "thumbs/e4bf195534c15ea8.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
       "source": "line",
       "sourceName": "라인",
       "color": "#06C755",
@@ -403,6 +572,21 @@
       "firstSeen": "2026-07-16T08:50:00+00:00"
     },
     {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "AI 인프라 설계의 기술적 레퍼런스, 를 소개합니다",
+      "url": "https://meetup.nhncloud.com/posts/417",
+      "date": "2026-07-13T02:57:40+00:00",
+      "summary": "[![NHN Cloud_meetup banner_FactoryX WP_202606_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetup%20bannerFactoryX%20WP202606900.png)](https://www.nhncloud.com/kr) ## 어제의 경험으로 내일의 변화를 만들어 내는 공장, NHN FactoryX 필요한 만큼의 GPU를 사서 랙에 꽂으면 AI 인프라가 완성될까요? 실제로 대규모 G",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/229c7fab3b163582.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
       "source": "naver",
       "sourceName": "네이버",
       "color": "#03C75A",
@@ -416,6 +600,22 @@
       ],
       "image": "thumbs/9320a09e311d3414.jpg",
       "firstSeen": "2026-07-10T17:06:42+00:00"
+    },
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "의심했던 범인은 알리바이가 있었다.",
+      "url": "https://techblog.musinsa.com/%EC%9D%98%EC%8B%AC%ED%96%88%EB%8D%98-%EB%B2%94%EC%9D%B8%EC%9D%80-%EC%95%8C%EB%A6%AC%EB%B0%94%EC%9D%B4%EA%B0%80-%EC%9E%88%EC%97%88%EB%8B%A4-e1578cb49bfa?source=rss----f107b03c406e---4",
+      "date": "2026-07-09T07:31:01+00:00",
+      "summary": "JFR로 잡은 12분짜리 Jenkins 배치 Hang 무신사 물류기술실 WMS팀 — Spring Batch · Jenkins · JFR(Java Flight Recorder) · Aurora MySQL 들어가며 저희 팀은 무신사의 창고 운영을 책임지는 MWMS(Musinsa Warehouse Management System) 를 만들고 있습니다. 매일 다량의 출고 작업이 인입되면 작업자에게 보낼 피킹 지시서 단위로 작업이 분해되는데, 이 분해 작업을 수행하는 Spring Batch가 한동안 저희를",
+      "author": "Kyungjae Lee",
+      "tags": [
+        "AI",
+        "LLM"
+      ],
+      "image": "thumbs/277f4e167403eb89.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
     },
     {
       "source": "woowahan",
@@ -434,6 +634,22 @@
       ],
       "image": "thumbs/efc95a071fe0675e.jpg",
       "firstSeen": "2026-07-07T06:00:39+00:00"
+    },
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "LLM 비용 64% 절감, 캐시 히트율 98% 달성기",
+      "url": "https://techblog.musinsa.com/llm-%EB%B9%84%EC%9A%A9-64-%EC%A0%88%EA%B0%90-%EC%BA%90%EC%8B%9C-%ED%9E%88%ED%8A%B8%EC%9C%A8-98-%EB%8B%AC%EC%84%B1%EA%B8%B0-d568135bd40e?source=rss----f107b03c406e---4",
+      "date": "2026-07-07T05:03:44+00:00",
+      "summary": "메트릭 가시성 확보부터 Prompt Caching 도입까지 들어가며 안녕하세요, 29CM Pricing 팀에서 백엔드 개발을 맡고 있는 정다해입니다. 29CM에서는 상품 속성 추출, 그룹 평가, 고객 응대 등 여러 기능에서 AWS Bedrock 기반 LLM을 사용하고 있습니다. 운영 중 LLM 비용이 꾸준히 증가하는 추세가 관찰되어 비용 구조 분석을 시작했습니다. 분석을 시작하자마자 첫 번째 장애물에 부딪혔습니다. AWS Bedrock 콘솔은 일별 토큰·비용 합계는 보여주지만, 어떤 API가 얼마",
+      "author": "정다해",
+      "tags": [
+        "LLM",
+        "AI"
+      ],
+      "image": "thumbs/3a6e2e785db62f88.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
     },
     {
       "source": "naver",
@@ -875,6 +1091,22 @@
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
     },
     {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "VLM을 쓰지 않은 이유: Geometric Prior로 25배 빠른 의류 디테일컷 자동화",
+      "url": "https://techblog.musinsa.com/vlm%EC%9D%84-%EC%93%B0%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%9D%B4%EC%9C%A0-geometric-prior%EB%A1%9C-25%EB%B0%B0-%EB%B9%A0%EB%A5%B8-%EC%9D%98%EB%A5%98-%EB%94%94%ED%85%8C%EC%9D%BC%EC%BB%B7-%EC%9E%90%EB%8F%99%ED%99%94-ea9dc5ca2add?source=rss----f107b03c406e---4",
+      "date": "2026-05-26T01:53:12+00:00",
+      "summary": "무신사 유즈드에서 AI 기반 의류 디테일컷 자동 생성 시스템을 구축하며 겪은 기술적 의사결정과 구현 과정을 공유합니다. 들어가며 무신사 유즈드는 중고 의류를 거래하는 플랫폼입니다. 새 상품과 달리 중고 상품은 개별 상태가 모두 다릅니다. 목 라인이 얼마나 늘어났는지, 소매 끝이 마모되었는지, 주머니 안쪽은 깨끗한지, 이런 디테일이 구매 결정에 큰 영향을 미칩니다. 앞뒤 2장이 전부였던 상품 상세 페이지 Before 그런데 무신사 유즈드의 상품 상세 페이지에는 앞면과 뒷면, 단 2장의 사진만 제공되",
+      "author": "Hyeongjun Kim",
+      "tags": [
+        "컴퓨터비전",
+        "AI"
+      ],
+      "image": "thumbs/80142c1526513fe9.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
       "source": "woowahan",
       "sourceName": "배달의민족",
       "color": "#2AC1BC",
@@ -908,6 +1140,22 @@
       ],
       "image": "thumbs/a46168acd1b14259.jpg",
       "firstSeen": "2026-05-20T15:00:00+00:00"
+    },
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "AI 스페셜리스트와 자동사냥 — 하네스로 제어하는 AI 파이프라인",
+      "url": "https://techblog.musinsa.com/ai-%EC%8A%A4%ED%8E%98%EC%85%9C%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%99%80-%EC%9E%90%EB%8F%99%EC%82%AC%EB%83%A5-%ED%95%98%EB%84%A4%EC%8A%A4%EB%A1%9C-%EC%A0%9C%EC%96%B4%ED%95%98%EB%8A%94-ai-%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8-6c578f8bd1fb?source=rss----f107b03c406e---4",
+      "date": "2026-05-17T22:01:00+00:00",
+      "summary": "[Tech-Blog] AI 스페셜리스트와 자동사냥 — 하네스로 제어하는 AI 파이프라인 Slow Query 수집부터 정합성 검증 · PR 생성 · 리뷰 반영까지 “또 슬로우 쿼리야?” 안녕하세요, 무신사 물류플랫폼팀에서 WMS를 개발하고 있는 이상호입니다. 금요일 오후, 슬랙 알림이 울립니다. “DB 응답 속도 저하 감지.” 이미 익숙한 시나리오입니다. CloudWatch 콘솔을 열고, 로그 그룹을 찾아 Logs Insights 쿼리를 작성합니다. 느린 쿼리 몇 개를 복사해서 에디터에 붙여넣고, ",
+      "author": "Sangho Lee",
+      "tags": [
+        "AI",
+        "LLM"
+      ],
+      "image": "thumbs/684d8436f2cf0693.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
     },
     {
       "source": "line",
@@ -1016,6 +1264,36 @@
       "firstSeen": "2026-04-27T15:00:00+00:00"
     },
     {
+      "source": "hyperconnect",
+      "sourceName": "하이퍼커넥트",
+      "color": "#8B5CF6",
+      "title": "1부: 데이터도 정답도 없다: 하이퍼커넥트가 LLM을 길들이는 법",
+      "url": "https://hyperconnect.github.io/2026/04/22/how-hyperconnect-built-llm-explanation-policy.html",
+      "date": "2026-04-22T00:00:00+00:00",
+      "summary": "정답 데이터가 없는 open-ended generation 문제에서, 하이퍼커넥트가 설명 생성 정책과 평가 기준을 어떻게 수립했는지 소개합니다.",
+      "author": "Dongyeong Hwang (young.hwang@match.com)",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/ac86720ab7d832c6.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "hyperconnect",
+      "sourceName": "하이퍼커넥트",
+      "color": "#8B5CF6",
+      "title": "2부: 정책을 따르는 평가자, LLM-as-a-Judge",
+      "url": "https://hyperconnect.github.io/2026/04/22/llm-as-a-judge-for-explanation-quality.html",
+      "date": "2026-04-22T00:00:00+00:00",
+      "summary": "사람이 만든 설명 정책을 LLM Judge로 구조화해 평가 자동화, 디버깅, 데이터 정제에 활용한 과정을 소개합니다.",
+      "author": "Dongyeong Hwang (young.hwang@match.com)",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/51f205418565c0a1.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
       "source": "line",
       "sourceName": "라인",
       "color": "#06C755",
@@ -1060,6 +1338,21 @@
       ],
       "image": "thumbs/4f007b4e8aca6aaa.jpg",
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
+    },
+    {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "Artifact Driven Development: 과정을 보지 않기로 했다",
+      "url": "https://meetup.nhncloud.com/posts/412",
+      "date": "2026-04-14T00:28:54+00:00",
+      "summary": "[![NHN Cloud_meetup banner_ADD_202604_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetup%20bannerADD202604900.png)](https://www.nhncloud.com/kr) ## 들어가며 AI 코딩 에이전트에게 일을 시키면서, 저는 에이전트가 코드를 작성하는 과정을 계속 지켜보고 있었습니다. 파일이 수정되는 걸 보고, 빌드 로그를 확인하고, 에이전트의 판단이 맞는지 ",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/db0cbcae8aa51546.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
     },
     {
       "source": "line",
@@ -1312,6 +1605,22 @@
       "firstSeen": "2026-02-24T15:00:00+00:00"
     },
     {
+      "source": "hyperconnect",
+      "sourceName": "하이퍼커넥트",
+      "color": "#8B5CF6",
+      "title": "온디바이스 AI 얼굴 식별 파이프라인 최적화",
+      "url": "https://hyperconnect.github.io/2026/01/23/On-device-Face-Verification-Pipeline-Optimization.html",
+      "date": "2026-01-23T00:00:00+00:00",
+      "summary": "온디바이스 환경에서 AI 얼굴 식별 파이프라인을 최적화하는 방법을 소개합니다.",
+      "author": "Jiseong Ham (joel.ham@match.com)",
+      "tags": [
+        "AI",
+        "온디바이스 AI"
+      ],
+      "image": "thumbs/536eb88dba9722c2.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
       "source": "naver",
       "sourceName": "네이버",
       "color": "#03C75A",
@@ -1325,6 +1634,22 @@
       ],
       "image": "thumbs/b4bb9dfae9962957.jpg",
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
+    },
+    {
+      "source": "hyperconnect",
+      "sourceName": "하이퍼커넥트",
+      "color": "#8B5CF6",
+      "title": "비즈니스 문제를 AI 문제로 정렬하는 방법",
+      "url": "https://hyperconnect.github.io/2026/01/12/how-to-relax-a-business-problem.html",
+      "date": "2026-01-12T00:00:00+00:00",
+      "summary": "최적화 이론의 완화(relaxation) 개념을 비즈니스 문제에 적용하여, 비즈니스 문제를 AI 문제로 정렬하는 방법을 소개합니다.",
+      "author": "Joonyoung Yi (zerry@hpcnt.com)",
+      "tags": [
+        "AI",
+        "추천"
+      ],
+      "image": "thumbs/d6825872be117d2d.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
     },
     {
       "source": "kurly",
@@ -1527,6 +1852,22 @@
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
     },
     {
+      "source": "hyperconnect",
+      "sourceName": "하이퍼커넥트",
+      "color": "#8B5CF6",
+      "title": "왜 막상 배포하면 효과가 없지? 타겟 지표에 맞는 ML모델 train/eval 설계하기",
+      "url": "https://hyperconnect.github.io/2025/11/28/how-to-set-ml-objective.html",
+      "date": "2025-11-28T00:00:00+00:00",
+      "summary": "실제 비즈니스 목표를 최적화하기 위해 머신러닝 모델의 타겟 메트릭을 정하는 방법을 소개합니다.",
+      "author": "Eunhyouk Shin (shawn.s@hpcnt.com)",
+      "tags": [
+        "머신러닝",
+        "추천"
+      ],
+      "image": "thumbs/7a1ee9d7eda0d6eb.jpg",
+      "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
       "source": "naver",
       "sourceName": "네이버",
       "color": "#03C75A",
@@ -1621,7 +1962,7 @@
         "AI",
         "MLOps"
       ],
-      "image": "",
+      "image": "thumbs/48693b6f581b8267.jpg",
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
     },
     {
