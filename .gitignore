@@ -1,0 +1,10 @@
+# 로그 / 캐시 / 가상환경
+__pycache__/
+*.pyc
+.DS_Store
+refresh.log
+launchd.out.log
+launchd.err.log
+.venv/
+
+# data.js / data.json 은 배포 대상이므로 커밋합니다 (무시하지 않음)
