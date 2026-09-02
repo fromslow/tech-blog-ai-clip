@@ -6,8 +6,8 @@
 #   3) origin(main) 으로 push  ->  GitHub Pages 자동 갱신
 set -uo pipefail
 
-DIR="/Users/suyeon/Downloads/보험사 챗봇/tech_blog_ai_clip"
-PY="/Users/suyeon/Downloads/보험사 챗봇/.venv/bin/python"
+DIR="/Users/suyeon/AI Clipping"
+PY="/Users/suyeon/AI Clipping/.venv/bin/python"
 LOG="$DIR/refresh.log"
 
 cd "$DIR" || exit 1
@@ -25,7 +25,7 @@ if git rev-parse --git-dir >/dev/null 2>&1; then
       if git push origin HEAD >> "$LOG" 2>&1; then
         echo "  -> push 완료 (GitHub Pages 갱신됨)" >> "$LOG"
       else
-        echo "  -> push 실패: 원격/인증(SSH 키 또는 PAT) 확인 필요" >> "$LOG"
+        echo "  -> push 실패: 원격/인증(PAT) 확인 필요" >> "$LOG"
       fi
     else
       echo "  -> origin 원격 미설정 (DEPLOY.md 참고). 로컬 커밋만 됨." >> "$LOG"

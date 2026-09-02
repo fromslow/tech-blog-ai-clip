@@ -8,7 +8,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/suyeon/Downloads/보험사 챗봇/tech_blog_ai_clip/refresh_and_deploy.sh</string>
+    <string>/Users/suyeon/AI Clipping/refresh_and_deploy.sh</string>
   </array>
 
   <!-- 매일 오전 8:30 실행 (맥이 자고 있었으면 깨어난 직후 1회 실행) -->
@@ -19,9 +19,9 @@
   </dict>
 
   <key>StandardOutPath</key>
-  <string>/Users/suyeon/Downloads/보험사 챗봇/tech_blog_ai_clip/launchd.out.log</string>
+  <string>/Users/suyeon/AI Clipping/launchd.out.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/suyeon/Downloads/보험사 챗봇/tech_blog_ai_clip/launchd.err.log</string>
+  <string>/Users/suyeon/AI Clipping/launchd.err.log</string>
 
   <key>RunAtLoad</key>
   <false/>

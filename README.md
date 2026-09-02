@@ -19,16 +19,18 @@
 ## 보는 방법
 로컬 서버로 실행 (Wanted Sans 웹폰트 로드를 위해 인터넷 필요):
 ```bash
-cd tech_blog_ai_clip
-python serve.py          # http://localhost:4599
+cd "/Users/suyeon/AI Clipping"
+.venv/bin/python serve.py          # http://localhost:4599
 ```
 > `index.html` 더블클릭으로도 열리지만, 일부 브라우저는 로컬 폰트/스크립트 보안정책 때문에 서버 실행을 권장합니다.
 
 ## 데이터 누적(새로고침)
 ```bash
-pip install -r requirements.txt   # 최초 1회
-python fetch_feeds.py             # 새 글 수집 → 누적 → data.js / data.json 갱신
+cd "/Users/suyeon/AI Clipping"
+.venv/bin/pip install -r requirements.txt   # 최초 1회
+.venv/bin/python fetch_feeds.py             # 새 글 수집 → 누적 → data.js / data.json 갱신
 ```
+> 자동 수집(launchd)이 매일 오전 8:30에 이 과정을 대신 실행합니다.
 실행 결과 예시: `이전 누적 83건 | 신규 추가 33건 | 1년 경과 제거 10건 | 현재 누적 106건`
 
 ## 과거 글 백필(backfill)
