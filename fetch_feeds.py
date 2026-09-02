@@ -190,6 +190,34 @@ def within_window(iso_date: str) -> bool:
     return d >= CUTOFF
 
 
+_OG_RE = [
+    re.compile(r'<meta[^>]+property=["\']og:image(?::url)?["\'][^>]+content=["\']([^"\']+)', re.I),
+    re.compile(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', re.I),
+    re.compile(r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)', re.I),
+]
+
+
+def fetch_og_image(url: str) -> str:
+    """글 페이지에서 대표 이미지(og:image / twitter:image)를 추출한다."""
+    try:
+        r = http_get(url)
+        html_text = r.text[:250000]  # 일부 사이트(카카오 등)는 head 가 커서 넉넉히 스캔
+        for rx in _OG_RE:
+            m = rx.search(html_text)
+            if m:
+                img = html.unescape(m.group(1).strip())
+                if img.startswith("//"):
+                    img = "https:" + img
+                elif img.startswith("/"):
+                    from urllib.parse import urljoin
+                    img = urljoin(url, img)
+                if img.startswith("http"):
+                    return img
+    except Exception:  # noqa: BLE001
+        pass
+    return ""
+
+
 # ---------------------------------------------------------------------------
 # 소스별 페처
 # ---------------------------------------------------------------------------
@@ -341,6 +369,24 @@ def main():
             print(f"[FAIL] {src['name']} ({src['id']}): {ex}", file=sys.stderr)
         time.sleep(1.0)  # throttle
 
+    # ---- 대표 이미지 보강: 이미지 없는 글은 글 페이지의 og:image 로 채운다 ----
+    #  이미 수집돼 이미지가 있던 글은 재요청하지 않아, 매일 실행 시 새 글만 조회한다.
+    enriched = 0
+    for p in fetched:
+        if p.get("image"):
+            continue
+        old = existing.get(p["url"])
+        if old and old.get("image"):
+            p["image"] = old["image"]          # 이전에 찾아둔 이미지 재사용
+            continue
+        img = fetch_og_image(p["url"])
+        if img:
+            p["image"] = img
+            enriched += 1
+        time.sleep(0.4)                         # throttle
+    if enriched:
+        print(f"[img] og:image 로 대표 이미지 {enriched}건 보강")
+
     # ---- 병합/누적 (기존 + 신규, URL 기준 중복 제거) ----
     merged = dict(existing)
     added = 0
@@ -358,14 +404,14 @@ def main():
             merged[url] = p
             added += 1
 
-    # ---- 1년 롤링 윈도우 유지 ----
-    kept = [p for p in merged.values() if within_window(p.get("date", ""))]
-    dropped = len(merged) - len(kept)
+    # ---- 전량 누적: 한 번 모은 글은 삭제하지 않고 계속 쌓는다 ----
+    #  (신규 수집은 최근 1년을 기준으로 하되, 과거에 모아둔 글은 1년이 지나도 유지)
+    kept = list(merged.values())
     kept.sort(key=lambda x: x.get("date", ""), reverse=True)
 
     payload = {
         "generatedAt": now_iso,
-        "windowDays": WINDOW_DAYS,
+        "backfillWindowDays": WINDOW_DAYS,
         "sources": [{"id": s["id"], "name": s["name"], "color": s["color"], "home": s["home"]} for s in SOURCES],
         "posts": kept,
     }
@@ -376,8 +422,8 @@ def main():
 
     print("\n=== 수집 요약 ===")
     print("\n".join(stats))
-    print(f"\n이전 누적: {prev_count}건  |  신규 추가: {added}건  |  1년 경과 제거: {dropped}건")
-    print(f"현재 누적(최근 {WINDOW_DAYS}일): {len(kept)}건  ->  data.json / data.js")
+    print(f"\n이전 누적: {prev_count}건  |  신규 추가: {added}건  |  전량 누적 유지(삭제 없음)")
+    print(f"현재 누적: {len(kept)}건  ->  data.json / data.js")
 
 
 if __name__ == "__main__":
