@@ -20,12 +20,14 @@ WAF(배민 등)를 통과하기 위해 curl_cffi 로 크롬 TLS 지문을 위장
 사용법:  python fetch_feeds.py
 """
 
+import hashlib
 import html
 import json
 import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
+from io import BytesIO
 from pathlib import Path
 
 import feedparser
@@ -36,7 +38,13 @@ except ImportError:  # pragma: no cover
     print("curl_cffi 가 필요합니다:  pip install -r requirements.txt", file=sys.stderr)
     raise
 
+try:
+    from PIL import Image
+except ImportError:  # pragma: no cover
+    Image = None
+
 HERE = Path(__file__).resolve().parent
+THUMBS_DIR = HERE / "thumbs"
 WINDOW_DAYS = 365
 NOW = datetime.now(timezone.utc)
 CUTOFF = NOW - timedelta(days=WINDOW_DAYS)
@@ -216,6 +224,46 @@ def fetch_og_image(url: str) -> str:
     except Exception:  # noqa: BLE001
         pass
     return ""
+
+
+def localize_image(img_url: str, post_url: str) -> str:
+    """대표 이미지를 내려받아 thumbs/ 에 저장하고 로컬 경로를 반환한다.
+
+    외부 CDN 은 다른 출처에서의 핫링크를 막는 경우가 많아, 브라우저에서 직접
+    불러오면 깨진다. 그래서 이미지를 저장소에 함께 담아 같은 출처로 서빙한다.
+    (다운로드는 서버에서 하고, Referer 를 글 주소로 넣어 핫링크 차단을 통과한다.)
+    실패하면 "" 를 반환해 카드가 그라디언트 플레이스홀더로 표시되게 한다.
+    """
+    key = hashlib.md5(post_url.encode("utf-8")).hexdigest()[:16]
+    rel = f"thumbs/{key}.jpg"
+    dest = THUMBS_DIR / f"{key}.jpg"
+    if dest.exists():
+        return rel                       # 이미 받아둔 이미지 재사용
+    if Image is None:
+        return ""
+    # 배민: 콘텐츠 이미지가 접속 불가한 woowa.in 에 있어 접속 가능한 woowahan.com 으로 치환
+    img_url = img_url.replace("techblog.woowa.in", "techblog.woowahan.com")
+    try:
+        r = creq.get(img_url, impersonate="chrome", timeout=25,
+                     headers={"Referer": post_url, "Accept": "image/avif,image/webp,image/*,*/*"})
+        if r.status_code != 200 or not r.content:
+            return ""
+        im = Image.open(BytesIO(r.content))
+        if im.mode in ("RGBA", "LA", "P"):     # 투명 배경은 흰색으로 합성
+            bg = Image.new("RGB", im.size, (255, 255, 255))
+            im = im.convert("RGBA")
+            bg.paste(im, mask=im.split()[-1])
+            im = bg
+        else:
+            im = im.convert("RGB")
+        w, h = im.size
+        if w > 640:                            # 카드 크기에 맞춰 축소
+            im = im.resize((640, max(1, round(h * 640 / w))), Image.LANCZOS)
+        THUMBS_DIR.mkdir(exist_ok=True)
+        im.save(dest, "JPEG", quality=80, optimize=True)
+        return rel
+    except Exception:  # noqa: BLE001
+        return ""
 
 
 # ---------------------------------------------------------------------------
@@ -408,6 +456,23 @@ def main():
     #  (신규 수집은 최근 1년을 기준으로 하되, 과거에 모아둔 글은 1년이 지나도 유지)
     kept = list(merged.values())
     kept.sort(key=lambda x: x.get("date", ""), reverse=True)
+
+    # ---- 대표 이미지 로컬 저장: 외부 CDN 핫링크 차단을 피하려고 thumbs/ 에 내려받는다 ----
+    #  이미 thumbs/ 로 바뀐 글은 재요청하지 않으므로, 매일 실행 시 새 글만 내려받는다.
+    localized = failed = 0
+    for p in kept:
+        img = p.get("image", "")
+        if not img.startswith("http"):
+            continue                       # 이미 로컬(thumbs/…) 이거나 이미지 없음
+        local = localize_image(img, p["url"])
+        p["image"] = local                 # 성공: thumbs/xxx.jpg / 실패: "" (플레이스홀더)
+        if local:
+            localized += 1
+        else:
+            failed += 1
+        time.sleep(0.3)                    # throttle
+    if localized or failed:
+        print(f"[img] 대표 이미지 로컬 저장 {localized}건 (실패 {failed}건)")
 
     payload = {
         "generatedAt": now_iso,

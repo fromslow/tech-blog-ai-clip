@@ -271,7 +271,10 @@
     var order=(DATA.sources||[]).map(function(s){return s.id;}).filter(function(id){return companyCounts[id];});
     function chip(id,label,color,count){
       var b=document.createElement('button'); b.className='chip'+(state.company===id?' on':'');
-      if(state.company===id && color){ b.style.background=color; b.style.color=textOn(color); }
+      if(state.company===id){                      // 활성 칩 배경
+        if(color){ b.style.background=color; b.style.color=textOn(color); }
+        else { b.style.background='var(--accent)'; b.style.color='#fff'; }  // '전체'는 브랜드색이 없으므로 accent
+      }
       var mark = (id && id!=='all')
         ? '<img class="clogo" src="'+logoOf(id)+'" alt="" onerror="this.remove()">'
         : (color?'<span class="cdot" style="background:'+color+'"></span>':'');
@@ -327,7 +330,7 @@
         var thumbInner=
           '<div class="ph" style="background:linear-gradient(140deg,'+color+','+lighten(color)+')"><b>'+initial+'</b></div>'+
           (p.image?'<img loading="lazy" src="'+esc(p.image)+'" onerror="this.remove()" alt="">':'')+
-          '<span class="badge"><img class="clogo" src="'+logoOf(p.source)+'" alt="" onerror="this.remove()">'+esc(p.sourceName)+'</span>'+
+          '<span class="badge" style="background:'+color+';color:'+textOn(color)+'">'+esc(p.sourceName)+'</span>'+
           (isNew?'<span class="new">NEW</span>':'');
         var tags=(p.tags||[]).slice(0,3).map(function(t){return '<span class="ctag">'+esc(t)+'</span>';}).join('');
         el.innerHTML=
