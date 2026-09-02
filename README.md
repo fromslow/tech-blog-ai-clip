@@ -26,5 +26,3 @@ python fetch_feeds.py
 | `fetch_feeds.py` | 수집 · AI 필터 · 이미지 저장 |
 | `data.js` | 수집된 글 데이터 (자동 생성) |
 | `thumbs/` · `logos/` | 썸네일 · 로고 |
-
-배포 · 자동화 설정은 [`DEPLOY.md`](DEPLOY.md) 참고.
