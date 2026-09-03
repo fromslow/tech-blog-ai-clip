@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T09:20:14.358015+00:00",
+  "generatedAt": "2026-09-03T23:39:36.881961+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -100,6 +100,21 @@
     }
   ],
   "posts": [
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "Retail Platform QA 자동화 여정",
+      "url": "https://techblog.musinsa.com/retail-platform-qa-%EC%9E%90%EB%8F%99%ED%99%94-%EC%97%AC%EC%A0%95-027ceba7fd6d?source=rss----f107b03c406e---4",
+      "date": "2026-09-03T10:01:02+00:00",
+      "summary": "하루 걸리던 회귀 테스트를 30분으로 만든 이야기 무신사 Retail Platform QA팀이 Playwright와 Slack 봇, AI 기반 TC 생성기를 만들어 온 기록 들어가며 안녕하세요. 무신사 PBO(Platform Business Operation)에서 Retail Platform QA 엔지니어 고남석입니다. Retail Platform팀은 편집샵과 무탠다드, 29CM 같은 오프라인 매장을 운영하는 플랫폼을 개발합니다. mPOS, Self-POS, PDP, MOSS까지 여러 서비스가 촘",
+      "author": "고남석(Mickey)",
+      "tags": [
+        "AI"
+      ],
+      "image": "",
+      "firstSeen": "2026-09-03T23:39:36.881961+00:00"
+    },
     {
       "source": "gccompany",
       "sourceName": "여기어때",
