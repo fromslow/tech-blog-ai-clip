@@ -81,6 +81,10 @@ SOURCES = [
      "type": "rss", "feed": "https://techblog.gccompany.co.kr/feed"},
     {"id": "nhn", "name": "NHN", "color": "#0E9AA7", "home": "https://meetup.nhncloud.com",
      "type": "rss", "feed": "https://meetup.nhncloud.com/rss"},
+    {"id": "myrealtrip", "name": "마이리얼트립", "color": "#00C2B8", "home": "https://medium.com/myrealtrip-product",
+     "type": "rss", "feed": "https://medium.com/feed/myrealtrip-product"},
+    {"id": "devocean", "name": "데보션", "color": "#5C7CFA", "home": "https://devocean.sk.com",
+     "type": "rss", "feed": "https://devocean.sk.com/blog/rss.do"},
 ]
 
 # ---------------------------------------------------------------------------
@@ -290,6 +294,21 @@ def fetch_rss(src):
             if t:
                 iso = datetime(*t[:6], tzinfo=timezone.utc).isoformat()
                 break
+        if not iso:
+            # feedparser 가 파싱 못한 날짜(타임존 없는 RFC822 등, 예: 데보션) 폴백
+            for key in ("published", "updated"):
+                raw = e.get(key)
+                if not raw:
+                    continue
+                try:
+                    from email.utils import parsedate_to_datetime
+                    d = parsedate_to_datetime(raw)
+                    if d.tzinfo is None:
+                        d = d.replace(tzinfo=timezone.utc)
+                    iso = d.astimezone(timezone.utc).isoformat()
+                    break
+                except Exception:  # noqa: BLE001
+                    continue
         content_html = e.get("content", [{}])[0].get("value", "") if e.get("content") else ""
         summary = e.get("summary", "") or content_html
         tags = " ".join(t.get("term", "") for t in e.get("tags", []) if t.get("term"))

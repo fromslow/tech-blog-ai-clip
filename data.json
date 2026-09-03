@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T23:30:39.223779+00:00",
+  "generatedAt": "2026-09-03T09:20:14.358015+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -85,6 +85,18 @@
       "name": "NHN",
       "color": "#0E9AA7",
       "home": "https://meetup.nhncloud.com"
+    },
+    {
+      "id": "myrealtrip",
+      "name": "마이리얼트립",
+      "color": "#00C2B8",
+      "home": "https://medium.com/myrealtrip-product"
+    },
+    {
+      "id": "devocean",
+      "name": "데보션",
+      "color": "#5C7CFA",
+      "home": "https://devocean.sk.com"
     }
   ],
   "posts": [
@@ -182,6 +194,22 @@
       "firstSeen": "2026-08-26T15:00:00+00:00"
     },
     {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "Vision Transformer 구현 — TensorFlow/Keras로 손글씨(MNIST) 분류하기",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168459&boardType=techBlog&isShared=Y",
+      "date": "2026-08-26T13:43:11+00:00",
+      "summary": "안녕하세요. SK AX 의 송영목 매니저입니다. Vision Transformer(ViT)를 TensorFlow/Keras로 직접 구현하면서, 개념 → 수식/구조 → 코드 → 실행 결과 순서로 한 단계씩 설명합니다....",
+      "author": "xipert",
+      "tags": [
+        "딥러닝",
+        "프레임워크"
+      ],
+      "image": "thumbs/03eb823ffd6322db.jpg",
+      "firstSeen": "2026-09-03T09:20:14.358015+00:00"
+    },
+    {
       "source": "toss",
       "sourceName": "토스",
       "color": "#3182F6",
@@ -273,6 +301,21 @@
       "firstSeen": "2026-09-02T11:49:32.894968+00:00"
     },
     {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "Claude Code Dynamic Workflow 쉽게 이해하기",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168424&boardType=techBlog&isShared=Y",
+      "date": "2026-08-21T11:24:20+00:00",
+      "summary": "나의 에이전트가 순서대로 일하는 대신, JavaScript 스크립트가 여러 서브에이전트를 지휘하는 방식. 반복·분기·병렬 같은 제어 흐름을 코드로 확정해 두고, 실제 작업만 에이전트에게 맡깁니다. Claude Cod...",
+      "author": "한성원",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/026d12a1c2e07d52.jpg",
+      "firstSeen": "2026-09-03T09:20:14.358015+00:00"
+    },
+    {
       "source": "toss",
       "sourceName": "토스",
       "color": "#3182F6",
@@ -319,6 +362,21 @@
       "firstSeen": "2026-08-18T05:00:00+00:00"
     },
     {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "VLM을 이용한 시각적 문서 검색: ColPali와 ColQwen",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168438&boardType=techBlog&isShared=Y",
+      "date": "2026-08-17T12:42:45+00:00",
+      "summary": "들어가며 안녕하세요, SK AX 배준호 매니저입니다. 이번 글에서는 질의와 관련된 문서를 찾는 문서 검색(Document Retrieval)에 대한 내용을 다뤄보려고 합니다. 문서 검색은 RAG(Retrieval-A...",
+      "author": "juunho",
+      "tags": [
+        "RAG"
+      ],
+      "image": "thumbs/7489d064c013b2d0.jpg",
+      "firstSeen": "2026-09-03T09:20:14.358015+00:00"
+    },
+    {
       "source": "nhn",
       "sourceName": "NHN",
       "color": "#0E9AA7",
@@ -332,6 +390,21 @@
       ],
       "image": "thumbs/d116f0f87f80000c.jpg",
       "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "LLM의 thinking_token_budget은 어떤 역할을 하는가?",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168420&boardType=techBlog&isShared=Y",
+      "date": "2026-08-11T13:09:19+00:00",
+      "summary": "안녕하세요. teus입니다. 이번 포스팅은, opencode 등의 LLM에서 설정할 수 있는 thinking_token_budget에 대해서 다룹니다. 0. Effort opencode나 claude code의 설정...",
+      "author": "Teus",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/8033b96f6d95e30c.jpg",
+      "firstSeen": "2026-09-03T09:20:14.358015+00:00"
     },
     {
       "source": "naver",
@@ -379,6 +452,22 @@
       ],
       "image": "thumbs/3ed696c1ad6da26f.jpg",
       "firstSeen": "2026-08-07T02:00:00+00:00"
+    },
+    {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "AI 에이전트, 자율에 맡길까 절차로 통제할까",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168417&boardType=techBlog&isShared=Y",
+      "date": "2026-08-06T12:29:42+00:00",
+      "summary": "에이전트에게 일을 맡길 때, 스스로 알아서 하게 둘 것인가 아니면 정해진 순서대로 하나씩 시킬 것인가. 이 선택이 시스템 전체의 성격을 바꿉니다. 어느 한쪽이 더 나은 것이 아니라, 각자 비싸지는 지점이 다를 뿐입니...",
+      "author": "한성원",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "thumbs/ff038bd4443bb681.jpg",
+      "firstSeen": "2026-09-03T09:20:14.358015+00:00"
     },
     {
       "source": "woowahan",
@@ -1203,6 +1292,38 @@
       "firstSeen": "2026-05-14T02:00:00+00:00"
     },
     {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "Product Engineer: 하루 500건 분석 요청을 받아내는 데이터 에이전트, 일을 돕는 AI에서 일을 수행하는 AI로",
+      "url": "https://medium.com/myrealtrip-product/product-engineer-%ED%95%98%EB%A3%A8-500%EA%B1%B4-%EB%B6%84%EC%84%9D-%EC%9A%94%EC%B2%AD%EC%9D%84-%EB%B0%9B%EC%95%84%EB%82%B4%EB%8A%94-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%EC%9D%BC%EC%9D%84-%EB%8F%95%EB%8A%94-ai%EC%97%90%EC%84%9C-%EC%9D%BC%EC%9D%84-%EC%88%98%ED%96%89%ED%95%98%EB%8A%94-ai%EB%A1%9C-dde9b6a891c5?source=rss----f516ea7fca7c---4",
+      "date": "2026-05-08T10:07:40+00:00",
+      "summary": "PEPE 세션 — 데이터 엔지니어링팀 정현영 님 마이리얼트립 데이터 에이전트가 슬랙에 라이브된 지 일주일도 채 안 된 시점, 이미 들어온 분석 요청은 2,000건을 넘기고 있었습니다. 이번 PEPE 세션에서 프로덕트 엔지니어(PE) 정현영님은 “하루에 500건 분석 요청을 받아내는 AI Agent 만드는 법”을 소개했습니다. 데이터 에이전트가 라이브되기 전까지는, “어제 거래가 얼마야”라는 질문을 처리하던 사람은 분석가였습니다. 분석가 한 명이 하루에 처리할 수 있는 요청은 많아야 4건에서 7건.",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "thumbs/02d44571edd18b3e.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
+    },
+    {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "월 7만 5천 건 CS, 마이리얼트립 자회사 ‘AICX’가 풀어낸 자동화",
+      "url": "https://medium.com/myrealtrip-product/%EC%9B%94-7%EB%A7%8C-5%EC%B2%9C-%EA%B1%B4-cs-%EB%A7%88%EC%9D%B4%EB%A6%AC%EC%96%BC%ED%8A%B8%EB%A6%BD%EC%9D%B4-%ED%92%80%EC%96%B4%EB%82%B8-%EC%9A%B4%EC%98%81-%EC%9E%90%EB%8F%99%ED%99%94-aicx%EC%9D%98-%EC%9D%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D-9c338156436c?source=rss----f516ea7fca7c---4",
+      "date": "2026-05-07T09:45:54+00:00",
+      "summary": "2026년 5월 6일, 마이리얼트립 사무실에서 Claude Bloom 3차 행사가 열렸습니다. 이날 마이리얼트립과 자회사 AICX의 CTO를 겸하고 있는 허원진 님이 공유한 자동화 사례를 풀어봅니다. AICX는 마이리얼트립이 자사 운영으로 가장 먼저 검증한 AI 운영센터 입니다. 2022년 운영 전담 조직 MRTCX로 시작했고, 2024년 외부 기업의 고객 경험·서비스 운영에 같은 노하우를 적용하는 회사로 이름을 바꿨습니다. 자체 개발한 ‘AICX 에이전트’와 전문 운영 인력을 결합한 하이브리드 ",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI",
+        "LLM"
+      ],
+      "image": "thumbs/fedfe5533f833b83.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
+    },
+    {
       "source": "line",
       "sourceName": "라인",
       "color": "#06C755",
@@ -1264,6 +1385,21 @@
       "firstSeen": "2026-04-27T15:00:00+00:00"
     },
     {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "만드는 엔지니어에서, 파는 엔지니어로: 한 PE의 자발적 전직",
+      "url": "https://medium.com/myrealtrip-product/%EB%A7%8C%EB%93%9C%EB%8A%94-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EC%97%90%EC%84%9C-%ED%8C%8C%EB%8A%94-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A1%9C-%ED%95%9C-pe%EC%9D%98-%EC%9E%90%EB%B0%9C%EC%A0%81-%EC%97%AD%ED%95%A0-%ED%99%95%EC%9E%A5-925ca7bec65b?source=rss----f516ea7fca7c---4",
+      "date": "2026-04-24T08:17:29+00:00",
+      "summary": "Stay(숙박)실 성장사업팀 국승현님 결정까지 3초. 직군을 옮기기까지 한 달. 마이리얼트립 결제정산개발팀에서 4년 반 동안 정산 시스템을 만들어 온 프로덕트 엔지니어(PE) 국승현님이 최근 Stay(숙박)실 성장사업팀 세일즈 현장으로 자리를 옮겼습니다. 마이리얼트립 PE가 팀과 직무를 바꿔 세일즈로 전직한 첫 사례입니다. 마이리얼트립의 PE 체제는 “만든 사람이 문제를 끝까지 책임진다”는 철학 위에 서 있습니다. AI가 구현의 속도를 끌어올릴수록, 사람이 만드는 레버리지는 더 넓은 문제를 직접 ",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/ea28dbb95a809db1.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
+    },
+    {
       "source": "hyperconnect",
       "sourceName": "하이퍼커넥트",
       "color": "#8B5CF6",
@@ -1309,6 +1445,22 @@
       "firstSeen": "2026-04-21T06:00:00+00:00"
     },
     {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "Product Engineer: 클릭 몇 번으로 여행 상품 5,000개를 만들다",
+      "url": "https://medium.com/myrealtrip-product/product-engineer-%ED%81%B4%EB%A6%AD-%EB%AA%87-%EB%B2%88%EC%9C%BC%EB%A1%9C-%EC%97%AC%ED%96%89-%EC%83%81%ED%92%88-5-000%EA%B0%9C%EB%A5%BC-%EB%A7%8C%EB%93%A4%EB%8B%A4-24ce85cfe56a?source=rss----f516ea7fca7c---4",
+      "date": "2026-04-17T06:58:01+00:00",
+      "summary": "PEPE 세션 6 — T&A(투어&액티비티) Experience팀 김제림님 마이리얼트립에는 전 세계 연동사로부터 들어오는 수만 개의 여행 상품이 있습니다. 하지만 이 상품들을 실제 판매 가능한 형태로 등록하는 과정은 놀라울 만큼 수작업이었습니다. 상품 하나에 수십 분, 하루에 최대 20개 가 한계였고, 미등록 상품 대기열은 계속 늘어가고 있었습니다. 여섯 번째 PEPE 세션에서는 T&A Experience팀의 프로덕트 엔지니어(PE) 김제림님이 이 과정을 AI로 자동화한 이야기를 공유했습니다. 상",
+      "author": "Myrealtrip",
+      "tags": [
+        "LLM",
+        "AI"
+      ],
+      "image": "thumbs/7a1e92db49a49d6c.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
+    },
+    {
       "source": "woowahan",
       "sourceName": "배달의민족",
       "color": "#2AC1BC",
@@ -1338,6 +1490,22 @@
       ],
       "image": "thumbs/4f007b4e8aca6aaa.jpg",
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
+    },
+    {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "마이리얼트립에서 가장 큰 조직, T&A실의 리더는 어떻게 AI를 활용하는가",
+      "url": "https://medium.com/myrealtrip-product/%EB%A7%88%EC%9D%B4%EB%A6%AC%EC%96%BC%ED%8A%B8%EB%A6%BD%EC%97%90%EC%84%9C-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%A1%B0%EC%A7%81-t-a%EC%8B%A4%EC%9D%98-%EB%A6%AC%EB%8D%94%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-ai%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%98%EB%8A%94%EA%B0%80-8a1226c254c7?source=rss----f516ea7fca7c---4",
+      "date": "2026-04-14T02:40:45+00:00",
+      "summary": "— T&A(투어&액티비티)실 최강규 실장 마이리얼트립의 시작점이자, 지금도 가장 큰 조직이 T&A실입니다. 10개 팀, 약 60명이 전 세계 100개 이상 도시를 운영합니다. 그 조직의 실장 최강규님이 직접 만든 AI Native 매니지먼트 시스템, T&A Control Tower 를 소개합니다. Control Tower는 매일 오전 10시에 자동으로 돕니다. Wiki 주간회의록, KPI, FP&A 시트, Slack 이슈를 한꺼번에 읽고, Claude가 이슈를 긴급도별로 분류하고, 실장이 개입해야",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI",
+        "LLM"
+      ],
+      "image": "thumbs/feb62323b7deb233.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
     },
     {
       "source": "nhn",
@@ -1386,6 +1554,21 @@
       "firstSeen": "2026-04-08T02:00:00+00:00"
     },
     {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "“AI를 쓰는 회사가 아니라, AI 없이는 일이 안 되는 회사”: 마이리얼트립이 AI Native 조직으로 전환한 이유",
+      "url": "https://medium.com/myrealtrip-product/ai%EB%A5%BC-%EC%93%B0%EB%8A%94-%ED%9A%8C%EC%82%AC%EA%B0%80-%EC%95%84%EB%8B%88%EB%9D%BC-ai-%EC%97%86%EC%9D%B4%EB%8A%94-%EC%9D%BC%EC%9D%B4-%EC%95%88-%EB%90%98%EB%8A%94-%ED%9A%8C%EC%82%AC-%EB%A7%88%EC%9D%B4%EB%A6%AC%EC%96%BC%ED%8A%B8%EB%A6%BD%EC%9D%B4-ai-native-%EC%A1%B0%EC%A7%81%EC%9C%BC%EB%A1%9C-%EC%A0%84%ED%99%98%ED%95%9C-%EC%9D%B4%EC%9C%A0-0e7d0eb21750?source=rss----f516ea7fca7c---4",
+      "date": "2026-04-07T07:40:01+00:00",
+      "summary": "AI 기능을 얹는 것과, AI 없이는 일이 안 되는 조직을 만드는 것은 다릅니다. 마이리얼트립이 3년에 걸쳐 후자를 택한 이유와, 그 과정에서 바꾼 것들을 공유합니다. 2026년 1분기, 마이리얼트립 이동건 대표는 전 구성원 앞에서 선언했습니다. “마이리얼트립은 AI Native 조직으로 전환합니다.” 새로운 기능 출시나 신규 서비스 론칭 소식이 아니었습니다. 회사가 일하는 방식 자체를 바꾸겠다는 선언이었습니다. 2024년, 사내에 AI Lab을 세우고 전 구성원의 AI 리터러시를 끌어올리는 작업",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/6ddd65d000aefcbf.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
+    },
+    {
       "source": "woowahan",
       "sourceName": "배달의민족",
       "color": "#2AC1BC",
@@ -1400,6 +1583,23 @@
       ],
       "image": "thumbs/1dad0caed72b0f4c.jpg",
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
+    },
+    {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "마이리얼트립 재무실장의 AI 에이전트 구축 일지",
+      "url": "https://medium.com/myrealtrip-product/%EB%A7%88%EC%9D%B4%EB%A6%AC%EC%96%BC%ED%8A%B8%EB%A6%BD-%EC%9E%AC%EB%AC%B4%EC%8B%A4%EC%9E%A5%EC%9D%98-ai-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%EA%B5%AC%EC%B6%95-%EC%9D%BC%EC%A7%80-f782fa0ed963?source=rss----f516ea7fca7c---4",
+      "date": "2026-04-03T01:37:44+00:00",
+      "summary": "-재무관리실 이승길 실장 이승길님은 개발자가 아닙니다. 12년차 회계/재무 전문가입니다. 그런데 6일 만에 26명의 AI 전문가 팀을 구축했습니다. 마이리얼트립 재무관리실을 이끌고 있는 그에게, 재무 업무는 매일 반복되는 도전입니다. 회계기준서 를 찾고, 세법 예규를 확인하고, 법령 조문을 조회하는 일. 한 건의 질문에 답하려면 여러 시스템을 오가며 반나절이 걸리기도 했습니다. 전문 회계법인에 자문을 의뢰하면 빠르지만, 모든 질문을 외부에 맡길 수는 없었습니다. 그래서 AI에게 도움을 요청했습니다",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI",
+        "AI 에이전트",
+        "LLM"
+      ],
+      "image": "thumbs/81c8703a91a1c2e8.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
     },
     {
       "source": "kurly",
@@ -1433,6 +1633,22 @@
       "firstSeen": "2026-04-02T15:00:00+00:00"
     },
     {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "AI 시대의 엔지니어 역할 변화: 코드 작성자에서 시스템 사고자로",
+      "url": "https://medium.com/myrealtrip-product/ai-%EC%8B%9C%EB%8C%80%EC%9D%98-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EC%97%AD%ED%95%A0-%EB%B3%80%ED%99%94-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%EC%9E%90%EC%97%90%EC%84%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%82%AC%EA%B3%A0%EC%9E%90%EB%A1%9C-917efd59b073?source=rss----f516ea7fca7c---4",
+      "date": "2026-04-01T06:56:06+00:00",
+      "summary": "PE Expert 지식 공유 — 마이리얼트립 숙박프로덕트팀 신동빈 Product Engineer PE Expert는 마이리얼트립이 그리는 ‘문제 종결자’ Product Engineer 중에서도, PE의 정의와 방향을 선도하며 조직 내 PE를 이끄는 역할을 맡고 있습니다. 2026년, 마이리얼트립 Product Engineer 사이에서는 흥미로운 논의가 이어지고 있습니다. AI 에이전트가 코드를 작성하고, 테스트를 생성하고, 심지어 문서까지 만들어내는 시대. 그렇다면 엔지니어는 이제 무엇을 해야 할",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "thumbs/c528df830592e725.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
+    },
+    {
       "source": "line",
       "sourceName": "라인",
       "color": "#06C755",
@@ -1447,6 +1663,21 @@
       ],
       "image": "thumbs/332d86871bb49ecf.jpg",
       "firstSeen": "2026-03-30T06:30:00+00:00"
+    },
+    {
+      "source": "myrealtrip",
+      "sourceName": "마이리얼트립",
+      "color": "#00C2B8",
+      "title": "Product Engineer: 전직 백엔드 개발자, AI와 함께한 프론트엔드 도전기",
+      "url": "https://medium.com/myrealtrip-product/product-engineer-%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-ai%EC%97%90%EA%B2%8C-%EC%9D%BC-%EC%8B%9C%ED%82%A4%EB%8A%94-%EB%B2%95%EC%9D%84-%EB%B0%94%EA%BE%BC-%EC%9D%B4%EC%95%BC%EA%B8%B0-773453e94ee7?source=rss----f516ea7fca7c---4",
+      "date": "2026-03-30T01:01:01+00:00",
+      "summary": "PEPE 세션 5 — 그로스엔지니어링팀 황재선님 마이리얼트립의 다섯 번째 PEPE(Product Engineer Possibility Exchange) 세션에서는 조금 다른 도전기가 등장했습니다. 마이리얼트립에는 ‘백엔드 개발자’, ‘프론트엔드 개발자’라는 구분이 없습니다. 모두가 Product Engineer(PE)입니다. 하지만 사람마다 익숙한 기술 영역은 다릅니다. 백엔드에 익숙한 엔지니어가 프론트엔드 코드를 모르는 상태에서 관리자 페이지 화면을 직접 만든 이야기입니다. 그로스엔지니어링팀 황",
+      "author": "Myrealtrip",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/f8cb4dbad940a84a.jpg",
+      "firstSeen": "2026-09-03T06:23:03.154103+00:00"
     },
     {
       "source": "line",
