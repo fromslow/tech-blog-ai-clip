@@ -71,6 +71,16 @@ SOURCES = [
      "type": "rss", "feed": "https://blog.banksalad.com/rss.xml"},
     {"id": "kurly", "name": "컬리", "color": "#5F0080", "home": "https://helloworld.kurly.com",
      "type": "rss", "feed": "https://helloworld.kurly.com/rss.xml"},
+    {"id": "musinsa", "name": "무신사", "color": "#1A1A1A", "home": "https://medium.com/musinsa-tech",
+     "type": "rss", "feed": "https://medium.com/feed/musinsa-tech"},
+    {"id": "hyperconnect", "name": "하이퍼커넥트", "color": "#8B5CF6", "home": "https://hyperconnect.github.io",
+     "type": "rss", "feed": "https://hyperconnect.github.io/feed.xml"},
+    {"id": "coupang", "name": "쿠팡", "color": "#E4002B", "home": "https://medium.com/coupang-engineering",
+     "type": "rss", "feed": "https://medium.com/feed/coupang-engineering"},
+    {"id": "gccompany", "name": "여기어때", "color": "#FF3D77", "home": "https://techblog.gccompany.co.kr",
+     "type": "rss", "feed": "https://techblog.gccompany.co.kr/feed"},
+    {"id": "nhn", "name": "NHN", "color": "#0E9AA7", "home": "https://meetup.nhncloud.com",
+     "type": "rss", "feed": "https://meetup.nhncloud.com/rss"},
 ]
 
 # ---------------------------------------------------------------------------
