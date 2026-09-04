@@ -110,7 +110,11 @@
   .dsecs{margin-top:13px;display:flex;flex-direction:column;gap:13px}
   .dsec .dlabel{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--primary);
     background:color-mix(in srgb,var(--primary) 12%,transparent);padding:2px 9px;border-radius:6px;margin-bottom:6px}
-  .dsec p{margin:0;font-size:13.5px;line-height:1.68;color:var(--foreground)}
+  .dsec p{margin:0;font-size:13.5px;line-height:1.72;color:var(--foreground)}
+  .dsec p + p{margin-top:9px}
+  .dfig{margin:14px 0 0}
+  .dfig img{width:100%;border:1px solid var(--border);border-radius:calc(var(--radius)*.9);background:var(--muted);display:block}
+  .dfig figcaption{margin-top:6px;font-size:11.5px;color:var(--muted-foreground)}
   .dsec ul{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
   .dsec li{position:relative;padding-left:15px;font-size:13px;color:var(--muted-foreground);line-height:1.6}
   .dsec li::before{content:"";position:absolute;left:2px;top:.6em;width:4px;height:4px;border-radius:50%;
@@ -225,15 +229,24 @@
             '<div class="dmeta">'+(a.author?esc(a.author)+' · ':'')+fmtDate(a.date)+'</div>'+
             (a.oneLiner?'<p class="doneliner">'+esc(a.oneLiner)+'</p>':'');
           if(a.sections&&a.sections.length){
-            // 상세 포맷: 이미지 상단 + 배경/구현/결과 섹션
+            // 상세 포맷: 이미지 상단 + 배경/구현/결과 섹션(문단) + 원문 그림
             var secs=a.sections.map(function(s){
+              var paras=String(s.text||'').split(/\n\n+/).filter(Boolean)
+                .map(function(t){return '<p>'+esc(t)+'</p>';}).join('');
               var bl=(s.bullets||[]).map(function(b){return '<li>'+esc(b)+'</li>';}).join('');
               return '<div class="dsec"><span class="dlabel">'+esc(s.label)+'</span>'+
-                (s.text?'<p>'+esc(s.text)+'</p>':'')+(bl?'<ul>'+bl+'</ul>':'')+'</div>';
+                paras+(bl?'<ul>'+bl+'</ul>':'')+'</div>';
+            }).join('');
+            var figs=(a.figures||[]).map(function(f){
+              if(!f||!f.src)return'';
+              return '<figure class="dfig"><img loading="lazy" src="'+esc(f.src)+'" alt="" '+
+                'onerror="this.closest(\'figure\').remove()">'+
+                (f.caption?'<figcaption>'+esc(f.caption)+' · 출처 '+esc(c.name)+' 원문</figcaption>':'')+
+                '</figure>';
             }).join('');
             out+='<article class="digest detailed">'+
               '<a class="dthumb" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+thumb+'</a>'+
-              '<div class="dbody">'+head+'<div class="dsecs">'+secs+'</div></div>'+
+              '<div class="dbody">'+head+'<div class="dsecs">'+secs+'</div>'+figs+'</div>'+
             '</article>';
           }else{
             // 기존 간단 포맷: 불릿

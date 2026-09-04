@@ -21,34 +21,46 @@ from curl_cffi import requests as creq
 HERE = Path(__file__).resolve().parent
 CONTENT_DIR = HERE / "_content"
 PER_COMPANY = 2          # 서비스별 회사당 최대 글 수
-CONTENT_CAP = 14000      # 본문 저장 최대 글자수
+CONTENT_CAP = 18000      # 본문 저장 최대 글자수
 
 # 서비스 카테고리: id, 이름, 아이콘(remixicon), 설명, 매칭 키워드(정규식)
 SERVICES = [
-    {"id": "agent", "name": "AI 에이전트", "icon": "ri-robot-2-line",
-     "desc": "LLM 에이전트로 업무·운영을 자동화한 사례",
-     "pat": [r"에이전트", r"\bagent\b", r"\bMCP\b", r"copilot"]},
-    {"id": "incident", "name": "장애 원인 분석 · SRE", "icon": "ri-alarm-warning-line",
-     "desc": "AI로 장애를 탐지·분석하고 대응을 자동화한 사례",
-     "pat": [r"장애", r"원인 ?분석", r"incident", r"\bSRE\b", r"이상 ?탐지", r"anomaly", r"알림|alert"]},
-    {"id": "rag", "name": "RAG · 검색 · 임베딩", "icon": "ri-search-eye-line",
-     "desc": "임베딩·벡터 검색·검색 증강 생성을 적용한 사례",
-     "pat": [r"\bRAG\b", r"검색 ?증강", r"임베딩", r"embedding", r"벡터", r"시맨틱", r"semantic"]},
-    {"id": "serving", "name": "LLM 서빙 · 비용 최적화", "icon": "ri-speed-up-line",
-     "desc": "LLM 추론 서빙, 지연시간·비용을 최적화한 사례",
-     "pat": [r"서빙", r"serving", r"vllm", r"추론", r"비용 ?(절감|최적화)", r"캐시|cache", r"latency|지연"]},
-    {"id": "reco", "name": "추천 · 개인화", "icon": "ri-thumb-up-line",
-     "desc": "추천 시스템과 개인화에 AI를 적용한 사례",
-     "pat": [r"추천", r"recommend", r"개인화", r"personaliz"]},
-    {"id": "devprod", "name": "코드리뷰 · 개발생산성", "icon": "ri-code-box-line",
-     "desc": "AI 코드리뷰·코딩 어시스트로 개발 생산성을 높인 사례",
-     "pat": [r"코드 ?리뷰", r"code ?review", r"개발 ?생산성", r"ai ?코딩|코딩 ?어시", r"생산성"]},
-    {"id": "knowledge", "name": "지식관리 · 문서 자동화", "icon": "ri-book-open-line",
-     "desc": "문서·릴리즈노트·위키 등 지식을 AI로 자동화한 사례",
-     "pat": [r"위키|wiki", r"지식", r"ssot", r"릴리즈 ?노트", r"문서.*(자동|생성|요약)"]},
-    {"id": "text2sql", "name": "Text2SQL · 자연어 질의", "icon": "ri-database-2-line",
-     "desc": "자연어를 SQL·쿼리로 바꿔 데이터를 다루게 한 사례",
-     "pat": [r"text\s*-?2?\s*-?sql", r"text2sql", r"자연어.{0,8}(sql|쿼리|질의|분석|조회)", r"nl2sql"]},
+    # ── 제품·비즈니스 대상 ──
+    {"id": "cs", "name": "고객 상담·CS 자동화", "icon": "ri-customer-service-2-line",
+     "desc": "AI로 고객 문의 응대·상담을 자동화한 사례",
+     "pat": [r"상담", r"고객 ?문의", r"고객센터", r"컨택센터", r"\bcs\b", r"\bvoc\b", r"문의 ?응대"]},
+    {"id": "reco", "name": "추천·개인화", "icon": "ri-thumb-up-line",
+     "desc": "상품·콘텐츠 추천과 개인화에 AI를 적용한 사례",
+     "pat": [r"추천", r"recommend", r"개인화", r"personaliz", r"타게팅", r"\bCRM\b"]},
+    {"id": "search", "name": "검색", "icon": "ri-search-2-line",
+     "desc": "상품·통합 검색의 품질을 AI로 높인 사례",
+     "pat": [r"검색 ?품질", r"통합 ?검색", r"상품 ?검색", r"검색 ?랭킹", r"검색.*(개선|고도화|정확도)", r"semantic search"]},
+    {"id": "marketing", "name": "마케팅·광고", "icon": "ri-megaphone-line",
+     "desc": "마케팅 콘텐츠·광고·타게팅에 AI를 활용한 사례",
+     "pat": [r"마케팅", r"광고", r"\bads?\b", r"타게팅|targeting", r"프로모션", r"카피.*생성", r"배너.*생성"]},
+    {"id": "translate", "name": "번역·다국어", "icon": "ri-translate-2",
+     "desc": "콘텐츠 번역·다국어 지원을 AI로 처리한 사례",
+     "pat": [r"번역", r"translat", r"다국어", r"\bi18n\b", r"로컬라이"]},
+    # ── 운영·개발·크리에이티브 대상 ──
+    {"id": "incident", "name": "장애 대응·운영 자동화", "icon": "ri-alarm-warning-line",
+     "desc": "AI로 장애를 탐지·분석하고 복구·대응을 자동화한 사례",
+     "pat": [r"장애", r"원인 ?분석", r"incident", r"\bSRE\b", r"자동 ?복구", r"알림|alert", r"모니터링.*ai|ai.*모니터링"]},
+    {"id": "devprod", "name": "개발 생산성", "icon": "ri-code-box-line",
+     "desc": "AI 코딩·코드리뷰·테스트로 개발 생산성을 높인 사례",
+     "pat": [r"코드 ?리뷰", r"code ?review", r"개발 ?생산성", r"ai ?코딩|코딩 ?어시|바이브 ?코딩|vibe ?coding", r"테스트 ?자동|\bE2E\b", r"코드 ?생성"]},
+    {"id": "data", "name": "데이터 분석·자연어 질의", "icon": "ri-database-2-line",
+     "desc": "자연어 질의(Text2SQL)·지표 분석을 AI로 다룬 사례",
+     "pat": [r"text\s*-?2?\s*-?sql", r"자연어.{0,8}(sql|쿼리|질의|분석|조회)", r"지표.*분석|분석.*지표",
+             r"데이터 ?에이전트", r"대시보드", r"분석 ?(요청|자동화)", r"데이터 ?분석"]},
+    {"id": "quality", "name": "이상·어뷰징·품질 탐지", "icon": "ri-shield-check-line",
+     "desc": "어뷰징·이상거래·유해성·품질 문제를 AI로 탐지한 사례",
+     "pat": [r"어뷰징|abuse", r"유해성|유해 ?콘텐츠", r"불법|사기|fraud|이상거래", r"오배송", r"품질 ?(검사|탐지)", r"스팸"]},
+    {"id": "knowledge", "name": "사내 지식·문서 자동화", "icon": "ri-book-open-line",
+     "desc": "사내 지식 검색·릴리즈노트·위키를 AI로 자동화한 사례",
+     "pat": [r"위키|wiki", r"릴리즈 ?노트", r"사내.*(지식|검색|문서)", r"ssot", r"문서.*(자동|생성)", r"물어보새", r"지식 ?검색"]},
+    {"id": "design", "name": "디자인", "icon": "ri-palette-line",
+     "desc": "디자인 시스템·디자인 업무에 AI를 적용한 사례",
+     "pat": [r"디자인 ?시스템", r"design ?system", r"디자이너", r"디자인.*ai|ai.*디자인", r"figma|피그마"]},
 ]
 
 
@@ -62,13 +74,23 @@ def strip_html(raw: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def _keep_figures(block: str) -> str:
+    # 요약 에이전트가 관련 그림을 고를 수 있도록 <img> 를 [FIGURE:url] 마커로 남긴다.
+    def repl(m):
+        src = m.group(1)
+        if src.startswith("data:") or not src.startswith("http"):
+            return " "
+        return f" [FIGURE:{src}] "
+    return re.sub(r'<img[^>]+src=["\']([^"\']+)["\'][^>]*>', repl, block, flags=re.I)
+
+
 def extract_main(html_text: str) -> str:
-    # <article> 또는 <main> 우선, 없으면 body 전체
+    # <article> 또는 <main> 우선, 없으면 body 전체. 그림 URL은 마커로 보존.
     for tag in ("article", "main"):
         m = re.search(r"(?is)<" + tag + r"[^>]*>(.*?)</" + tag + r">", html_text)
         if m and len(strip_html(m.group(1))) > 400:
-            return strip_html(m.group(1))
-    return strip_html(html_text)
+            return strip_html(_keep_figures(m.group(1)))
+    return strip_html(_keep_figures(html_text))
 
 
 def load_feed_contents() -> dict:

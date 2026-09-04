@@ -10,6 +10,7 @@ launchd.err.log
 # 서비스 페이지 빌드 중간 산출물 (services.js/json 만 배포)
 _content/
 _summaries/
+_summaries2/
 _services_work.json
 _rethin_a.json
 _rethin_b.json
