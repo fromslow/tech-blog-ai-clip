@@ -70,20 +70,20 @@
   .icon-btn:hover{background:var(--muted)}
 
   /* ── Hero ── */
-  .hero{padding:44px 0 22px}
-  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted-foreground);margin:0 0 12px}
-  h1{margin:0;font-size:clamp(30px,4.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.12}
-  .lead{margin:14px 0 0;color:var(--muted-foreground);font-size:16px;line-height:1.6;max-width:640px}
-  .stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:26px}
-  .stat .n{font-size:24px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-  .stat .l{font-size:12.5px;color:var(--muted-foreground);margin-top:1px}
+  .hero{padding:40px 0 24px}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.03em;color:var(--muted-foreground);margin:0}
+  .hero-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 16px;margin-top:8px}
+  h1{margin:0;font-size:clamp(30px,4.4vw,48px);font-weight:800;letter-spacing:-.035em;line-height:1.1}
+  .hero-meta{color:var(--muted-foreground);font-size:14px;padding-bottom:5px;font-variant-numeric:tabular-nums}
+  .hero-meta b{color:var(--foreground);font-weight:700}
+  .lead{margin:12px 0 0;color:var(--muted-foreground);font-size:15px;line-height:1.6;max-width:640px}
 
   /* ── Toolbar (sticky) ── */
   .toolbar{position:sticky;top:56px;z-index:40;border-bottom:1px solid var(--border);
     background:color-mix(in srgb,var(--background) 90%,transparent);backdrop-filter:blur(12px)}
-  .toolbar-in{padding:12px 0}
-  .searchrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  .search{position:relative;flex:1;min-width:220px}
+  .toolbar-in{padding-top:12px;padding-bottom:12px}
+  .filterbar{display:flex;flex-direction:column;gap:10px}
+  .search{position:relative}
   .search i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted-foreground);font-size:16px;pointer-events:none}
   .search input{width:100%;height:38px;padding:0 12px 0 36px;border:1px solid var(--border);
     border-radius:calc(var(--radius)*.8);background:transparent;color:var(--foreground);
@@ -91,7 +91,8 @@
   .search input::placeholder{color:var(--muted-foreground)}
   .search input:focus{border-color:var(--ring);box-shadow:0 0 0 3px color-mix(in srgb,var(--ring) 35%,transparent)}
 
-  .chips{display:flex;gap:6px;overflow-x:auto;margin-top:10px}
+  .chips{display:flex;gap:6px;overflow-x:auto;flex:1;min-width:0}
+  @media(min-width:900px){.filterbar{flex-direction:row;align-items:center}.search{width:280px;flex:none}}
   .chip{flex-shrink:0;display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px;
     border:1px solid var(--border);border-radius:999px;background:transparent;color:var(--muted-foreground);
     font:inherit;font-size:13px;font-weight:600;white-space:nowrap;cursor:pointer;transition:color .15s,border-color .15s}
@@ -159,7 +160,7 @@
 </style>
 <script>
   // 다크모드: 저장값 없으면 라이트 기본 (site-starter 와 동일: enableSystem=false, default light)
-  (function(){try{if(localStorage.getItem('clip-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
+  (function(){try{if(localStorage.getItem('clip-theme-v2')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
 </script>
 </head>
 <body>
@@ -173,26 +174,23 @@
   <div class="wrap">
     <section class="hero">
       <p class="eyebrow">TECH BLOG · AI CLIPPING</p>
-      <h1>테크 블로그의 AI 이야기만 모아서</h1>
-      <p class="lead">국내 주요 테크 기업 기술 블로그에서 AI 관련 글만 자동으로 클리핑합니다.</p>
-      <div class="stats">
-        <div class="stat"><div class="n" id="sTotal">–</div><div class="l">클리핑된 AI 글</div></div>
-        <div class="stat"><div class="n" id="sCos">–</div><div class="l">테크 기업</div></div>
-        <div class="stat"><div class="n" id="sNew">–</div><div class="l">최근 7일 신규</div></div>
-        <div class="stat"><div class="n" id="sDate">–</div><div class="l">마지막 업데이트</div></div>
+      <div class="hero-head">
+        <h1>테크 블로그의 AI 이야기</h1>
+        <span class="hero-meta" id="heroMeta"></span>
       </div>
+      <p class="lead">국내 주요 테크 기업 기술 블로그에서 AI 관련 글만 자동으로 클리핑합니다.</p>
     </section>
   </div>
 
   <div class="toolbar">
     <div class="wrap toolbar-in">
-      <div class="searchrow">
+      <div class="filterbar">
+        <div class="chips scrollbar-none" id="chips"></div>
         <div class="search">
           <i class="ri-search-line"></i>
           <input id="q" type="search" placeholder="제목·내용·키워드 검색 (예: LLM, RAG, 추천)" autocomplete="off" />
         </div>
       </div>
-      <div class="chips scrollbar-none" id="chips"></div>
       <div class="tagrow scrollbar-none" id="tagrow"></div>
     </div>
   </div>
@@ -220,7 +218,7 @@
     var tbtn=document.getElementById('theme');
     function paint(){ tbtn.innerHTML = root.classList.contains('dark') ? '<i class="ri-sun-line"></i>' : '<i class="ri-moon-line"></i>'; }
     function toggleTheme(){ root.classList.toggle('dark');
-      try{localStorage.setItem('clip-theme', root.classList.contains('dark')?'dark':'light');}catch(e){} paint(); }
+      try{localStorage.setItem('clip-theme-v2', root.classList.contains('dark')?'dark':'light');}catch(e){} paint(); }
     paint();
     tbtn.onclick=toggleTheme;
     document.addEventListener('keydown',function(e){
@@ -244,11 +242,10 @@
     var DAY=86400000, now=Date.now();
     var newCount=posts.filter(function(p){return p.firstSeen&&(now-new Date(p.firstSeen))<7*DAY;}).length;
 
-    document.getElementById('sTotal').textContent=posts.length;
-    document.getElementById('sCos').textContent=Object.keys(companyCounts).length;
-    document.getElementById('sNew').textContent=newCount;
+    var meta='총 <b>'+posts.length+'</b>건 · <b>'+Object.keys(companyCounts).length+'</b>개 기업';
     if(DATA.generatedAt){var d=new Date(DATA.generatedAt);
-      document.getElementById('sDate').textContent="'"+String(d.getFullYear()).slice(2)+"."+String(d.getMonth()+1).padStart(2,'0')+"."+String(d.getDate()).padStart(2,'0');}
+      meta+=" · 업데이트 '"+String(d.getFullYear()).slice(2)+"."+String(d.getMonth()+1).padStart(2,'0')+"."+String(d.getDate()).padStart(2,'0');}
+    document.getElementById('heroMeta').innerHTML=meta;
 
     // ----- chips -----
     var chips=document.getElementById('chips');
@@ -304,7 +301,7 @@
       var frag=document.createDocumentFragment();
       list.forEach(function(p){
         var color=p.color||'#888';
-        var isNew=p.firstSeen&&(Date.now()-new Date(p.firstSeen))<3*DAY;
+        var isNew=p.date&&(Date.now()-new Date(p.date))<3*DAY;   // 발행일 기준 3일 이내
         var el=document.createElement('article'); el.className='card';
         el.onclick=function(){if(p.url)window.open(p.url,'_blank','noopener');};
         var initial=esc((p.sourceName||'?').slice(0,2));
