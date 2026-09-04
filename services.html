@@ -103,6 +103,19 @@
     background:var(--primary);opacity:.6}
   .thin-note{font-size:12px;color:var(--muted-foreground);font-style:normal;opacity:.8}
 
+  /* 상세 카드: 이미지 상단 + 배경/구현/결과 섹션 */
+  .digest.detailed{flex-direction:column;gap:0;padding:0;overflow:hidden}
+  .digest.detailed .dthumb{width:100%;aspect-ratio:16/9;max-height:280px;border-radius:0}
+  .digest.detailed .dbody{padding:16px 18px 18px}
+  .dsecs{margin-top:13px;display:flex;flex-direction:column;gap:13px}
+  .dsec .dlabel{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--primary);
+    background:color-mix(in srgb,var(--primary) 12%,transparent);padding:2px 9px;border-radius:6px;margin-bottom:6px}
+  .dsec p{margin:0;font-size:13.5px;line-height:1.68;color:var(--foreground)}
+  .dsec ul{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+  .dsec li{position:relative;padding-left:15px;font-size:13px;color:var(--muted-foreground);line-height:1.6}
+  .dsec li::before{content:"";position:absolute;left:2px;top:.6em;width:4px;height:4px;border-radius:50%;
+    background:var(--primary);opacity:.55}
+
   footer.f{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--muted-foreground);font-size:12.5px}
 
   @media (max-width:640px){
@@ -207,16 +220,31 @@
           var initial=esc((c.name||'?').slice(0,2));
           var thumb='<div class="ph" style="background:'+tint(c.color,10)+';color:'+c.color+'">'+initial+'</div>'+
             (a.image?'<img loading="lazy" src="'+esc(a.image)+'" onerror="this.remove()" alt="">':'');
-          var bullets=(a.bullets||[]).map(function(b){return '<li>'+esc(b)+'</li>';}).join('');
-          out+='<div class="digest">'+
-            '<a class="dthumb" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+thumb+'</a>'+
-            '<div class="dbody">'+
-              '<a class="dtitle" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'<i class="ri-external-link-line"></i></a>'+
-              '<div class="dmeta">'+(a.author?esc(a.author)+' · ':'')+fmtDate(a.date)+'</div>'+
-              (a.oneLiner?'<p class="doneliner">'+esc(a.oneLiner)+'</p>':'')+
-              (bullets?'<ul class="dbullets">'+bullets+'</ul>':(a.thin?'<p class="dbullets thin-note">원문에서 상세 요약을 가져오지 못했습니다. 링크를 확인하세요.</p>':''))+
-            '</div>'+
-          '</div>';
+          var head=
+            '<a class="dtitle" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'<i class="ri-external-link-line"></i></a>'+
+            '<div class="dmeta">'+(a.author?esc(a.author)+' · ':'')+fmtDate(a.date)+'</div>'+
+            (a.oneLiner?'<p class="doneliner">'+esc(a.oneLiner)+'</p>':'');
+          if(a.sections&&a.sections.length){
+            // 상세 포맷: 이미지 상단 + 배경/구현/결과 섹션
+            var secs=a.sections.map(function(s){
+              var bl=(s.bullets||[]).map(function(b){return '<li>'+esc(b)+'</li>';}).join('');
+              return '<div class="dsec"><span class="dlabel">'+esc(s.label)+'</span>'+
+                (s.text?'<p>'+esc(s.text)+'</p>':'')+(bl?'<ul>'+bl+'</ul>':'')+'</div>';
+            }).join('');
+            out+='<article class="digest detailed">'+
+              '<a class="dthumb" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+thumb+'</a>'+
+              '<div class="dbody">'+head+'<div class="dsecs">'+secs+'</div></div>'+
+            '</article>';
+          }else{
+            // 기존 간단 포맷: 불릿
+            var bullets=(a.bullets||[]).map(function(b){return '<li>'+esc(b)+'</li>';}).join('');
+            out+='<article class="digest">'+
+              '<a class="dthumb" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+thumb+'</a>'+
+              '<div class="dbody">'+head+
+                (bullets?'<ul class="dbullets">'+bullets+'</ul>':(a.thin?'<p class="dbullets thin-note">원문에서 상세 요약을 가져오지 못했습니다. 링크를 확인하세요.</p>':''))+
+              '</div>'+
+            '</article>';
+          }
         });
         out+='</div></section>';
       });
