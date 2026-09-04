@@ -218,6 +218,7 @@
     });
 
     function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function esp(s){return esc(String(s||'').replace(/\s*·\s*/g,' · '));}  // 가운뎃점 좌우 공백
     function logoOf(id){return 'logos/'+id+'.png';}
     function tint(hex,a){return 'color-mix(in srgb,'+hex+' '+a+'%, var(--card))';}
     function fmtDate(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';
@@ -269,13 +270,13 @@
             // 구조화 포맷: 문제 → 동작 방식(단계) → 핵심 설계(왜) → 결과
             var how=a.how.map(function(h,i){
               var hf=(h.fig&&h.fig.src)?('<figure class="dfig"><img loading="lazy" src="'+esc(h.fig.src)+'" alt="" '+
-                'onerror="this.closest(\'figure\').remove()">'+(h.fig.caption?'<figcaption>'+esc(h.fig.caption)+' · 출처 '+esc(c.name)+' 원문</figcaption>':'')+'</figure>'):'';
-              return '<div class="fstep"><span class="fnum">'+(i+1)+'</span><div class="fbody"><b>'+esc(h.step)+'</b> '+esc(h.desc)+hf+'</div></div>';
+                'onerror="this.closest(\'figure\').remove()">'+(h.fig.caption?'<figcaption>'+esp(h.fig.caption)+' · 출처 '+esc(c.name)+' 원문</figcaption>':'')+'</figure>'):'';
+              return '<div class="fstep"><span class="fnum">'+(i+1)+'</span><div class="fbody"><b>'+esp(h.step)+'</b> '+esp(h.desc)+hf+'</div></div>';
             }).join('');
-            var keys=(a.keys||[]).map(function(k){return '<li><b>'+esc(k.point)+'</b> <span class="why">— '+esc(k.why)+'</span></li>';}).join('');
-            var res=(a.results||[]).map(function(r){return '<li>'+esc(r)+'</li>';}).join('');
+            var keys=(a.keys||[]).map(function(k){return '<li><b>'+esp(k.point)+'</b> <span class="why">— '+esp(k.why)+'</span></li>';}).join('');
+            var res=(a.results||[]).map(function(r){return '<li>'+esp(r)+'</li>';}).join('');
             var body=head+
-              (a.problem?'<div class="sblock"><span class="slabel"><i class="ri-focus-3-line"></i>문제</span><div class="sprob">'+esc(a.problem)+'</div></div>':'')+
+              (a.problem?'<div class="sblock"><span class="slabel"><i class="ri-focus-3-line"></i>문제</span><div class="sprob">'+esp(a.problem)+'</div></div>':'')+
               (how?'<div class="sblock"><span class="slabel"><i class="ri-flow-chart"></i>동작 방식</span><div class="flow">'+how+'</div></div>':'')+
               (keys?'<div class="sblock"><span class="slabel"><i class="ri-key-2-line"></i>핵심 설계 · 왜 이렇게</span><ul class="skeys">'+keys+'</ul></div>':'')+
               (res?'<div class="sblock"><span class="slabel"><i class="ri-line-chart-line"></i>결과</span><ul class="sres">'+res+'</ul></div>':'')+
