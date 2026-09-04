@@ -233,7 +233,7 @@
       chipsEl.innerHTML='';
       services.forEach(function(s){
         var b=document.createElement('button'); b.className='svcchip'+(s.id===current?' on':'');
-        b.innerHTML='<i class="'+s.icon+'"></i><span>'+esc(s.name)+'</span><span class="cnt">'+s.companyCount+'사</span>';
+        b.innerHTML='<i class="'+s.icon+'"></i><span>'+esp(s.name)+'</span><span class="cnt">'+s.companyCount+'사</span>';
         b.onclick=function(){current=s.id;try{history.replaceState(null,'','#'+s.id);}catch(e){}render();window.scrollTo({top:0,behavior:'smooth'});};
         chipsEl.appendChild(b);
       });
@@ -242,7 +242,7 @@
       buildChips();
       var s=services.filter(function(x){return x.id===current;})[0];
       if(!s){headEl.innerHTML='';bodyEl.innerHTML='<p style="color:var(--muted-foreground);padding:40px 0">데이터가 없습니다. build_services.py → assemble_services.py 를 실행하세요.</p>';return;}
-      headEl.innerHTML='<h2><i class="'+s.icon+'"></i>'+esc(s.name)+'</h2><p>'+esc(s.desc)+'</p>'+
+      headEl.innerHTML='<h2><i class="'+s.icon+'"></i>'+esp(s.name)+'</h2><p>'+esp(s.desc)+'</p>'+
         '<div class="meta">'+s.companyCount+'개 기업 · 글 '+s.articleCount+'건</div>';
       var out='';
       s.companies.forEach(function(c){
@@ -263,7 +263,7 @@
             if(!f||!f.src)return'';
             return '<figure class="dfig"><img loading="lazy" src="'+esc(f.src)+'" alt="" '+
               'onerror="this.closest(\'figure\').remove()">'+
-              (f.caption?'<figcaption>'+esc(f.caption)+' · 출처 '+esc(c.name)+' 원문</figcaption>':'')+
+              (f.caption?'<figcaption>'+esp(f.caption)+' · 출처 '+esc(c.name)+' 원문</figcaption>':'')+
               '</figure>';
           }).join('');
           if(a.how&&a.how.length){

@@ -16,3 +16,7 @@ _rethin_a.json
 _rethin_b.json
 
 # data.js / data.json 은 배포 대상이므로 커밋합니다 (무시하지 않음)
+_manual_structured.json
+_agent_specs/
+_workspace/
+_hz_input.md

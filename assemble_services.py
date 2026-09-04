@@ -60,8 +60,26 @@ ORDER = ["incident", "reco", "cs", "devprod", "data", "knowledge", "design", "qu
 
 def main():
     work = {s["id"]: s for s in json.loads((HERE / "_services_work.json").read_text(encoding="utf-8"))}
+    manual_file = HERE / "_manual_structured.json"
+    manual = json.loads(manual_file.read_text(encoding="utf-8")) if manual_file.exists() else {}
     services = []
     ordered_ids = [i for i in ORDER if i in work] + [i for i in work if i not in ORDER]
+
+    def loc_fig(f, referer):
+        """fig({src,caption}) 을 로컬화. 이미 assets/ 경로면 그대로 통과."""
+        if not f:
+            return None
+        src = (f.get("src") or "").strip()
+        cap = f.get("caption", "")
+        if src.startswith("assets/"):
+            return {"src": src, "caption": cap}
+        if not src.startswith("http"):
+            return None
+        local = localize_figure(src, referer)
+        time.sleep(0.3)
+        if local:
+            return {"src": local, "caption": cap}
+        return None
 
     for sid in ordered_ids:
         svc = work[sid]
@@ -69,23 +87,33 @@ def main():
         summ = json.loads(sfile.read_text(encoding="utf-8")) if sfile.exists() else {}
         comps = {}
         for it in svc["items"]:
-            s = summ.get(it["url"])
+            s = manual.get(it["url"]) or summ.get(it["url"])
             if not s or s.get("drop"):          # 요약 없음/서비스 무관 → 제외
                 continue
+            # 동작 단계(how) 안의 인라인 그림 로컬화
+            how = []
+            for step in (s.get("how") or []):
+                st = {"step": step.get("step", ""), "desc": step.get("desc", "")}
+                fig = loc_fig(step.get("fig"), it["url"])
+                if fig:
+                    st["fig"] = fig
+                    print(f"    [fig] {it['company']} {fig['src']}")
+                how.append(st)
+            # 하단 보조 그림(figures) 로컬화
             figs = []
             for f in (s.get("figures") or [])[:2]:
-                src = (f or {}).get("src", "")
-                if not src.startswith("http"):
-                    continue
-                local = localize_figure(src, it["url"])
-                if local:
-                    figs.append({"src": local, "caption": (f or {}).get("caption", "")})
-                    print(f"    [fig] {it['company']} {local}")
-                time.sleep(0.3)
+                fig = loc_fig(f, it["url"])
+                if fig:
+                    figs.append(fig)
+                    print(f"    [fig] {it['company']} {fig['src']}")
             art = {
                 "url": it["url"], "title": it["title"], "date": it.get("date", ""),
                 "image": it.get("image", ""), "author": it.get("author", ""),
-                "oneLiner": s.get("oneLiner", ""), "sections": s.get("sections", []),
+                "oneLiner": s.get("oneLiner", ""),
+                "problem": s.get("problem", ""),
+                "how": how,
+                "keys": s.get("keys", []),
+                "results": s.get("results", []),
                 "figures": figs,
             }
             c = comps.setdefault(it["source"], {
