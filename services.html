@@ -115,6 +115,29 @@
   .dfig{margin:14px 0 0}
   .dfig img{width:100%;border:1px solid var(--border);border-radius:calc(var(--radius)*.9);background:var(--muted);display:block}
   .dfig figcaption{margin-top:6px;font-size:11.5px;color:var(--muted-foreground)}
+
+  /* 구조화 포맷 */
+  .sblock{margin-top:15px}
+  .slabel{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:.02em;
+    color:var(--primary);background:color-mix(in srgb,var(--primary) 12%,transparent);
+    padding:3px 9px;border-radius:6px;margin-bottom:9px}
+  .sprob{font-size:13.5px;line-height:1.65;color:var(--foreground);
+    background:var(--muted);border-radius:calc(var(--radius)*.8);padding:11px 13px;margin-top:8px}
+  .show{margin:0;padding:0;list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:10px}
+  .show li{position:relative;padding-left:30px;font-size:13px;line-height:1.62;color:var(--muted-foreground)}
+  .show li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:21px;height:21px;
+    border-radius:7px;background:color-mix(in srgb,var(--primary) 14%,transparent);color:var(--primary);
+    font-size:11px;font-weight:800;display:grid;place-items:center}
+  .show li b{color:var(--foreground);font-weight:700}
+  .skeys{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+  .skeys li{position:relative;padding-left:16px;font-size:13px;line-height:1.6}
+  .skeys li::before{content:"";position:absolute;left:3px;top:.6em;width:5px;height:5px;border-radius:50%;
+    background:var(--primary);opacity:.6}
+  .skeys b{color:var(--foreground);font-weight:700}
+  .skeys .why{color:var(--muted-foreground)}
+  .sres{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+  .sres li{position:relative;padding-left:22px;font-size:13px;line-height:1.55;color:var(--foreground)}
+  .sres li::before{content:"\2713";position:absolute;left:1px;top:0;color:var(--primary);font-weight:800;font-size:12px}
   .dsec ul{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
   .dsec li{position:relative;padding-left:15px;font-size:13px;color:var(--muted-foreground);line-height:1.6}
   .dsec li::before{content:"";position:absolute;left:2px;top:.6em;width:4px;height:4px;border-radius:50%;
@@ -228,21 +251,35 @@
             '<a class="dtitle" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'<i class="ri-external-link-line"></i></a>'+
             '<div class="dmeta">'+(a.author?esc(a.author)+' · ':'')+fmtDate(a.date)+'</div>'+
             (a.oneLiner?'<p class="doneliner">'+esc(a.oneLiner)+'</p>':'');
-          if(a.sections&&a.sections.length){
-            // 상세 포맷: 이미지 상단 + 배경/구현/결과 섹션(문단) + 원문 그림
+          var figs=(a.figures||[]).map(function(f){
+            if(!f||!f.src)return'';
+            return '<figure class="dfig"><img loading="lazy" src="'+esc(f.src)+'" alt="" '+
+              'onerror="this.closest(\'figure\').remove()">'+
+              (f.caption?'<figcaption>'+esc(f.caption)+' · 출처 '+esc(c.name)+' 원문</figcaption>':'')+
+              '</figure>';
+          }).join('');
+          if(a.how&&a.how.length){
+            // 구조화 포맷: 문제 → 동작 방식(단계) → 핵심 설계(왜) → 결과
+            var how=a.how.map(function(h){return '<li><b>'+esc(h.step)+'</b> '+esc(h.desc)+'</li>';}).join('');
+            var keys=(a.keys||[]).map(function(k){return '<li><b>'+esc(k.point)+'</b> <span class="why">— '+esc(k.why)+'</span></li>';}).join('');
+            var res=(a.results||[]).map(function(r){return '<li>'+esc(r)+'</li>';}).join('');
+            var body=head+
+              (a.problem?'<div class="sblock"><span class="slabel"><i class="ri-focus-3-line"></i>문제</span><div class="sprob">'+esc(a.problem)+'</div></div>':'')+
+              (how?'<div class="sblock"><span class="slabel"><i class="ri-flow-chart"></i>동작 방식</span><ol class="show">'+how+'</ol></div>':'')+
+              (keys?'<div class="sblock"><span class="slabel"><i class="ri-key-2-line"></i>핵심 설계 · 왜 이렇게</span><ul class="skeys">'+keys+'</ul></div>':'')+
+              (res?'<div class="sblock"><span class="slabel"><i class="ri-line-chart-line"></i>결과</span><ul class="sres">'+res+'</ul></div>':'')+
+              figs;
+            out+='<article class="digest detailed">'+
+              '<a class="dthumb" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+thumb+'</a>'+
+              '<div class="dbody">'+body+'</div></article>';
+          }else if(a.sections&&a.sections.length){
+            // (이전) 줄글 포맷: 배경/구현/결과 문단 + 그림
             var secs=a.sections.map(function(s){
               var paras=String(s.text||'').split(/\n\n+/).filter(Boolean)
                 .map(function(t){return '<p>'+esc(t)+'</p>';}).join('');
               var bl=(s.bullets||[]).map(function(b){return '<li>'+esc(b)+'</li>';}).join('');
               return '<div class="dsec"><span class="dlabel">'+esc(s.label)+'</span>'+
                 paras+(bl?'<ul>'+bl+'</ul>':'')+'</div>';
-            }).join('');
-            var figs=(a.figures||[]).map(function(f){
-              if(!f||!f.src)return'';
-              return '<figure class="dfig"><img loading="lazy" src="'+esc(f.src)+'" alt="" '+
-                'onerror="this.closest(\'figure\').remove()">'+
-                (f.caption?'<figcaption>'+esc(f.caption)+' · 출처 '+esc(c.name)+' 원문</figcaption>':'')+
-                '</figure>';
             }).join('');
             out+='<article class="digest detailed">'+
               '<a class="dthumb" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+thumb+'</a>'+
