@@ -257,12 +257,21 @@ def localize_image(img_url: str, post_url: str) -> str:
         return ""
     # 배민: 콘텐츠 이미지가 접속 불가한 woowa.in 에 있어 접속 가능한 woowahan.com 으로 치환
     img_url = img_url.replace("techblog.woowa.in", "techblog.woowahan.com")
+    data = None
+    for attempt in range(2):                   # 일시적 실패 대비 1회 재시도
+        try:
+            r = creq.get(img_url, impersonate="chrome", timeout=25 + attempt * 15,
+                         headers={"Referer": post_url, "Accept": "image/avif,image/webp,image/*,*/*"})
+            if r.status_code == 200 and r.content:
+                data = r.content
+                break
+        except Exception:  # noqa: BLE001
+            pass
+        time.sleep(0.8)
+    if data is None:
+        return ""
     try:
-        r = creq.get(img_url, impersonate="chrome", timeout=25,
-                     headers={"Referer": post_url, "Accept": "image/avif,image/webp,image/*,*/*"})
-        if r.status_code != 200 or not r.content:
-            return ""
-        im = Image.open(BytesIO(r.content))
+        im = Image.open(BytesIO(data))
         if im.mode in ("RGBA", "LA", "P"):     # 투명 배경은 흰색으로 합성
             bg = Image.new("RGB", im.size, (255, 255, 255))
             im = im.convert("RGBA")
