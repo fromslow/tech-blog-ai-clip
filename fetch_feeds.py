@@ -85,6 +85,8 @@ SOURCES = [
      "type": "rss", "feed": "https://medium.com/feed/myrealtrip-product"},
     {"id": "devocean", "name": "데보션", "color": "#5C7CFA", "home": "https://devocean.sk.com",
      "type": "rss", "feed": "https://devocean.sk.com/blog/rss.do"},
+    {"id": "scatterlab", "name": "스캐터랩", "color": "#FF5470", "home": "https://blog.pingpong.us",
+     "type": "rss", "feed": "https://blog.pingpong.us/rss/"},
 ]
 
 # ---------------------------------------------------------------------------

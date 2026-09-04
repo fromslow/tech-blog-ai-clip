@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T07:26:19.249735+00:00",
+  "generatedAt": "2026-09-04T07:57:03.997757+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -97,6 +97,12 @@
       "name": "데보션",
       "color": "#5C7CFA",
       "home": "https://devocean.sk.com"
+    },
+    {
+      "id": "scatterlab",
+      "name": "스캐터랩",
+      "color": "#FF5470",
+      "home": "https://blog.pingpong.us"
     }
   ],
   "posts": [
@@ -146,6 +152,21 @@
       ],
       "image": "thumbs/b5a91c9935474d94.jpg",
       "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "scatterlab",
+      "sourceName": "스캐터랩",
+      "color": "#FF5470",
+      "title": "비용과 성능을 한번에 - 언어 특화 토크나이저 도입기",
+      "url": "https://blog.scatterlab.co.kr/tokenizer-281373",
+      "date": "2026-08-31T09:00:00+00:00",
+      "summary": "같은 말을, 절반의 토큰으로",
+      "author": "",
+      "tags": [
+        "머신러닝"
+      ],
+      "image": "thumbs/7d09bb4441380e81.jpg",
+      "firstSeen": "2026-09-04T07:57:03.997757+00:00"
     },
     {
       "source": "woowahan",
@@ -1164,6 +1185,22 @@
       "firstSeen": "2026-06-10T02:00:00+00:00"
     },
     {
+      "source": "scatterlab",
+      "sourceName": "스캐터랩",
+      "color": "#FF5470",
+      "title": "유저와 함께 만드는 LLM 2편 — 제타에 Online Learning 도입하기",
+      "url": "https://blog.scatterlab.co.kr/유저와-함께-만드는-llm-2편-제타에-online-learning-도입하기-196476",
+      "date": "2026-06-10T01:48:00+00:00",
+      "summary": "",
+      "author": "",
+      "tags": [
+        "LLM",
+        "머신러닝"
+      ],
+      "image": "",
+      "firstSeen": "2026-09-04T07:57:03.997757+00:00"
+    },
+    {
       "source": "naver",
       "sourceName": "네이버",
       "color": "#03C75A",
@@ -1370,6 +1407,22 @@
       "firstSeen": "2026-05-07T05:00:00+00:00"
     },
     {
+      "source": "scatterlab",
+      "sourceName": "스캐터랩",
+      "color": "#FF5470",
+      "title": "유저와 함께 만드는 LLM — 제타에 Preference Optimization 도입하기",
+      "url": "https://blog.scatterlab.co.kr/유저와-함께-만드는-llm-제타에-preference-optimization-도입하기-172134",
+      "date": "2026-05-06T09:23:00+00:00",
+      "summary": "",
+      "author": "",
+      "tags": [
+        "LLM",
+        "머신러닝"
+      ],
+      "image": "",
+      "firstSeen": "2026-09-04T07:57:03.997757+00:00"
+    },
+    {
       "source": "line",
       "sourceName": "라인",
       "color": "#06C755",
@@ -1552,6 +1605,22 @@
       ],
       "image": "thumbs/db0cbcae8aa51546.jpg",
       "firstSeen": "2026-09-02T11:49:32.894968+00:00"
+    },
+    {
+      "source": "scatterlab",
+      "sourceName": "스캐터랩",
+      "color": "#FF5470",
+      "title": "ChatGPT보다 오래 사용하는 AI 서비스, 그 뒤의 백엔드 팀 이야기",
+      "url": "https://blog.scatterlab.co.kr/156669",
+      "date": "2026-04-10T03:21:00+00:00",
+      "summary": "",
+      "author": "",
+      "tags": [
+        "AI",
+        "LLM"
+      ],
+      "image": "thumbs/f8a0e568ce0c61b2.jpg",
+      "firstSeen": "2026-09-04T07:57:03.997757+00:00"
     },
     {
       "source": "line",
@@ -1774,6 +1843,22 @@
       "firstSeen": "2026-09-02T05:24:54.110161+00:00"
     },
     {
+      "source": "scatterlab",
+      "sourceName": "스캐터랩",
+      "color": "#FF5470",
+      "title": "월 150만 유저가 사용하는 LLM Inference 인프라 안정적으로 운영하기",
+      "url": "https://blog.scatterlab.co.kr/월-150만-유저가-사용하는-llm-inference-인프라-안정적으로-운영하기-122607",
+      "date": "2026-03-11T06:44:24+00:00",
+      "summary": "",
+      "author": "",
+      "tags": [
+        "LLM",
+        "머신러닝"
+      ],
+      "image": "",
+      "firstSeen": "2026-09-04T07:57:03.997757+00:00"
+    },
+    {
       "source": "woowahan",
       "sourceName": "배달의민족",
       "color": "#2AC1BC",
@@ -1865,6 +1950,22 @@
       ],
       "image": "thumbs/160e7fa70153a37a.jpg",
       "firstSeen": "2026-02-24T15:00:00+00:00"
+    },
+    {
+      "source": "scatterlab",
+      "sourceName": "스캐터랩",
+      "color": "#FF5470",
+      "title": "스캐터랩이 가장 재밌는 LLM을 찾는 방법",
+      "url": "https://blog.scatterlab.co.kr/104253",
+      "date": "2026-02-12T05:38:00+00:00",
+      "summary": "실제 제품에서 유저 반응으로 LLM 평가하기: A/B 테스트·MAB·리더보드",
+      "author": "",
+      "tags": [
+        "머신러닝",
+        "LLM"
+      ],
+      "image": "thumbs/283d70296bbf3778.jpg",
+      "firstSeen": "2026-09-04T07:57:03.997757+00:00"
     },
     {
       "source": "hyperconnect",

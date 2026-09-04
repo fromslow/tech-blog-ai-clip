@@ -67,6 +67,10 @@
   .brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;letter-spacing:-.02em}
   .brand .mark{width:24px;height:24px;border-radius:8px;
     background:linear-gradient(135deg,#4f46e5,#2563eb 45%,#0ea5e9)}
+  .navlinks{display:flex;align-items:center;gap:2px}
+  .navlink{color:var(--muted-foreground);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;transition:.15s}
+  .navlink:hover{color:var(--foreground)}
+  .navlink.on{color:var(--foreground);background:var(--muted)}
   .icon-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:calc(var(--radius)*.7);
     border:0;background:transparent;color:var(--foreground);cursor:pointer;font-size:18px;transition:background .15s}
   .icon-btn:hover{background:var(--muted)}
@@ -170,7 +174,11 @@
   <header class="nav">
     <div class="wrap nav-in">
       <div class="brand"><span class="mark"></span><span>AI 클리핑</span></div>
-      <button class="icon-btn" id="theme" aria-label="테마 전환" title="테마 전환 (D)"><i class="ri-moon-line"></i></button>
+      <div class="navlinks">
+        <a class="navlink on" href="index.html">피드</a>
+        <a class="navlink" href="services.html">서비스</a>
+        <button class="icon-btn" id="theme" aria-label="테마 전환" title="테마 전환 (D)"><i class="ri-moon-line"></i></button>
+      </div>
     </div>
   </header>
 

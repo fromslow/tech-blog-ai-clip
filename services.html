@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>서비스별 구현 사례 · 테크 블로그 AI 클리핑</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" />
+<style>
+  @font-face{font-family:'Pretendard Variable';font-style:normal;font-weight:45 920;font-display:swap;
+    src:url('fonts/PretendardVariable.woff2') format('woff2-variations');}
+  :root{
+    --background:oklch(1 0 0);--foreground:oklch(0.147 0.004 49.25);
+    --card:oklch(1 0 0);--card-foreground:oklch(0.147 0.004 49.25);
+    --primary:oklch(0.488 0.243 264.376);--primary-foreground:oklch(0.97 0.014 254.604);
+    --secondary:oklch(0.967 0.001 286.375);--secondary-foreground:oklch(0.21 0.006 285.885);
+    --muted:oklch(0.97 0.001 106.424);--muted-foreground:oklch(0.553 0.013 58.071);
+    --border:oklch(0.923 0.003 48.717);--input:oklch(0.923 0.003 48.717);--ring:oklch(0.709 0.01 56.259);
+    --radius:0.875rem;color-scheme:light;
+  }
+  html.dark{
+    --background:oklch(0.147 0.004 49.25);--foreground:oklch(0.985 0.001 106.423);
+    --card:oklch(0.216 0.006 56.043);--card-foreground:oklch(0.985 0.001 106.423);
+    --primary:oklch(0.623 0.214 259.815);--primary-foreground:oklch(0.97 0.014 254.604);
+    --secondary:oklch(0.274 0.006 286.033);--secondary-foreground:oklch(0.985 0 0);
+    --muted:oklch(0.268 0.007 34.298);--muted-foreground:oklch(0.709 0.01 56.259);
+    --border:oklch(1 0 0 / 12%);--input:oklch(1 0 0 / 15%);--ring:oklch(0.553 0.013 58.071);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box;border-color:var(--border)}
+  html,body{margin:0;padding:0}
+  body{background:var(--background);color:var(--foreground);min-height:100svh;
+    font-family:'Pretendard Variable',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.5;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:72rem;margin:0 auto;padding:0 20px}
+  .scrollbar-none{scrollbar-width:none}.scrollbar-none::-webkit-scrollbar{display:none}
+
+  header.nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--border);
+    background:color-mix(in srgb,var(--background) 80%,transparent);backdrop-filter:blur(12px)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+  .brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;letter-spacing:-.02em}
+  .brand .mark{width:24px;height:24px;border-radius:8px;background:linear-gradient(135deg,#4f46e5,#2563eb 45%,#0ea5e9)}
+  .navlinks{display:flex;align-items:center;gap:2px}
+  .navlink{color:var(--muted-foreground);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;transition:.15s}
+  .navlink:hover{color:var(--foreground)}
+  .navlink.on{color:var(--foreground);background:var(--muted)}
+  .icon-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:calc(var(--radius)*.7);
+    border:0;background:transparent;color:var(--foreground);cursor:pointer;font-size:18px;transition:background .15s}
+  .icon-btn:hover{background:var(--muted)}
+
+  .hero{padding:40px 0 18px}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted-foreground);margin:0 0 10px}
+  h1{margin:0;font-size:clamp(28px,4.2vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.14}
+  .lead{margin:12px 0 0;color:var(--muted-foreground);font-size:15.5px;max-width:640px}
+
+  /* 서비스 선택 칩 (sticky) */
+  .svcbar{position:sticky;top:56px;z-index:40;border-bottom:1px solid var(--border);
+    background:color-mix(in srgb,var(--background) 90%,transparent);backdrop-filter:blur(12px)}
+  .svcchips{display:flex;gap:8px;overflow-x:auto;padding:12px 0}
+  .svcchip{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;
+    border:1px solid var(--border);border-radius:999px;background:transparent;color:var(--muted-foreground);
+    font:inherit;font-size:13.5px;font-weight:600;white-space:nowrap;cursor:pointer;transition:.15s}
+  .svcchip:hover{color:var(--foreground);border-color:color-mix(in srgb,var(--foreground) 25%,transparent)}
+  .svcchip i{font-size:16px}
+  .svcchip .cnt{font-size:11px;opacity:.6;font-variant-numeric:tabular-nums}
+  .svcchip.on{background:var(--foreground);color:var(--background);border-color:transparent}
+  .svcchip.on .cnt{opacity:.8}
+
+  main{padding:26px 0 90px}
+  .svc-head h2{margin:0;font-size:22px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+  .svc-head h2 i{font-size:22px;color:var(--primary)}
+  .svc-head p{margin:8px 0 0;color:var(--muted-foreground);font-size:14px}
+  .svc-head .meta{margin-top:6px;color:var(--muted-foreground);font-size:12.5px}
+
+  .compsec{padding:26px 0;border-top:1px solid var(--border)}
+  .compsec:first-of-type{border-top:0}
+  .comphead{display:flex;align-items:center;gap:9px;margin-bottom:16px}
+  .comphead .clogo{width:26px;height:26px;border-radius:7px;object-fit:contain;background:#fff;flex-shrink:0;
+    box-shadow:0 0 0 1px oklch(0 0 0 / .06)}
+  .comphead h3{margin:0;font-size:17px;font-weight:800;letter-spacing:-.02em}
+  .comphead .ccnt{font-size:12.5px;color:var(--muted-foreground)}
+  .comphead .cbar{height:6px;width:6px;border-radius:50%;margin-left:2px}
+
+  .digests{display:flex;flex-direction:column;gap:14px}
+  .digest{display:flex;gap:15px;background:var(--card);border:1px solid var(--border);
+    border-radius:calc(var(--radius)*1.4);padding:14px;transition:box-shadow .16s,border-color .16s}
+  .digest:hover{box-shadow:0 1px 2px oklch(0 0 0 /.05),0 8px 22px oklch(0 0 0 /.07);
+    border-color:color-mix(in srgb,var(--foreground) 12%,transparent)}
+  .dthumb{position:relative;width:190px;flex-shrink:0;aspect-ratio:16/10;border-radius:calc(var(--radius)*.9);
+    overflow:hidden;background:var(--muted);display:grid;place-items:center}
+  .dthumb .ph{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:18px;opacity:.5}
+  .dthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .dbody{min-width:0;flex:1;display:flex;flex-direction:column}
+  .dtitle{font-size:15.5px;font-weight:700;line-height:1.4;letter-spacing:-.015em}
+  .dtitle:hover{text-decoration:underline;text-underline-offset:2px}
+  .dtitle i{font-size:13px;color:var(--muted-foreground);margin-left:3px;vertical-align:-1px}
+  .dmeta{margin-top:3px;font-size:12px;color:var(--muted-foreground)}
+  .doneliner{margin:9px 0 0;font-size:13.5px;font-weight:600;line-height:1.5}
+  .dbullets{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+  .dbullets li{position:relative;padding-left:14px;font-size:13px;color:var(--muted-foreground);line-height:1.5}
+  .dbullets li::before{content:"";position:absolute;left:1px;top:.55em;width:5px;height:5px;border-radius:50%;
+    background:var(--primary);opacity:.6}
+  .thin-note{font-size:12px;color:var(--muted-foreground);font-style:normal;opacity:.8}
+
+  footer.f{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--muted-foreground);font-size:12.5px}
+
+  @media (max-width:640px){
+    .wrap{padding:0 16px}
+    .digest{flex-direction:column;gap:12px}
+    .dthumb{width:100%;aspect-ratio:16/9}
+    .hero{padding:30px 0 14px}
+  }
+</style>
+<script>
+  (function(){try{if(localStorage.getItem('clip-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();
+</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <div class="brand"><span class="mark"></span><span>AI 클리핑</span></div>
+      <div class="navlinks">
+        <a class="navlink" href="index.html">피드</a>
+        <a class="navlink on" href="services.html">서비스</a>
+        <button class="icon-btn" id="theme" aria-label="테마 전환" title="테마 전환 (D)"><i class="ri-moon-line"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="hero">
+      <p class="eyebrow">SERVICES · 구현 사례</p>
+      <h1>서비스별 구현 사례</h1>
+      <p class="lead">같은 문제를 여러 테크 기업이 어떻게 풀었는지, 서비스(유즈케이스)별로 회사들의 구현을 모아 요약했습니다.</p>
+    </section>
+  </div>
+
+  <div class="svcbar">
+    <div class="wrap"><div class="svcchips scrollbar-none" id="svcchips"></div></div>
+  </div>
+
+  <main>
+    <div class="wrap">
+      <div class="svc-head" id="svcHead"></div>
+      <div id="svcBody"></div>
+    </div>
+  </main>
+
+  <footer class="f">
+    <div class="wrap">각 요약은 원문을 바탕으로 재구성한 것입니다. 자세한 내용은 원문 링크를 확인하세요.</div>
+  </footer>
+
+  <script src="./services.js"></script>
+  <script>
+  (function(){
+    var DATA=window.SERVICES_DATA||{services:[]};
+    var services=DATA.services||[];
+    var root=document.documentElement;
+
+    // theme (light 기본 + D 단축키)
+    var tbtn=document.getElementById('theme');
+    function paint(){tbtn.innerHTML=root.classList.contains('dark')?'<i class="ri-sun-line"></i>':'<i class="ri-moon-line"></i>';}
+    function toggle(){root.classList.toggle('dark');try{localStorage.setItem('clip-theme',root.classList.contains('dark')?'dark':'light');}catch(e){}paint();}
+    paint(); tbtn.onclick=toggle;
+    document.addEventListener('keydown',function(e){
+      if(e.defaultPrevented||e.repeat||e.metaKey||e.ctrlKey||e.altKey)return;
+      if(e.key.toLowerCase()!=='d')return;
+      var t=e.target; if(t&&(t.isContentEditable||t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.tagName==='SELECT'))return;
+      toggle();
+    });
+
+    function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function logoOf(id){return 'logos/'+id+'.png';}
+    function tint(hex,a){return 'color-mix(in srgb,'+hex+' '+a+'%, var(--card))';}
+    function fmtDate(iso){if(!iso)return'';var d=new Date(iso);if(isNaN(d))return'';
+      return d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0');}
+
+    var chipsEl=document.getElementById('svcchips'),headEl=document.getElementById('svcHead'),bodyEl=document.getElementById('svcBody');
+    var current=services.length?services[0].id:null;
+    // URL 해시로 서비스 지정 가능 (#serving 등)
+    var h=(location.hash||'').replace('#',''); if(h&&services.some(function(s){return s.id===h;}))current=h;
+
+    function buildChips(){
+      chipsEl.innerHTML='';
+      services.forEach(function(s){
+        var b=document.createElement('button'); b.className='svcchip'+(s.id===current?' on':'');
+        b.innerHTML='<i class="'+s.icon+'"></i><span>'+esc(s.name)+'</span><span class="cnt">'+s.companyCount+'사</span>';
+        b.onclick=function(){current=s.id;try{history.replaceState(null,'','#'+s.id);}catch(e){}render();window.scrollTo({top:0,behavior:'smooth'});};
+        chipsEl.appendChild(b);
+      });
+    }
+    function render(){
+      buildChips();
+      var s=services.filter(function(x){return x.id===current;})[0];
+      if(!s){headEl.innerHTML='';bodyEl.innerHTML='<p style="color:var(--muted-foreground);padding:40px 0">데이터가 없습니다. build_services.py → assemble_services.py 를 실행하세요.</p>';return;}
+      headEl.innerHTML='<h2><i class="'+s.icon+'"></i>'+esc(s.name)+'</h2><p>'+esc(s.desc)+'</p>'+
+        '<div class="meta">'+s.companyCount+'개 기업 · 글 '+s.articleCount+'건</div>';
+      var out='';
+      s.companies.forEach(function(c){
+        out+='<section class="compsec">'+
+          '<div class="comphead"><img class="clogo" src="'+logoOf(c.source)+'" alt="" onerror="this.remove()">'+
+          '<h3>'+esc(c.name)+'</h3><span class="ccnt">글 '+c.articles.length+'건</span>'+
+          '<span class="cbar" style="background:'+c.color+'"></span></div>'+
+          '<div class="digests">';
+        c.articles.forEach(function(a){
+          var initial=esc((c.name||'?').slice(0,2));
+          var thumb='<div class="ph" style="background:'+tint(c.color,10)+';color:'+c.color+'">'+initial+'</div>'+
+            (a.image?'<img loading="lazy" src="'+esc(a.image)+'" onerror="this.remove()" alt="">':'');
+          var bullets=(a.bullets||[]).map(function(b){return '<li>'+esc(b)+'</li>';}).join('');
+          out+='<div class="digest">'+
+            '<a class="dthumb" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+thumb+'</a>'+
+            '<div class="dbody">'+
+              '<a class="dtitle" href="'+esc(a.url)+'" target="_blank" rel="noopener">'+esc(a.title)+'<i class="ri-external-link-line"></i></a>'+
+              '<div class="dmeta">'+(a.author?esc(a.author)+' · ':'')+fmtDate(a.date)+'</div>'+
+              (a.oneLiner?'<p class="doneliner">'+esc(a.oneLiner)+'</p>':'')+
+              (bullets?'<ul class="dbullets">'+bullets+'</ul>':(a.thin?'<p class="dbullets thin-note">원문에서 상세 요약을 가져오지 못했습니다. 링크를 확인하세요.</p>':''))+
+            '</div>'+
+          '</div>';
+        });
+        out+='</div></section>';
+      });
+      bodyEl.innerHTML=out;
+    }
+    render();
+  })();
+  </script>
+</body>
+</html>

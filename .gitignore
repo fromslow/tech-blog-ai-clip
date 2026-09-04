@@ -7,4 +7,11 @@ launchd.out.log
 launchd.err.log
 .venv/
 
+# 서비스 페이지 빌드 중간 산출물 (services.js/json 만 배포)
+_content/
+_summaries/
+_services_work.json
+_rethin_a.json
+_rethin_b.json
+
 # data.js / data.json 은 배포 대상이므로 커밋합니다 (무시하지 않음)
