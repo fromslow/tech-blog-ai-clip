@@ -179,6 +179,13 @@
     .sgnode{flex:1 1 auto}
     .sgsep{transform:rotate(90deg);padding:1px 0}
   }
+  .sgdiagram{margin-top:9px;overflow-x:auto;padding:4px 0}
+  .sgdiagram .mermaid{margin:0;background:transparent;line-height:1.3;min-height:20px;text-align:center}
+  .sgdiagram svg{max-width:100%;height:auto}
+  .sgphil{margin:11px 0 0;font-size:13px;line-height:1.55;color:var(--foreground);font-weight:600;
+    padding:8px 12px;border-left:3px solid var(--primary);border-radius:0 8px 8px 0;
+    background:color-mix(in srgb,var(--primary) 6%,transparent)}
+  .sgphil::before{content:"핵심 사상 · ";color:var(--primary);font-weight:800}
   .dsec ul{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
   .dsec li{position:relative;padding-left:15px;font-size:13px;color:var(--muted-foreground);line-height:1.6}
   .dsec li::before{content:"";position:absolute;left:2px;top:.6em;width:4px;height:4px;border-radius:50%;
@@ -232,6 +239,7 @@
     <div class="wrap">각 요약은 원문을 바탕으로 재구성한 것입니다. 자세한 내용은 원문 링크를 확인하세요.</div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
   <script src="./services.js"></script>
   <script>
   (function(){
@@ -242,7 +250,7 @@
     // theme (light 기본 + D 단축키)
     var tbtn=document.getElementById('theme');
     function paint(){tbtn.innerHTML=root.classList.contains('dark')?'<i class="ri-sun-line"></i>':'<i class="ri-moon-line"></i>';}
-    function toggle(){root.classList.toggle('dark');try{localStorage.setItem('clip-theme',root.classList.contains('dark')?'dark':'light');}catch(e){}paint();}
+    function toggle(){root.classList.toggle('dark');try{localStorage.setItem('clip-theme',root.classList.contains('dark')?'dark':'light');}catch(e){}paint();render();}
     paint(); tbtn.onclick=toggle;
     document.addEventListener('keydown',function(e){
       if(e.defaultPrevented||e.repeat||e.metaKey||e.ctrlKey||e.altKey)return;
@@ -284,7 +292,12 @@
         var gb=(g.build||[]).map(function(x){return '<li>'+esp(x)+'</li>';}).join('');
         var gl=(g.learn||[]).map(function(x){return '<li>'+esp(x)+'</li>';}).join('');
         var gflow='';
-        if(g.flow&&g.flow.length){
+        if(g.diagram){
+          gflow='<div class="sgflow-wrap"><span class="sgh"><i class="ri-route-line"></i>추천 구현 플로우 · 핵심 사상</span>'+
+            '<div class="sgdiagram"><pre class="mermaid"></pre></div>'+
+            (g.philosophy?'<p class="sgphil">'+esp(g.philosophy)+'</p>':'')+
+            '</div>';
+        }else if(g.flow&&g.flow.length){
           var nodes=g.flow.map(function(n,i){
             return (i?'<span class="sgsep"><i class="ri-arrow-right-line"></i></span>':'')+
               '<div class="sgnode"><span class="sgn">'+(i+1)+'</span><b>'+esp(n.label)+'</b>'+
@@ -369,6 +382,23 @@
         out+='</div></section>';
       });
       bodyEl.innerHTML=out;
+      renderDiagram(s);
+    }
+    function renderDiagram(s){
+      if(!s||!s.guide||!s.guide.diagram||!window.mermaid)return;
+      var pre=bodyEl.querySelector('pre.mermaid'); if(!pre)return;
+      pre.textContent=s.guide.diagram; pre.removeAttribute('data-processed');
+      try{
+        mermaid.initialize({startOnLoad:false,securityLevel:'loose',
+          theme:root.classList.contains('dark')?'dark':'base',
+          themeVariables:{fontFamily:'Pretendard,system-ui,sans-serif',fontSize:'13px',
+            primaryColor:root.classList.contains('dark')?'#26314a':'#eef2ff',
+            primaryBorderColor:root.classList.contains('dark')?'#3b4a6b':'#c3cce6',
+            primaryTextColor:root.classList.contains('dark')?'#e8ecf5':'#1e2433',
+            lineColor:root.classList.contains('dark')?'#6b7797':'#94a0c0'},
+          flowchart:{htmlLabels:true,curve:'basis',nodeSpacing:26,rankSpacing:34,useMaxWidth:true}});
+        mermaid.run({nodes:[pre]});
+      }catch(e){}
     }
     render();
   })();

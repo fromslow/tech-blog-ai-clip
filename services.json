@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T02:31:49.690354+00:00",
+  "generatedAt": "2026-09-05T02:45:55.772161+00:00",
   "services": [
     {
       "id": "incident",
@@ -47,7 +47,9 @@
             "label": "사람 검토",
             "note": "배포는 사람이 확정"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"장애 알림<br/>모니터링 · Slack\"] --> B{\"반복 알림?\"}\n  B -->|예| N[\"요약만 게시<br/>노이즈 차단\"]\n  B -->|아니오| C[\"관측 데이터 조회<br/>MCP · 지표·로그·추적\"]\n  C --> D[\"AI 원인 분석<br/>가설 → 데이터 교차검증\"]\n  D --> E[\"근거 검증<br/>코드가 판정 · 조회 전용\"]\n  E --> F{\"실측 근거 있나?\"}\n  F -->|아니오| G[\"'추측' 표시<br/>모른다고 답\"]\n  F -->|예| H[\"리포트 · 조치<br/>복구는 사람이 최종\"]\n  G --> H\n  class E key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "AI에게 '조회'만 맡기고 위험한 행동은 도구로 차단한다 — 그 판단은 코드가 다시 검증하고, 근거 없으면 '모른다'고 답한다."
       },
       "companies": [
         {
@@ -396,7 +398,9 @@
             "label": "서빙",
             "note": "개인화로 추천 노출"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"행동 로그 수집<br/>조회 · 구매 · 클릭\"] --> B[\"공통 유저 표현층<br/>임베딩 · 지식그래프\"]\n  B --> C[\"경량화<br/>지식 증류 · TransE\"]\n  C --> D{\"신규 유저?\"}\n  D -->|예| E[\"속성 기반 추론<br/>콜드스타트\"]\n  D -->|아니오| F[\"행동 기반 추천\"]\n  E --> G[\"A/B 검증\"]\n  F --> G\n  G --> H[\"실시간 서빙<br/>벡터 거리 · 스트림\"]\n  class B key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "결정마다 모델을 새로 만들지 말고, 모든 추천이 함께 쓰는 공통 유저 표현층부터 만든다."
       },
       "companies": [
         {
@@ -901,7 +905,9 @@
             "label": "결과 제공",
             "note": "근거 경로까지 전달"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"소스 데이터 정제<br/>사전 · 메타데이터\"] --> B[\"질의 이해<br/>의도 분류 · 쿼리 벡터\"]\n  B --> C[\"하이브리드 검색<br/>글자 매칭 + 의미(임베딩)\"]\n  C --> D{\"결과 없나? (NR)\"}\n  D -->|예| E[\"의미 검색으로 보강<br/>유의어 · 오타\"]\n  D -->|아니오| F[\"리랭킹<br/>노이즈 컷\"]\n  E --> F\n  F --> G[\"결과 제공<br/>A/B로 검증\"]\n  class C key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "검색 품질은 모델 성능이 아니라 소스 데이터 정제와 여러 검색 신호를 겹치는 데서 갈린다."
       },
       "companies": [
         {
@@ -1074,7 +1080,9 @@
             "label": "피드백 반영",
             "note": "규칙 단위로 정책 수정"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"문의 접수<br/>채팅 · 전화 · 티켓\"] --> B[\"유형 분류<br/>FAQ · 개별 질문\"]\n  B --> C[\"지식 검색<br/>규정 · 상담이력 RAG\"]\n  C --> D[\"AI 1차 응대<br/>챗봇 · 전화 Agent\"]\n  D --> E{\"AI가 해결?\"}\n  E -->|예| F[\"자동 종료<br/>결과 기록\"]\n  E -->|아니오| G[\"사람 상담사 핸드오프\"]\n  F --> H[\"피드백 반영\"]\n  G --> H\n  class G key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "앞단(자료 수집·1차 응대)은 AI가, 어려운 판단은 사람이 — 경계선을 분명히 긋는다."
       },
       "companies": [
         {
@@ -1382,7 +1390,9 @@
             "label": "사람 검토",
             "note": "PR 검토·확정"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"맥락 수집<br/>CLAUDE.md · 문서 · 규칙\"] --> B[\"계획 수립<br/>구현 전 plan\"]\n  B --> C[\"AI 구현<br/>코드 · 테스트 생성\"]\n  C --> D[\"자동 검증<br/>테스트 · 린트\"]\n  D --> E{\"검증 통과?\"}\n  E -->|아니오| C\n  E -->|예| F[\"사람 리뷰<br/>PR 최종 병합\"]\n  class A key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "AI에게 코드부터 짜게 하지 말고, 맥락과 계획을 먼저 준 뒤 결과물은 사람이 검토한다."
       },
       "companies": [
         {
@@ -1861,7 +1871,9 @@
             "label": "답변·전달",
             "note": "답하거나 사람에게"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"질문 접수<br/>Slack · 자연어\"] --> B{\"데이터 질문?\"}\n  B -->|아니오| N[\"범위 밖 차단\"]\n  B -->|예| C[\"지식 검색<br/>용어 · 테이블 RAG\"]\n  C --> D[\"Text2SQL 생성<br/>회사 기준 반영\"]\n  D --> E[\"실행 · 자체 검증<br/>self-eval\"]\n  E --> F{\"결과 신뢰?\"}\n  F -->|아니오| C\n  F -->|예| G[\"답변 · 전달\"]\n  class D key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "파운데이션 모델에 그냥 맡기지 말고, 회사의 지식·기준·검증을 붙여야 실무에 쓸 답이 나온다."
       },
       "companies": [
         {
@@ -2258,7 +2270,9 @@
             "label": "사람 확정",
             "note": "사람이 검토·확정"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"지식 자동 수집<br/>PR · 회의록 · 코드\"] --> B[\"정제 · 통합<br/>단일 출처(SSOT)\"]\n  B --> C[\"검색<br/>의미 + 정확 매칭\"]\n  C --> D[\"답변 생성<br/>근거 링크 포함\"]\n  D --> E{\"근거 충분?\"}\n  E -->|아니오| C\n  E -->|예| F[\"사람 확정<br/>수집=AI · 확정=사람\"]\n  class B key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "같은 지식을 사람과 AI가 함께 보게 만들고, 수집·정리는 AI에게 판단·확정은 사람에게 맡긴다."
       },
       "companies": [
         {
@@ -2634,7 +2648,9 @@
             "label": "반영",
             "note": "결과를 서비스에 반영"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"규칙 정리<br/>디자인 시스템\"] --> B[\"컨텍스트 구성<br/>llms.txt · MCP · 문서\"]\n  B --> C[\"AI 초안 생성<br/>시안 · 코드\"]\n  C --> D{\"규칙 준수?\"}\n  D -->|아니오| E[\"컨텍스트 보강<br/>부분 수정\"]\n  D -->|예| F[\"사람 검증\"]\n  E --> C\n  F --> G[\"반영 · 배포\"]\n  class B key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "AI가 규칙을 잘 지키게 하려면, 프롬프트를 늘리기보다 규칙을 컨텍스트로 잘 설계하는 게 먼저다."
       },
       "companies": [
         {
@@ -2965,7 +2981,9 @@
             "label": "성능 점검",
             "note": "오검수 영향 계속 확인"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"데이터 수집<br/>이미지 · 텍스트 · 로그\"] --> B[\"AI 판정<br/>모델 · 임베딩 거리\"]\n  B --> C{\"확신도 충분?\"}\n  C -->|아니오| D[\"사람 검토<br/>정밀도 우선\"]\n  C -->|예| E[\"자동 처리 · 반영\"]\n  D --> E\n  E --> F[\"성능 점검<br/>오탐 모니터링\"]\n  class D key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "AI를 정답으로 100% 믿지 말고, 임곗값·사람 검토·기존 방식과 엮어 오탐을 막는다."
       },
       "companies": [
         {
@@ -3238,7 +3256,9 @@
             "label": "배포",
             "note": "서버 배포로 빠르게 적용"
           }
-        ]
+        ],
+        "diagram": "flowchart TD\n  A[\"문구 분리<br/>고정 UI · 콘텐츠\"] --> B[\"번역 대상 탐지<br/>ESLint · 결정론적 규칙\"]\n  B --> C[\"AI 번역<br/>LLM · 온디바이스 모델\"]\n  C --> D[\"품질 검증<br/>역번역 · 린트\"]\n  D --> E{\"검증 통과?\"}\n  E -->|아니오| F[\"사람 보정\"]\n  E -->|예| G[\"배포 · 적재\"]\n  F --> G\n  class B key;\n  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;",
+        "philosophy": "AI·결정론적 도구·사람이 각자 잘하는 일을 나누고, 자주 바뀌는 것과 고정된 것을 갈라 관리한다."
       },
       "companies": [
         {
