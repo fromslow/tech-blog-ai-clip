@@ -55,7 +55,7 @@ def localize_figure(url: str, referer: str) -> str:
         time.sleep(0.8)
     return ""
 # 화면에 보일 서비스 순서
-ORDER = ["incident", "reco", "cs", "devprod", "data", "knowledge", "design", "quality", "translate"]
+ORDER = ["incident", "reco", "search", "cs", "devprod", "data", "knowledge", "design", "quality", "translate"]
 
 
 def main():

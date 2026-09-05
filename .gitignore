@@ -20,3 +20,7 @@ _manual_structured.json
 _agent_specs/
 _workspace/
 _hz_input.md
+_agent_specs_add/
+_summaries2_add/
+_backfill_candidates.json
+_curated_urls.json
