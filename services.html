@@ -164,6 +164,21 @@
     background:var(--primary);opacity:.5}
   .sgcol.sglearn li{color:var(--foreground)}
   .sgcol.sglearn li::before{opacity:.85}
+  .sgflow-wrap{margin-top:15px}
+  .sgflow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin-top:8px}
+  .sgnode{flex:1 1 140px;min-width:128px;display:flex;flex-direction:column;gap:3px;
+    border:1px solid var(--border);border-radius:11px;padding:9px 11px;
+    background:color-mix(in srgb,var(--primary) 3%,var(--card))}
+  .sgnode .sgn{font-size:10px;font-weight:800;color:var(--primary);line-height:1}
+  .sgnode b{font-size:12.5px;color:var(--foreground);line-height:1.35;font-weight:700}
+  .sgnode span{font-size:11.5px;color:var(--muted-foreground);line-height:1.45}
+  .sgsep{display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--primary);opacity:.55}
+  .sgsep i{font-size:17px}
+  @media(max-width:640px){
+    .sgflow{flex-direction:column}
+    .sgnode{flex:1 1 auto}
+    .sgsep{transform:rotate(90deg);padding:1px 0}
+  }
   .dsec ul{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
   .dsec li{position:relative;padding-left:15px;font-size:13px;color:var(--muted-foreground);line-height:1.6}
   .dsec li::before{content:"";position:absolute;left:2px;top:.6em;width:4px;height:4px;border-radius:50%;
@@ -268,9 +283,20 @@
         var g=s.guide;
         var gb=(g.build||[]).map(function(x){return '<li>'+esp(x)+'</li>';}).join('');
         var gl=(g.learn||[]).map(function(x){return '<li>'+esp(x)+'</li>';}).join('');
+        var gflow='';
+        if(g.flow&&g.flow.length){
+          var nodes=g.flow.map(function(n,i){
+            return (i?'<span class="sgsep"><i class="ri-arrow-right-line"></i></span>':'')+
+              '<div class="sgnode"><span class="sgn">'+(i+1)+'</span><b>'+esp(n.label)+'</b>'+
+              (n.note?'<span>'+esp(n.note)+'</span>':'')+'</div>';
+          }).join('');
+          gflow='<div class="sgflow-wrap"><span class="sgh"><i class="ri-route-line"></i>추천 구현 플로우</span>'+
+            '<div class="sgflow">'+nodes+'</div></div>';
+        }
         out+='<section class="sguide">'+
           '<div class="sgtag"><i class="ri-compass-3-line"></i>우리 회사가 이 서비스를 만든다면</div>'+
           (g.lead?'<p class="sglead">'+esp(g.lead)+'</p>':'')+
+          gflow+
           '<div class="sgcols">'+
             (gb?'<div class="sgcol"><span class="sgh"><i class="ri-hammer-line"></i>이렇게 구현</span><ul>'+gb+'</ul></div>':'')+
             (gl?'<div class="sgcol sglearn"><span class="sgh"><i class="ri-lightbulb-flash-line"></i>특히 배울 점</span><ul>'+gl+'</ul></div>':'')+
