@@ -24,3 +24,6 @@ _agent_specs_add/
 _summaries2_add/
 _backfill_candidates.json
 _curated_urls.json
+_guide_specs/
+_service_guides_out/
+_service_guides.json

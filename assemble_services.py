@@ -62,6 +62,8 @@ def main():
     work = {s["id"]: s for s in json.loads((HERE / "_services_work.json").read_text(encoding="utf-8"))}
     manual_file = HERE / "_manual_structured.json"
     manual = json.loads(manual_file.read_text(encoding="utf-8")) if manual_file.exists() else {}
+    guides_file = HERE / "_service_guides.json"
+    guides = json.loads(guides_file.read_text(encoding="utf-8")) if guides_file.exists() else {}
     services = []
     ordered_ids = [i for i in ORDER if i in work] + [i for i in work if i not in ORDER]
 
@@ -129,6 +131,7 @@ def main():
             "id": sid, "name": svc["name"], "icon": svc["icon"], "desc": svc["desc"],
             "companyCount": len(comp_list),
             "articleCount": sum(len(c["articles"]) for c in comp_list),
+            "guide": guides.get(sid),
             "companies": comp_list,
         })
 

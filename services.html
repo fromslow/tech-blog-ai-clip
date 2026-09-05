@@ -145,6 +145,25 @@
   .sres{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
   .sres li{position:relative;padding-left:22px;font-size:13px;line-height:1.55;color:var(--foreground)}
   .sres li::before{content:"\2713";position:absolute;left:1px;top:0;color:var(--primary);font-weight:800;font-size:12px}
+  /* 서비스 상단 구현 가이드 */
+  .sguide{margin:22px 0 4px;padding:18px 20px;border:1px solid var(--border);border-radius:16px;
+    background:color-mix(in srgb,var(--primary) 5%,var(--card));position:relative;overflow:hidden}
+  .sguide::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary);opacity:.7}
+  .sgtag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;letter-spacing:.01em;
+    color:var(--primary);text-transform:none}
+  .sgtag i{font-size:15px}
+  .sglead{margin:9px 0 0;font-size:14.5px;line-height:1.6;color:var(--foreground);font-weight:600;max-width:760px}
+  .sgcols{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;margin-top:14px}
+  @media(max-width:640px){.sgcols{grid-template-columns:1fr;gap:14px}}
+  .sgcol .sgh{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--foreground);margin-bottom:7px}
+  .sgcol .sgh i{font-size:14px;color:var(--muted-foreground)}
+  .sgcol.sglearn .sgh i{color:var(--primary)}
+  .sgcol ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+  .sgcol li{position:relative;padding-left:15px;font-size:13px;line-height:1.6;color:var(--muted-foreground)}
+  .sgcol li::before{content:"";position:absolute;left:2px;top:.62em;width:5px;height:5px;border-radius:50%;
+    background:var(--primary);opacity:.5}
+  .sgcol.sglearn li{color:var(--foreground)}
+  .sgcol.sglearn li::before{opacity:.85}
   .dsec ul{margin:7px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
   .dsec li{position:relative;padding-left:15px;font-size:13px;color:var(--muted-foreground);line-height:1.6}
   .dsec li::before{content:"";position:absolute;left:2px;top:.6em;width:4px;height:4px;border-radius:50%;
@@ -245,6 +264,19 @@
       headEl.innerHTML='<h2><i class="'+s.icon+'"></i>'+esp(s.name)+'</h2><p>'+esp(s.desc)+'</p>'+
         '<div class="meta">'+s.companyCount+'개 기업 · 글 '+s.articleCount+'건</div>';
       var out='';
+      if(s.guide){
+        var g=s.guide;
+        var gb=(g.build||[]).map(function(x){return '<li>'+esp(x)+'</li>';}).join('');
+        var gl=(g.learn||[]).map(function(x){return '<li>'+esp(x)+'</li>';}).join('');
+        out+='<section class="sguide">'+
+          '<div class="sgtag"><i class="ri-compass-3-line"></i>우리 회사가 이 서비스를 만든다면</div>'+
+          (g.lead?'<p class="sglead">'+esp(g.lead)+'</p>':'')+
+          '<div class="sgcols">'+
+            (gb?'<div class="sgcol"><span class="sgh"><i class="ri-hammer-line"></i>이렇게 구현</span><ul>'+gb+'</ul></div>':'')+
+            (gl?'<div class="sgcol sglearn"><span class="sgh"><i class="ri-lightbulb-flash-line"></i>특히 배울 점</span><ul>'+gl+'</ul></div>':'')+
+          '</div>'+
+        '</section>';
+      }
       s.companies.forEach(function(c){
         out+='<section class="compsec">'+
           '<div class="comphead"><img class="clogo" src="'+logoOf(c.source)+'" alt="" onerror="this.remove()">'+
