@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T23:30:05.350769+00:00",
+  "generatedAt": "2026-09-07T23:32:40.185339+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,52 @@
     }
   ],
   "posts": [
+    {
+      "source": "toss",
+      "sourceName": "토스",
+      "color": "#3182F6",
+      "title": "How Documents Find Developers at Toss",
+      "url": "https://toss.tech/article/toss-frontend-ai-docs-eng",
+      "date": "2026-09-07T06:27:00+00:00",
+      "summary": "The Toss Frontend team no longer has to dig through documents to find what they need. We’re building an environment where developers can get immediate answers to their questions through docs and AI. Here’s how we built a new documentation system that lets developers focus entirel",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/7a1cb76ca1897a4f.jpg",
+      "firstSeen": "2026-09-07T23:32:40.185339+00:00"
+    },
+    {
+      "source": "woowahan",
+      "sourceName": "배달의민족",
+      "color": "#2AC1BC",
+      "title": "문서로만 지키던 아키텍처 규칙, 테스트 코드로 강제하기",
+      "url": "https://techblog.woowahan.com/26835/",
+      "date": "2026-09-07T04:46:49+00:00",
+      "summary": "들어가며 제가 속한 파트너셀프서비스팀은 코딩 컨벤션을 사내 위키 문서와 AI 에이전트가 참조할 수 있는 규칙 문서에 정의해놓고 개발하고 있습니다. 하지만 그 규칙을 잘 지키고 있는지 확인하는 방법이 코드 리뷰뿐이었다는 점이 문제였습니다. 문서에 있는 규칙은 팀원들이 의식적으로 인지해서 코드를 작성하거나 리뷰를 받는 과정에서 반영해야 했습니다. AI 에이전트를 이용해 규칙을 주입하더라도 세션별 컨텍스트에 따라 규칙을 위반하는 경우가 […]",
+      "author": "",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "",
+      "firstSeen": "2026-09-07T23:32:40.185339+00:00"
+    },
+    {
+      "source": "kakao",
+      "sourceName": "카카오",
+      "color": "#FFB900",
+      "title": "카카오, if(kakao)26 컨퍼런스 개최... 모든 연결에 지능을",
+      "url": "https://tech.kakao.com/posts/834",
+      "date": "2026-09-06T15:00:00+00:00",
+      "summary": "🔗 if(kakao)26 바로가기 - 10월 13일부터 14일까지 이틀간 카카오 AI 캠퍼스에서 온·오프라인 진행 -올해 슬로건 ‘모든 연결에 지능을’… AI가 확장할 연결의 경험과 신뢰할 수 있는 기술 기준 제시 - 50여개 기술 세션서 AI 적용 성과와 개발 경험 공유…파이어사이드 챗·네트워킹 프로그램도 운영 [2026-09-07] 카카오(대표이사 정신아)가 오는 10월 13일부터 14일까지 이틀간 경기도 용인시 소재 ‘카카오 AI 캠퍼스’에서 ...",
+      "author": "kakao tech",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/9bdaa726bdede307.jpg",
+      "firstSeen": "2026-09-07T23:32:40.185339+00:00"
+    },
     {
       "source": "musinsa",
       "sourceName": "무신사",
