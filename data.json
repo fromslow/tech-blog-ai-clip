@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T23:32:40.185339+00:00",
+  "generatedAt": "2026-09-08T23:32:04.906737+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,36 @@
     }
   ],
   "posts": [
+    {
+      "source": "woowahan",
+      "sourceName": "배달의민족",
+      "color": "#2AC1BC",
+      "title": "한꺼번에 짊어지던 배치를 내려놓고, 하나씩 흘려보내는 워크플로로",
+      "url": "https://techblog.woowahan.com/26832/",
+      "date": "2026-09-08T04:50:28+00:00",
+      "summary": "Temporal 도입은 부담스러웠고, 그렇다고 배치를 그대로 둘 순 없었습니다 – 입맛대로 골라 Claude로 뚝딱 만든 워크플로 엔진 개발기 ℹ️ 이 글에 등장하는 수치와 설정값(대기 시간, 타임아웃, 재시도 횟수 등)은 이해를 돕기 위한 예시이며, 실제 운영 설정과는 다릅니다. 들어가는 말 배달의민족 사장님이 사용하는 포스(POS)의 백엔드를 만들다 보면, \"지금 당장 처리할 일\"보다 \"시간이 흐른 뒤에 처리해야 할 […]",
+      "author": "",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/1b5f4982bbb257eb.jpg",
+      "firstSeen": "2026-09-08T23:32:04.906737+00:00"
+    },
+    {
+      "source": "kakao",
+      "sourceName": "카카오",
+      "color": "#FFB900",
+      "title": "if(kakao)2026 첫째 날, 기술 세션 소개",
+      "url": "https://tech.kakao.com/posts/833",
+      "date": "2026-09-07T15:00:00+00:00",
+      "summary": "if(kakao)2026 첫째 날은 AI 방향성, 신뢰와 안전, Model & Agent, 상생과 성장에 대해 이야기합니다. 키노트를 제외한 총 23개의 기술 세션들이 아래와 같이 진행됩니다. [AI 방향성] 1. You Only Train Once: 더 효율적으로 Kanana SLM 개발하기 (류민호, 한규빈) 단 한 번의 학습으로, 4개의 Small Dense Model Family를 개발한 노하우를 공유합니다! 최근 공개한 Kanana-2 SLM ...",
+      "author": "zoo.young / kakao tech",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/87fa4dd2f88b5e10.jpg",
+      "firstSeen": "2026-09-08T23:32:04.906737+00:00"
+    },
     {
       "source": "toss",
       "sourceName": "토스",
