@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T23:32:04.906737+00:00",
+  "generatedAt": "2026-09-09T23:40:50.511800+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -135,6 +135,21 @@
       ],
       "image": "thumbs/87fa4dd2f88b5e10.jpg",
       "firstSeen": "2026-09-08T23:32:04.906737+00:00"
+    },
+    {
+      "source": "kakao",
+      "sourceName": "카카오",
+      "color": "#FFB900",
+      "title": "if(kakao)2026 둘째 날, 기술 세션 소개",
+      "url": "https://tech.kakao.com/posts/835",
+      "date": "2026-09-07T15:00:00+00:00",
+      "summary": "if(kakao)2026 둘째 날은 안정성과 인프라, 거버넌스, AI-DLC, Model & Agent에 대해 이야기합니다. 키노트를 제외한 총 30개의 기술 세션들이 아래와 같이 진행됩니다. [안전성과 인프라] 1. 유휴 서버를 찾다가 Hybrid Cloud까지 갔습니다: 비용 가시화에서 Unit Economics를 향해가는 카카오의 FinOps 여정 (백정태, 정원천) “서버가 놀고 있네? 그럼 빼면 되겠네!”…그렇게 간단하지 않았습니다. 사용률이 ...",
+      "author": "zoo.young / kakao tech",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/35341bd7796a79fe.jpg",
+      "firstSeen": "2026-09-09T23:40:50.511800+00:00"
     },
     {
       "source": "toss",
