@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T23:31:44.770906+00:00",
+  "generatedAt": "2026-09-14T23:34:34.515210+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -107,6 +107,22 @@
   ],
   "posts": [
     {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "AI 번역의 시대1: 세태(世態)",
+      "url": "https://meetup.nhncloud.com/posts/422",
+      "date": "2026-09-14T01:40:45+00:00",
+      "summary": "[![NHN Cloud_meetup banner_AI-translation_202609.png](https://image.toast.com/aaaadh/alpha/2026/techblog/NHN%20Cloudmeetup%20bannerAItranslation202609.png)](https://www.nhncloud.com/kr) ## 세태(世態), 사람들의 일상생활 지금 바로 클로드에 접속해, 문장 하나를 쓰고 \"영어로 번역해줘\"라는 프롬프트를 날려보세요. 어떠한 길이의 문장이나 표현이든지 빠르",
+      "author": "",
+      "tags": [
+        "AI",
+        "프롬프트"
+      ],
+      "image": "thumbs/4d544d32b35da2cc.jpg",
+      "firstSeen": "2026-09-14T23:34:34.515210+00:00"
+    },
+    {
       "source": "gccompany",
       "sourceName": "여기어때",
       "color": "#FF3D77",
@@ -141,10 +157,10 @@
       "source": "kakao",
       "sourceName": "카카오",
       "color": "#FFB900",
-      "title": "if(kakao)2026 첫째 날, 기술 세션 소개",
+      "title": "if(kakao)26 첫째 날, 기술 세션 소개",
       "url": "https://tech.kakao.com/posts/833",
       "date": "2026-09-07T15:00:00+00:00",
-      "summary": "if(kakao)2026 첫째 날은 AI 방향성, 신뢰와 안전, Model & Agent, 상생과 성장에 대해 이야기합니다. 키노트를 제외한 총 23개의 기술 세션들이 아래와 같이 진행됩니다. [AI 방향성] 1. You Only Train Once: 더 효율적으로 Kanana SLM 개발하기 (류민호, 한규빈) 단 한 번의 학습으로, 4개의 Small Dense Model Family를 개발한 노하우를 공유합니다! 최근 공개한 Kanana-2 SLM ...",
+      "summary": "if(kakao)26 첫째 날은 AI 방향성, 신뢰와 안전, Model & Agent, 상생과 성장에 대해 이야기합니다. 키노트를 제외한 총 23개의 기술 세션들이 아래와 같이 진행됩니다. [AI 방향성] 1. You Only Train Once: 더 효율적으로 Kanana SLM 개발하기 (류민호, 한규빈) 단 한 번의 학습으로, 4개의 Small Dense Model Family를 개발한 노하우를 공유합니다! 최근 공개한 Kanana-2 SLM 개발...",
       "author": "zoo.young / kakao tech",
       "tags": [
         "AI"
@@ -156,10 +172,10 @@
       "source": "kakao",
       "sourceName": "카카오",
       "color": "#FFB900",
-      "title": "if(kakao)2026 둘째 날, 기술 세션 소개",
+      "title": "if(kakao)26 둘째 날, 기술 세션 소개",
       "url": "https://tech.kakao.com/posts/835",
       "date": "2026-09-07T15:00:00+00:00",
-      "summary": "if(kakao)2026 둘째 날은 안정성과 인프라, 거버넌스, AI-DLC, Model & Agent에 대해 이야기합니다. 키노트를 제외한 총 30개의 기술 세션들이 아래와 같이 진행됩니다. [안전성과 인프라] 1. 유휴 서버를 찾다가 Hybrid Cloud까지 갔습니다: 비용 가시화에서 Unit Economics를 향해가는 카카오의 FinOps 여정 (백정태, 정원천) “서버가 놀고 있네? 그럼 빼면 되겠네!”…그렇게 간단하지 않았습니다. 사용률이 ...",
+      "summary": "if(kakao)26 둘째 날은 안정성과 인프라, 거버넌스, AI-DLC, Model & Agent에 대해 이야기합니다. 키노트를 제외한 총 30개의 기술 세션들이 아래와 같이 진행됩니다. [안전성과 인프라] 1. 유휴 서버를 찾다가 Hybrid Cloud까지 갔습니다: 비용 가시화에서 Unit Economics를 향해가는 카카오의 FinOps 여정 (백정태, 정원천) “서버가 놀고 있네? 그럼 빼면 되겠네!”…그렇게 간단하지 않았습니다. 사용률이 낮아...",
       "author": "zoo.young / kakao tech",
       "tags": [
         "AI"
