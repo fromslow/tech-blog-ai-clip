@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T23:36:21.112243+00:00",
+  "generatedAt": "2026-09-17T23:35:35.571888+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,22 @@
     }
   ],
   "posts": [
+    {
+      "source": "gccompany",
+      "sourceName": "여기어때",
+      "color": "#FF3D77",
+      "title": "QA 티켓 280건, AI와 함께 처리한 기록",
+      "url": "https://techblog.gccompany.co.kr/qa-%ED%8B%B0%EC%BC%93-280%EA%B1%B4-ai%EC%99%80-%ED%95%A8%EA%BB%98-%EC%B2%98%EB%A6%AC%ED%95%9C-%EA%B8%B0%EB%A1%9D-447b8b8b0f99?source=rss----18356045d353---4",
+      "date": "2026-09-17T00:04:37+00:00",
+      "summary": "글. 박수봉(Henby) / Experience Development팀 안녕하세요. Experience Development팀 헨비(henby) 입니다. 9월 7일, 여기어때의 해외투어 서비스를 오픈했습니다~ 그 동안 짧지만 밀도 높은 QA 기간을 보냈습니다. 프론트엔드 개발자는 총 두 명이었고, 저희는 웹과 웹뷰 모두를 처리하였고 저는 카테고리홈·상품 상세·주문서·예약내역·해외투어용 채팅을 맡았습니다. 또한 예약내역 탭·찜 탭·회원탈퇴처럼 여러 서비스가 함께 쓰는 공통 화면도 담당했습니다. 이 ",
+      "author": "Henby",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "thumbs/01036a2f59ba9ce3.jpg",
+      "firstSeen": "2026-09-17T23:35:35.571888+00:00"
+    },
     {
       "source": "toss",
       "sourceName": "토스",
