@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T23:35:35.571888+00:00",
+  "generatedAt": "2026-09-18T23:34:39.149469+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,37 @@
     }
   ],
   "posts": [
+    {
+      "source": "woowahan",
+      "sourceName": "배달의민족",
+      "color": "#2AC1BC",
+      "title": "배달의민족 전자계약서 화면 개편기: AI에게 맡긴 것과 사람이 챙긴 것",
+      "url": "https://techblog.woowahan.com/27604/",
+      "date": "2026-09-18T06:10:50+00:00",
+      "summary": "들어가며 전자계약서는 파트너(사장님)가 배달의민족을 처음 시작할 때 작성하는 전자문서입니다. 영업 담당자가 파트너와 함께 작성하고, 계약 내용을 바꿀 때도 같은 문서를 씁니다. 이 문서를 쓰는 작성 화면은 사업자 정보, 가게 정보, 광고 정보 같은 섹션이 모여 계약서 한 장을 이루는 큰 폼입니다. 2026년 4월부터 6월까지 이 작성 화면을 개편했습니다. 작성자가 계약서를 더 편하게 쓸 수 있게 […]",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/c98868f3b14d7c84.jpg",
+      "firstSeen": "2026-09-18T23:34:39.149469+00:00"
+    },
+    {
+      "source": "line",
+      "sourceName": "라인",
+      "color": "#06C755",
+      "title": "LLM에게 어디까지 맡길 것인가: AI 에이전트 기반 광고 분석 리포트 자동화",
+      "url": "https://techblog.lycorp.co.jp/ko/ai-agent-ad-report-automation",
+      "date": "2026-09-18T01:50:00+00:00",
+      "summary": "들어가며안녕하세요. LINE Ads에서 데이터 분석 플랫폼을 개발하고 있는 이종우, 이운열입니다.광고 매출은 상품, 광고주, 캠페인 집행 변화에 따라 매일 움직입니다. 광고 KPI...",
+      "author": "",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "thumbs/156bc1ca930868e0.jpg",
+      "firstSeen": "2026-09-18T23:34:39.149469+00:00"
+    },
     {
       "source": "gccompany",
       "sourceName": "여기어때",
