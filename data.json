@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T23:36:07.344270+00:00",
+  "generatedAt": "2026-09-21T23:36:23.256171+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,21 @@
     }
   ],
   "posts": [
+    {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "쿠버네티스로 여는 AI 추론 인프라",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168512&boardType=techBlog&isShared=Y",
+      "date": "2026-09-21T13:33:15+00:00",
+      "summary": "이번 글에서는 AI 컴퓨팅 트렌드가 어디로 향하는지, 그 흐름에서 추론(inference) 인프라를 운영하는 데 쿠버네티스가 어떤 도움을 주는지, 그리고 AWS 위에서 대규모 추론을 안정적으로 돌리는 방법까지 다뤄보...",
+      "author": "최용호",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/6cba7da0ca18f44f.jpg",
+      "firstSeen": "2026-09-21T23:36:23.256171+00:00"
+    },
     {
       "source": "woowahan",
       "sourceName": "배달의민족",
