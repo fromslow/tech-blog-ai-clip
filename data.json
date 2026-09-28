@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T23:33:51.641151+00:00",
+  "generatedAt": "2026-09-27T23:35:01.147313+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,21 @@
     }
   ],
   "posts": [
+    {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "나는 하네스 깎는 노인이 되었다 시리즈 1: 은총알은 없다",
+      "url": "https://meetup.nhncloud.com/posts/423",
+      "date": "2026-09-27T23:07:37+00:00",
+      "summary": "[![NHN Cloud_meetup_banner_harness_202609_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetupbannerharness202609900.png)](https://www.nhncloud.com/kr) > 이 글은 작성자가 사내 게시판에 공유한 글을 가공한 것으로, 작성자의 의도와 맥락을 충실히 전달하기 위해 원문의 문장 스타일을 그대로 유지하였습니다. > 이 글은 김영우 님의 [AI ",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/04699c980e7ba4e1.jpg",
+      "firstSeen": "2026-09-27T23:35:01.147313+00:00"
+    },
     {
       "source": "woowahan",
       "sourceName": "배달의민족",
