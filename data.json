@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T23:34:43.665597+00:00",
+  "generatedAt": "2026-09-29T23:35:38.015900+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,22 @@
     }
   ],
   "posts": [
+    {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "Jev로 AI 글 냄새 잡기 - 판정 모델을 교정 파이프라인 세 곳에 붙인 기록",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168525&boardType=techBlog&isShared=Y",
+      "date": "2026-09-29T12:05:36+00:00",
+      "summary": "요즘 AI와 함께 글을 쓰는 일이 부쩍 늘었습니다. 그러다 최근 DEVOCEAN에 올린 개발기(벡터DB를 걷어내고 유사글 추천을 되살린 이야기)가 ＂AI 느낌이 많이 난다＂는 이야기를 들었고, 마침 책 원고 교정 도...",
+      "author": "꼬마집사",
+      "tags": [
+        "AI",
+        "임베딩"
+      ],
+      "image": "thumbs/6fbede3a73cc2f7f.jpg",
+      "firstSeen": "2026-09-29T23:35:38.015900+00:00"
+    },
     {
       "source": "nhn",
       "sourceName": "NHN",
@@ -314,7 +330,7 @@
       "title": "if(kakao)26 첫째 날, 기술 세션 소개",
       "url": "https://tech.kakao.com/posts/833",
       "date": "2026-09-07T15:00:00+00:00",
-      "summary": "if(kakao)26 첫째 날은 AI 방향성, 신뢰와 안전, Model & Agent, 상생과 성장에 대해 이야기합니다. 키노트를 제외한 총 23개의 기술 세션들이 아래와 같이 진행됩니다. [AI 방향성] 1. You Only Train Once: 더 효율적으로 Kanana SLM 개발하기 (류민호, 한규빈) 단 한 번의 학습으로, 4개의 Small Dense Model Family를 개발한 노하우를 공유합니다! 최근 공개한 Kanana-2 SLM 개...",
+      "summary": "if(kakao)26 첫째 날은 신뢰와 안전, AI 방향성, 상생과 성장, Model & Agent에 대해 이야기합니다. 키노트를 제외한 총 22개의 기술 세션들이 아래와 같이 진행됩니다. [AI 방향성] 1. You Only Train Once: 더 효율적으로 Kanana SLM 개발하기 (류민호, 한규빈) 단 한 번의 학습으로, 4개의 Small Dense Model Family를 개발한 노하우를 공유합니다! 최근 공개한 Kanana-2 SLM 개...",
       "author": "zoo.young / kakao tech",
       "tags": [
         "AI"
