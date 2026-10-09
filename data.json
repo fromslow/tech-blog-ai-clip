@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T23:32:55.354731+00:00",
+  "generatedAt": "2026-10-08T23:35:14.088664+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,23 @@
     }
   ],
   "posts": [
+    {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "AI 학습부터 GPU 운영까지 한 곳에서, GPU Live",
+      "url": "https://meetup.nhncloud.com/posts/424",
+      "date": "2026-10-08T00:36:39+00:00",
+      "summary": "[![NHN Cloud_meetup banner_GPULive_202609_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetup%20bannerGPULive202609900.png)](https://www.nhncloud.com/kr) ## 들어가며 오늘날 대규모 언어 모델 학습, 이미지 생성, 강화 학습 등 AI 워크로드가 빠르게 확산되면서 학습과 추론을 뒷받침할 GPU 인프라의 중요성도 함께 커졌습니다. 많은 ",
+      "author": "",
+      "tags": [
+        "AI",
+        "LLM",
+        "이미지생성"
+      ],
+      "image": "thumbs/b0bb91c4c22aee21.jpg",
+      "firstSeen": "2026-10-08T23:35:14.088664+00:00"
+    },
     {
       "source": "woowahan",
       "sourceName": "배달의민족",
