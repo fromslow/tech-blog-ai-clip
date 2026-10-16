@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T23:37:38.413510+00:00",
+  "generatedAt": "2026-10-16T15:13:41.847126+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,85 @@
     }
   ],
   "posts": [
+    {
+      "source": "banksalad",
+      "sourceName": "뱅크샐러드",
+      "color": "#536DFE",
+      "title": "AI 코딩 시대, DDD가 더 필요해진 이유",
+      "url": "https://blog.banksalad.com/tech/banksalad-ddd-in-ai-era/",
+      "date": "2026-10-15T00:00:00+00:00",
+      "summary": "Go 서비스에 DDD-lite와 Clean Architecture를 적용하면 뭐가 다를까? 안녕하세요, 금융쇼핑 PA 서버 Tech Lead 김지원입니다. 뱅크샐러드 서버는 대부분 Go…",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/7ff995ba73d7270c.jpg",
+      "firstSeen": "2026-10-16T15:13:41.847126+00:00"
+    },
+    {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "AI 번역의 시대2: 오착(誤錯)",
+      "url": "https://meetup.nhncloud.com/posts/425",
+      "date": "2026-10-12T00:13:50+00:00",
+      "summary": "[![NHN Cloud_meetup banner_AI-translation_3_202610_900.png](https://image.toast.com/aaaadh/alpha/2026/techblog/NHN%20Cloudmeetup%20bannerAItranslation3202610900%281%29.png)](https://www.nhncloud.com/kr) ## 오착(誤錯), 착각을 하여 잘못함 ## 사고와 현상 최근 영화 '오디세이'의 흥행에 발맞추어 고전 오디세이아의 번역본이 대거 출간됐습",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/ed37d9a6ab5b7d45.jpg",
+      "firstSeen": "2026-10-16T15:13:41.847126+00:00"
+    },
+    {
+      "source": "gccompany",
+      "sourceName": "여기어때",
+      "color": "#FF3D77",
+      "title": "사내 지식으로 Agentic RAG 만들기 (2/3) : 검색을 얹기, LightRAG와 Navigator",
+      "url": "https://techblog.gccompany.co.kr/%EC%82%AC%EB%82%B4-%EC%A7%80%EC%8B%9D%EC%9C%BC%EB%A1%9C-agentic-rag-%EB%A7%8C%EB%93%A4%EA%B8%B0-2-3-%EA%B2%80%EC%83%89%EC%9D%84-%EC%96%B9%EA%B8%B0-lightrag%EC%99%80-navigator-9f3119060242?source=rss----18356045d353---4",
+      "date": "2026-10-10T00:01:04+00:00",
+      "summary": "글. 김수비(소피) / 공통플랫폼개발팀 안녕하세요, 여기어때컴퍼니 공통플랫폼개발팀 소피입니다. 1편 에서는 검색을 만들기 전에 바닥을 다졌습니다. Confluence와 Jira에 흩어진 문서를 증분으로 모으고, 검색에 쓸 수 없는 JSON을 Markdown으로 바꾸고, 이미지에는 대체 텍스트를 붙였습니다. 이미지가 보이지 않던 문제는 거기서 답이 됐습니다. 남은 문제는 하나였습니다. 맞는 키워드를 모르면 계속 헤매는 문제. 에이전트가 단어를 바꿔가며 검색과 열람을 6~7번씩 왕복하다 겨우 답을 내",
+      "author": "Sofie",
+      "tags": [
+        "RAG",
+        "임베딩"
+      ],
+      "image": "thumbs/21549f1a9ffa083a.jpg",
+      "firstSeen": "2026-10-16T15:13:41.847126+00:00"
+    },
+    {
+      "source": "gccompany",
+      "sourceName": "여기어때",
+      "color": "#FF3D77",
+      "title": "사내 지식으로 Agentic RAG 만들기 (3/3) : 관측 가능한 RAG, 운영되는 도구로",
+      "url": "https://techblog.gccompany.co.kr/%EC%82%AC%EB%82%B4-%EC%A7%80%EC%8B%9D%EC%9C%BC%EB%A1%9C-agentic-rag-%EB%A7%8C%EB%93%A4%EA%B8%B0-3-3-%EA%B4%80%EC%B8%A1-%EA%B0%80%EB%8A%A5%ED%95%9C-rag-%EC%9A%B4%EC%98%81%EB%90%98%EB%8A%94-%EB%8F%84%EA%B5%AC%EB%A1%9C-dbac813832db?source=rss----18356045d353---4",
+      "date": "2026-10-10T00:01:04+00:00",
+      "summary": "글. 박이슬(스노우) / 공통플랫폼개발팀 안녕하세요, 여기어때컴퍼니 공통플랫폼개발팀 스노우입니다. 1편 에서는 Confluence와 Jira에 흩어진 문서를 모아 검색 가능한 형태로 바꿨고, 2편에서는 그 위에 LightRAG와 Navigator를 얹었습니다. 여기까지 오면 질문을 던졌을 때 답이 돌아옵니다. 그런데 만들고 나서 가장 오래 붙잡고 있었던 건 검색이 아니었습니다. 만든 것이 제대로 동작하는지 확인하는 일이었습니다. 이번 편은 그 이야기입니다. 질의를 던졌을 때 무엇이 오갔는지 보이게",
+      "author": "Snow Park",
+      "tags": [
+        "RAG",
+        "AI",
+        "LLM",
+        "자연어처리"
+      ],
+      "image": "thumbs/59a617bd97245835.jpg",
+      "firstSeen": "2026-10-16T15:13:41.847126+00:00"
+    },
+    {
+      "source": "gccompany",
+      "sourceName": "여기어때",
+      "color": "#FF3D77",
+      "title": "AI 시대 당신의 팀은 안녕하신가요",
+      "url": "https://techblog.gccompany.co.kr/ai-%EC%8B%9C%EB%8C%80-%EB%8B%B9%EC%8B%A0%EC%9D%98-%ED%8C%80-%EC%A1%B0%EC%A7%81%EC%9D%80-%EC%95%88%EB%85%95%ED%95%98%EC%8B%A0%EA%B0%80%EC%9A%94-c59f982d5add?source=rss----18356045d353---4",
+      "date": "2026-10-10T00:01:02+00:00",
+      "summary": "안녕하세요, 유저혜택개발팀 윌비 입니다. AI가 코드를 짜 주는데 개발자는 이제 대체되는 것 아니냐는 말이 심심찮게 나옵니다. 저는 개발자가 없어지는 것이 아니라, 필요한 것이 코딩에서 다른 데로 옮겨 갔다고 생각합니다. 팀에서 AI 워크스페이스를 함께 만들어 쓰면서 겪은 고민과 지금 하고 있는 방식을 적어 봤는데요. 겪은 문제와 고민 속에서 각자 AI를 쓰는 팀이 어떻게 한 방향으로 갈 수 있는지에 대한 이야기입니다. 옮겨 간 그 자리에서 어떤 사람이 좋은 개발자일지, 그리고 왜 그 답이 혼자가",
+      "author": "Willbe",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/cbfb91ccfbe402cd.jpg",
+      "firstSeen": "2026-10-16T15:13:41.847126+00:00"
+    },
     {
       "source": "nhn",
       "sourceName": "NHN",
