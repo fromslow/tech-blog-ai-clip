@@ -1,0 +1,153 @@
+/* ============================================================================
+   clean-webpage-design — base.css
+   A portable, token-driven design system. Light + dark are both defined here;
+   every component references var(--…). Copy this in whole, then build markup
+   from the component classes below. Never hard-code a color that should be a
+   token — that is what breaks dark mode.
+   ============================================================================ */
+
+/* ---- Optional: Pretendard (Korean + Latin). Self-host for reliability, or use
+   the CDN line below. Remove if the project already loads a font. --------------
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+*/
+
+/* ---------- Design tokens: LIGHT (shadcn stone + indigo accent) ---------- */
+:root{
+  --background:oklch(1 0 0);            --foreground:oklch(0.147 0.004 49.25);
+  --card:oklch(1 0 0);                  --card-foreground:oklch(0.147 0.004 49.25);
+  --primary:oklch(0.488 0.243 264.376);--primary-foreground:oklch(0.97 0.014 254.604);
+  --secondary:oklch(0.967 0.001 286.375);--secondary-foreground:oklch(0.21 0.006 285.885);
+  --muted:oklch(0.97 0.001 106.424);   --muted-foreground:oklch(0.553 0.013 58.071);
+  --border:oklch(0.923 0.003 48.717);  --input:oklch(0.923 0.003 48.717);
+  --ring:oklch(0.709 0.01 56.259);
+  --radius:0.875rem;                   /* 14px scale; derive others with calc() */
+  color-scheme:light;
+}
+/* ---------- Design tokens: DARK (same names, swapped) ----------
+   Toggle by adding/removing class "dark" on <html>. Same tokens → every
+   component re-themes for free. ------------------------------------------- */
+html.dark{
+  --background:oklch(0.147 0.004 49.25);--foreground:oklch(0.985 0.001 106.423);
+  --card:oklch(0.216 0.006 56.043);    --card-foreground:oklch(0.985 0.001 106.423);
+  --primary:oklch(0.623 0.214 259.815);--primary-foreground:oklch(0.97 0.014 254.604);
+  --secondary:oklch(0.274 0.006 286.033);--secondary-foreground:oklch(0.985 0 0);
+  --muted:oklch(0.268 0.007 34.298);   --muted-foreground:oklch(0.709 0.01 56.259);
+  --border:oklch(1 0 0 / 12%);         --input:oklch(1 0 0 / 15%);
+  --ring:oklch(0.553 0.013 58.071);
+  color-scheme:dark;
+}
+/* Prefer system theme on first load when no explicit choice is stored.
+   (The bootstrap script in starter.html stamps html.dark before paint.) */
+
+/* ---------- Reset + base ---------- */
+*{box-sizing:border-box;border-color:var(--border)}
+html,body{margin:0;padding:0}
+body{background:var(--background);color:var(--foreground);min-height:100svh;
+  font-family:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,
+    'Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.5;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:72rem;margin:0 auto;padding:0 20px}   /* page gutter */
+.scrollbar-none{scrollbar-width:none}
+.scrollbar-none::-webkit-scrollbar{display:none}
+
+/* ---------- Nav: sticky, translucent, blurred ---------- */
+header.nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--border);
+  background:color-mix(in srgb,var(--background) 80%,transparent);backdrop-filter:blur(12px)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;letter-spacing:-.02em}
+.brand .mark{width:24px;height:24px;border-radius:8px;
+  background:linear-gradient(135deg,#4f46e5,#2563eb 45%,#0ea5e9)}
+.navlinks{display:flex;align-items:center;gap:2px}
+.navlink{color:var(--muted-foreground);border-radius:999px;padding:6px 12px;
+  font-size:13px;font-weight:600;transition:.15s}
+.navlink:hover{color:var(--foreground)}
+.navlink.on{color:var(--foreground);background:var(--muted)}
+.icon-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:calc(var(--radius)*.7);
+  border:0;background:transparent;color:var(--foreground);cursor:pointer;font-size:18px;transition:background .15s}
+.icon-btn:hover{background:var(--muted)}
+
+/* ---------- Hero ---------- */
+.hero{padding:40px 0 18px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted-foreground);margin:0 0 10px}
+h1{margin:0;font-size:clamp(28px,4.2vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.14}
+.lead{margin:12px 0 0;color:var(--muted-foreground);font-size:15.5px;max-width:640px}
+
+/* ---------- Pill tabs / chips (horizontal scroll, selectable) ---------- */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0}
+.chip{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;
+  border:1px solid var(--border);border-radius:999px;background:transparent;color:var(--muted-foreground);
+  font:inherit;font-size:13.5px;font-weight:600;white-space:nowrap;cursor:pointer;transition:.15s}
+.chip:hover{color:var(--foreground);border-color:color-mix(in srgb,var(--foreground) 25%,transparent)}
+.chip i{font-size:16px}
+.chip .cnt{font-size:11px;opacity:.6;font-variant-numeric:tabular-nums}
+.chip.on{background:var(--foreground);color:var(--background);border-color:transparent}  /* inverse fill = selected */
+.chip.on .cnt{opacity:.8}
+
+/* ---------- Card ---------- */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px}
+.card-title{font-size:15px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.card-title i{font-size:16px;color:var(--muted-foreground)}
+.card-meta{margin-top:3px;font-size:12px;color:var(--muted-foreground)}
+
+/* ---------- Structured block: an icon label + content (문제 / 동작 / 결과 …) ---------- */
+.block{margin-top:14px}
+.block-label{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;
+  color:var(--primary);margin-bottom:7px}
+.block-label i{font-size:14px}
+.block-body{font-size:13px;line-height:1.62;color:var(--muted-foreground)}
+
+/* Numbered steps inside a block (the "동작 방식" flow) */
+.steps{display:flex;flex-direction:column;gap:12px}
+.step{display:flex;gap:10px}
+.step-n{flex:0 0 auto;width:22px;height:22px;border-radius:7px;font-size:11px;font-weight:800;
+  display:grid;place-items:center;
+  background:color-mix(in srgb,var(--primary) 14%,transparent);color:var(--primary)}
+.step-body{min-width:0;font-size:13px;line-height:1.62;color:var(--muted-foreground)}
+.step-body b{color:var(--foreground);font-weight:700}
+
+/* point — why list (each item makes a claim and explains the reason) */
+.keylist{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.keylist li{position:relative;padding-left:16px;font-size:13px;line-height:1.6}
+.keylist li::before{content:"";position:absolute;left:3px;top:.6em;width:5px;height:5px;border-radius:50%;
+  background:var(--primary);opacity:.6}
+.keylist b{color:var(--foreground);font-weight:700}
+.keylist .why{color:var(--muted-foreground)}
+
+/* check list (results / outcomes) */
+.checklist{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.checklist li{position:relative;padding-left:22px;font-size:13px;line-height:1.55;color:var(--foreground)}
+.checklist li::before{content:"\2713";position:absolute;left:1px;top:0;color:var(--primary);
+  font-weight:800;font-size:12px}
+
+/* ---------- Accent callout (soft primary-tinted panel with a left bar) ---------- */
+.callout{margin:22px 0 4px;padding:18px 20px;border:1px solid var(--border);border-radius:16px;
+  background:color-mix(in srgb,var(--primary) 5%,var(--card));position:relative;overflow:hidden}
+.callout::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary);opacity:.7}
+.callout-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--primary)}
+.callout-tag i{font-size:15px}
+.callout-lead{margin:9px 0 0;font-size:14.5px;line-height:1.6;color:var(--foreground);font-weight:600;max-width:760px}
+.callout-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;margin-top:14px}
+@media(max-width:640px){.callout-cols{grid-template-columns:1fr;gap:14px}}
+
+/* ---------- Horizontal flow (numbered stage boxes + arrows; stacks on mobile) ---------- */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin-top:8px}
+.flow-node{flex:1 1 140px;min-width:128px;display:flex;flex-direction:column;gap:3px;
+  border:1px solid var(--border);border-radius:11px;padding:9px 11px;
+  background:color-mix(in srgb,var(--primary) 3%,var(--card))}
+.flow-node .n{font-size:10px;font-weight:800;color:var(--primary);line-height:1}
+.flow-node b{font-size:12.5px;color:var(--foreground);line-height:1.35;font-weight:700}
+.flow-node span{font-size:11.5px;color:var(--muted-foreground);line-height:1.45}
+.flow-sep{display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--primary);opacity:.55}
+.flow-sep i{font-size:17px}
+@media(max-width:640px){
+  .flow{flex-direction:column}
+  .flow-node{flex:1 1 auto}
+  .flow-sep{transform:rotate(90deg)}   /* arrows point down when stacked */
+}
+
+/* ---------- Figure (self-hosted image + caption) ---------- */
+.fig{margin:12px 0 0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--muted)}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{padding:7px 11px;font-size:11.5px;color:var(--muted-foreground);border-top:1px solid var(--border)}

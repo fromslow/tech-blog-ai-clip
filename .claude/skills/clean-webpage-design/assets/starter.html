@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clean Webpage Design · Starter</title>
+
+<!-- Icons (one icon set for the whole page) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" />
+
+<!-- Optional Korean font (or self-host Pretendard). base.css also lists a CDN @import. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+
+<!-- The design system. Keep it in the same folder, or inline it in a <style>. -->
+<link rel="stylesheet" href="base.css" />
+
+<!-- Dark-mode bootstrap: apply the saved choice BEFORE first paint (no flash).
+     Falls back to the OS preference when nothing is stored. -->
+<script>
+  (function(){try{
+    var t=localStorage.getItem('theme');
+    if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))
+      document.documentElement.classList.add('dark');
+  }catch(e){}})();
+</script>
+
+<!-- Optional: theme-aware flowcharts. Remove if you don't need diagrams. -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand"><span class="mark"></span>브랜드 이름</a>
+    <div style="display:flex;align-items:center;gap:8px">
+      <nav class="navlinks">
+        <a class="navlink on">홈</a>
+        <a class="navlink">소개</a>
+      </nav>
+      <button class="icon-btn" id="theme" aria-label="테마 전환"></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <p class="eyebrow">SECTION · 섹션 라벨</p>
+  <h1>깔끔한 콘텐츠 페이지</h1>
+  <p class="lead">같은 문제를 여러 방식으로 어떻게 풀었는지, 토큰 기반 디자인으로 일관되게 정리합니다. 라이트·다크 모두 그대로 맞습니다.</p>
+</div>
+
+<!-- Pill tabs -->
+<div class="wrap">
+  <div class="chips scrollbar-none" id="chips">
+    <button class="chip on"><i class="ri-focus-3-line"></i><span>개요</span><span class="cnt">4</span></button>
+    <button class="chip"><i class="ri-flow-chart"></i><span>구현</span><span class="cnt">6</span></button>
+    <button class="chip"><i class="ri-line-chart-line"></i><span>결과</span><span class="cnt">2</span></button>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- Accent callout: lead + flow + theme-aware diagram + philosophy -->
+  <section class="callout">
+    <div class="callout-tag"><i class="ri-compass-3-line"></i>이 페이지를 만든다면</div>
+    <p class="callout-lead">핵심은 토큰으로 색을 다루고, 컴포넌트를 재사용하며, 다크모드를 처음부터 함께 설계하는 것이다.</p>
+
+    <div style="margin-top:14px">
+      <div class="callout-tag"><i class="ri-route-line"></i>추천 구현 플로우</div>
+      <div class="flow">
+        <div class="flow-node"><span class="n">1</span><b>토큰 정의</b><span>oklch · 라이트/다크</span></div>
+        <span class="flow-sep"><i class="ri-arrow-right-line"></i></span>
+        <div class="flow-node"><span class="n">2</span><b>컴포넌트</b><span>카드 · 칩 · 블록</span></div>
+        <span class="flow-sep"><i class="ri-arrow-right-line"></i></span>
+        <div class="flow-node"><span class="n">3</span><b>조립</b><span>페이지 구성</span></div>
+      </div>
+    </div>
+
+    <!-- Mermaid flowchart. Leave the <pre> empty; JS fills textContent then runs mermaid. -->
+    <div style="margin-top:14px;overflow-x:auto"><pre class="mermaid" id="dg"></pre></div>
+  </section>
+
+  <!-- Card with structured blocks -->
+  <article class="card" style="margin-top:22px">
+    <div class="card-title"><i class="ri-article-line"></i>구조화 카드 예시</div>
+    <div class="card-meta">작성자 · 2026</div>
+
+    <div class="block">
+      <span class="block-label"><i class="ri-focus-3-line"></i>문제</span>
+      <div class="block-body">배경과 동기를 2~4문장으로. 왜 아팠는지를 사람 말로 적는다.</div>
+    </div>
+
+    <div class="block">
+      <span class="block-label"><i class="ri-flow-chart"></i>동작 방식</span>
+      <div class="steps">
+        <div class="step"><span class="step-n">1</span><div class="step-body"><b>첫 단계</b> 무슨 일이 일어나는지 쉬운 말로.</div></div>
+        <div class="step"><span class="step-n">2</span><div class="step-body"><b>둘째 단계</b> 전문용어는 처음 나올 때 풀어준다.</div></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="block-label"><i class="ri-key-2-line"></i>핵심 설계 · 왜 이렇게</span>
+      <ul class="keylist">
+        <li><b>토큰으로 색을 다룬다</b> <span class="why">— 다크모드가 공짜로 따라오기 때문</span></li>
+        <li><b>그림자 대신 경계선</b> <span class="why">— 평평하고 차분한 느낌을 유지하려고</span></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <span class="block-label"><i class="ri-line-chart-line"></i>결과</span>
+      <ul class="checklist">
+        <li>라이트·다크 모두 한 번에 맞는 페이지</li>
+        <li>컴포넌트 재사용으로 일관된 톤</li>
+      </ul>
+    </div>
+  </article>
+
+</main>
+
+<script>
+  var root=document.documentElement, tbtn=document.getElementById('theme');
+  function paint(){tbtn.innerHTML=root.classList.contains('dark')?'<i class="ri-sun-line"></i>':'<i class="ri-moon-line"></i>';}
+  function toggle(){root.classList.toggle('dark');
+    try{localStorage.setItem('theme',root.classList.contains('dark')?'dark':'light');}catch(e){}
+    paint(); renderDiagram();}
+  paint(); tbtn.onclick=toggle;
+  document.addEventListener('keydown',function(e){
+    if(e.key==='d'&&!/input|textarea/i.test((e.target.tagName||''))) toggle();
+  });
+
+  // Middle-dot spacing: render "a·b·c" as "a · b · c". Use on list/label text.
+  function esp(s){return String(s||'').replace(/\s*·\s*/g,' · ');}
+  document.querySelectorAll('.flow-node span, .keylist .why').forEach(function(el){el.textContent=esp(el.textContent);});
+
+  // Theme-aware Mermaid: fill textContent (never innerHTML — it would eat <br/>), then run.
+  var DIAGRAM=[
+    'flowchart TD',
+    '  A["입력<br/>토큰 정의"] --> B{"다크 지원?"}',
+    '  B -->|예| C["color-mix로 변형<br/>토큰만 사용"]',
+    '  B -->|아니오| D["하드코딩 색<br/>지양"]',
+    '  C --> E["컴포넌트 조립"]',
+    '  D --> E',
+    '  class C key;',
+    '  classDef key fill:#e8f5e9,stroke:#2e7d32,color:#14532d,stroke-width:1.6px;'
+  ].join('\n');
+  function renderDiagram(){
+    var pre=document.getElementById('dg'); if(!pre||!window.mermaid)return;
+    pre.textContent=DIAGRAM; pre.removeAttribute('data-processed');
+    try{
+      mermaid.initialize({startOnLoad:false,securityLevel:'loose',
+        theme:root.classList.contains('dark')?'dark':'base',
+        themeVariables:{fontFamily:'Pretendard Variable,system-ui,sans-serif',fontSize:'13px',
+          primaryColor:root.classList.contains('dark')?'#26314a':'#eef2ff',
+          primaryBorderColor:root.classList.contains('dark')?'#3b4a6b':'#c3cce6',
+          primaryTextColor:root.classList.contains('dark')?'#e8ecf5':'#1e2433',
+          lineColor:root.classList.contains('dark')?'#6b7797':'#94a0c0'},
+        flowchart:{htmlLabels:true,curve:'basis',useMaxWidth:true}});
+      mermaid.run({nodes:[pre]});
+    }catch(e){}
+  }
+  renderDiagram();
+</script>
+</body>
+</html>
