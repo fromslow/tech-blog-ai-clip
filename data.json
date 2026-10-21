@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T23:36:11.816353+00:00",
+  "generatedAt": "2026-10-20T23:36:27.172547+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,37 @@
     }
   ],
   "posts": [
+    {
+      "source": "kakao",
+      "sourceName": "카카오",
+      "color": "#FFB900",
+      "title": "글로벌 최고 수준의 자체 비전 인코더, Kanana-2-vision-encoder 개발기",
+      "url": "https://tech.kakao.com/posts/840",
+      "date": "2026-10-20T15:00:00+00:00",
+      "summary": "안녕하세요. 카카오 Multimodal Model Training팀에서 카나나를 연구·개발하는 Polar(엄지환)입니다. 카카오가 자체 기술력만으로 밑바닥부터(from scratch) 개발한 독자 비전 인코더, Kanana-2-vision-encoder를 소개합니다. Kanana-2-vision-encoder는 카카오 언어모델 Kanana-2 LLM[1]의 가중치와 구조를 활용해 학습과 추론 모두에서 높은 효율성을 자랑합니다. 또한, 고해상도 이미지 ...",
+      "author": "polar.bears",
+      "tags": [
+        "LLM",
+        "멀티모달"
+      ],
+      "image": "thumbs/264a5de482cf19a0.jpg",
+      "firstSeen": "2026-10-20T23:36:27.172547+00:00"
+    },
+    {
+      "source": "nhn",
+      "sourceName": "NHN",
+      "color": "#0E9AA7",
+      "title": "나는 하네스 깎는 노인이 되었다 시리즈 2: 안녕, 실버불릿",
+      "url": "https://meetup.nhncloud.com/posts/426",
+      "date": "2026-10-20T06:02:08+00:00",
+      "summary": "[![NHN Cloud_meetup_banner_harness_202610_900.png](https://image.toast.com/aaaadh/real/2026/techblog/NHN%20Cloudmeetupbannerharness202610900.png)](https://www.nhncloud.com/kr) > 이 글은 작성자가 사내 게시판에 공유한 글을 가공한 것으로, 작성자의 의도와 맥락을 충실히 전달하기 위해 원문의 문장 스타일을 그대로 유지하였습니다. > 이 글은 김영우 님의 AI 하",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/8ff5c36462901542.jpg",
+      "firstSeen": "2026-10-20T23:36:27.172547+00:00"
+    },
     {
       "source": "banksalad",
       "sourceName": "뱅크샐러드",
