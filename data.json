@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T23:36:46.771043+00:00",
+  "generatedAt": "2026-10-22T23:34:53.163775+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,21 @@
     }
   ],
   "posts": [
+    {
+      "source": "kakao",
+      "sourceName": "카카오",
+      "color": "#FFB900",
+      "title": "카카오 AI 돛 Summit 26 다시보기 공개 — AI 인프라부터 서비스 적용, 개발과 창업까지",
+      "url": "https://tech.kakao.com/posts/842",
+      "date": "2026-10-21T15:00:00+00:00",
+      "summary": "지난 9월 29일 부산에서 약 800명의 참가자와 함께한 ‘카카오 AI 돛 Summit 26’의 주요 세션 VOD를 공개합니다. 👉 카카오 AI 돛 Summit 26 세션 VOD 보러 가기 AI와 함께 개발하는 방식부터 실제 서비스에 AI를 적용하는 과정, 연구를 창업으로 연결하는 경험까지. 현장에 참석하지 못했거나 동시에 진행되어 놓쳤던 발표를 이제 온라인에서 만나보세요. 어떤 세션부터 볼지 고민된다면, 지금 여러분의 관심사와 가장 가까운 이야기부터...",
+      "author": "tj.kim",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/9191cb7aad76c431.jpg",
+      "firstSeen": "2026-10-22T23:34:53.163775+00:00"
+    },
     {
       "source": "daangn",
       "sourceName": "당근",
