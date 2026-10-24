@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T23:34:53.163775+00:00",
+  "generatedAt": "2026-10-23T23:37:40.073763+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,21 @@
     }
   ],
   "posts": [
+    {
+      "source": "toss",
+      "sourceName": "토스",
+      "color": "#3182F6",
+      "title": "머릿속에 있던 로그 정의 기준을 모두의 AI 스킬로 만들기",
+      "url": "https://toss.tech/article/dataops-log-definition-skill",
+      "date": "2026-10-23T01:53:00+00:00",
+      "summary": "도구가 규칙을 검사하고 AI가 제안하면 사람이 확정해서, 누구나 같은 기준으로 로그를 정의해요",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/9e680ba8391b140e.jpg",
+      "firstSeen": "2026-10-23T23:37:40.073763+00:00"
+    },
     {
       "source": "kakao",
       "sourceName": "카카오",
