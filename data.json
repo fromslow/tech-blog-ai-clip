@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T23:34:00.425068+00:00",
+  "generatedAt": "2026-10-27T23:36:03.898275+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,36 @@
     }
   ],
   "posts": [
+    {
+      "source": "toss",
+      "sourceName": "토스",
+      "color": "#3182F6",
+      "title": "손가락 튕기기로 LLM 비용 줄이기",
+      "url": "https://toss.tech/article/snap-llm-cost-reduction",
+      "date": "2026-10-27T07:05:00+00:00",
+      "summary": "토스에서 늘어나는 LLM 비용을 빠르게 줄이는 방법을 소개합니다.",
+      "author": "",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/f6c7e70e184eb9c8.jpg",
+      "firstSeen": "2026-10-27T23:36:03.898275+00:00"
+    },
+    {
+      "source": "naver",
+      "sourceName": "네이버",
+      "color": "#03C75A",
+      "title": "AI 시대의 개발자를 꿈꾸는 학생 개발자에게",
+      "url": "https://d2.naver.com/helloworld/1975819",
+      "date": "2026-10-27T02:00:00+00:00",
+      "summary": "시작하며: 2018년과 2026년 사이의 간격과 격변기의 고민 2018년에 저는 '백엔드 개발자를 꿈꾸는 학생개발자에게'라는 글을 이곳 D2 블로그에 공유했습니다. 당시 학생 개발자들과의 미트업 행사에서 나왔던 질문과 답변을 정리한 글이었습니다. 그 후 8년의 시간이 흘렀기에 그 글만 노출된다면 학생들에게 현시점에 적절한 정보를 주지 못할까 봐 걱정되었습니다. 그래서 2025년 말 설문으로 질문을 받아 후속편을 작성했습니다. 그동안 저도",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "",
+      "firstSeen": "2026-10-27T23:36:03.898275+00:00"
+    },
     {
       "source": "musinsa",
       "sourceName": "무신사",
