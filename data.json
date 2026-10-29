@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T23:36:03.898275+00:00",
+  "generatedAt": "2026-10-28T23:35:05.550331+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,23 @@
     }
   ],
   "posts": [
+    {
+      "source": "kakao",
+      "sourceName": "카카오",
+      "color": "#FFB900",
+      "title": "팀이 신뢰할 수 있는 AI 분석 환경 만들기: 추천팀의 컨텍스트 설계",
+      "url": "https://tech.kakao.com/posts/844",
+      "date": "2026-10-27T15:00:00+00:00",
+      "summary": "안녕하세요. 카카오톡 숏폼 추천 모델을 개발하고 있는 루퍼트(rupert)입니다. 저희 추천팀은 추천 지표 분석에 AI 에이전트를 사용합니다. AI 에이전트에게 분석을 요청하면, 에이전트가 미리 정리해 둔 지침 문서(CLAUDE.md)를 읽고 SQL을 작성해 기존 Hadoop 환경에서 실행한 뒤 집계 결과를 리포트로 완성합니다. 지난 글에서는 데이터 엔지니어, 분석가만 알고 있던 로그 데이터 접근 방법과 분석 기준을 AI를 통해 조회하는 사례를 소개했습...",
+      "author": "rupert.kim",
+      "tags": [
+        "AI",
+        "AI 에이전트",
+        "LLM"
+      ],
+      "image": "thumbs/7270f96f224e3666.jpg",
+      "firstSeen": "2026-10-28T23:35:05.550331+00:00"
+    },
     {
       "source": "toss",
       "sourceName": "토스",
