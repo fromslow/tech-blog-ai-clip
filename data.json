@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T23:35:05.550331+00:00",
+  "generatedAt": "2026-10-29T23:41:16.857645+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,22 @@
     }
   ],
   "posts": [
+    {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "블로그 발행 MCP를 직접 만들며 확인한 AI 에이전트 실무 원칙 - 구성요소부터 사람 승인까지",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168583&boardType=techBlog&isShared=Y",
+      "date": "2026-10-29T18:42:07+00:00",
+      "summary": "얼마 전 X에서 @silvanrec의 에이전트 스레드(스페인어)를 읽었는데, 에이전트를 데모가 아니라 아키텍처로 이해해야 실제 업무 문제를 진단하고 운영할 수 있다는 이야기가 계속 머리에 남았습니다. 마침 지난주에 ...",
+      "author": "꼬마집사",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "thumbs/3c5e49ad5a82a7b7.jpg",
+      "firstSeen": "2026-10-29T23:41:16.857645+00:00"
+    },
     {
       "source": "kakao",
       "sourceName": "카카오",
