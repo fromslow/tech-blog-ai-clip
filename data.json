@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T23:41:16.857645+00:00",
+  "generatedAt": "2026-10-30T23:37:56.272559+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,21 @@
     }
   ],
   "posts": [
+    {
+      "source": "scatterlab",
+      "sourceName": "스캐터랩",
+      "color": "#FF5470",
+      "title": "전문가의 절반을 내보냈습니다",
+      "url": "https://blog.scatterlab.co.kr/expert-395401",
+      "date": "2026-10-30T07:00:00+00:00",
+      "summary": "전문가는 덜고, 대화량은 1.6배로",
+      "author": "",
+      "tags": [
+        "머신러닝"
+      ],
+      "image": "thumbs/ef2ea262c3ef7ad7.jpg",
+      "firstSeen": "2026-10-30T23:37:56.272559+00:00"
+    },
     {
       "source": "devocean",
       "sourceName": "데보션",
