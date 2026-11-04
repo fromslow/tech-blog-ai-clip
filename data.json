@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T23:34:41.332585+00:00",
+  "generatedAt": "2026-11-03T23:37:57.812488+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,87 @@
     }
   ],
   "posts": [
+    {
+      "source": "daangn",
+      "sourceName": "당근",
+      "color": "#FF6F0F",
+      "title": "국내 최초 광고 MCP를 출시하며, 개발자의 역할은 어디까지 넓어졌을까?",
+      "url": "https://medium.com/daangn/%EA%B5%AD%EB%82%B4-%EC%B5%9C%EC%B4%88-%EA%B4%91%EA%B3%A0-mcp%EB%A5%BC-%EC%B6%9C%EC%8B%9C%ED%95%98%EB%A9%B0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EC%97%AD%ED%95%A0%EC%9D%80-%EC%96%B4%EB%94%94%EA%B9%8C%EC%A7%80-%EB%84%93%EC%96%B4%EC%A1%8C%EC%9D%84%EA%B9%8C-8dea7fe41c07?source=rss----4505f82a2dbd---4",
+      "date": "2026-11-03T09:27:47+00:00",
+      "summary": "안녕하세요. 당근 광고실 광고주플랫폼팀에서 백엔드 엔지니어로 일하는 제이크(Jake)예요. 얼마 전 저희 팀 엔지니어링 매니저 Iltaek이 프론트엔드와 백엔드를 한 팀으로 합친 이야기 를 글로 나눴어요. 그 글이 팀의 경계를 넘어 일하는 이야기였다면, 이번 글은 제가 당근 광고 MCP를 만들며 개발자의 역할을 넓혀 본 이야기 예요. MCP(Model Context Protocol)는 AI 서비스가 외부 서비스의 데이터를 불러올 때 쓰는 표준 연결 방식이에요. 광고주가 Claude 같은 AI 서비",
+      "author": "Jake",
+      "tags": [
+        "AI",
+        "AI 에이전트",
+        "LLM"
+      ],
+      "image": "thumbs/7dfb6c619ed189fc.jpg",
+      "firstSeen": "2026-11-03T23:37:57.812488+00:00"
+    },
+    {
+      "source": "kurly",
+      "sourceName": "컬리",
+      "color": "#5F0080",
+      "title": "기획서 하나로 결함 등록까지, QA AI Hub를 만들며 배운 것",
+      "url": "https://helloworld.kurly.com/blog/ai-qa-from-spec-to-defect/",
+      "date": "2026-11-03T06:00:00+00:00",
+      "summary": "TC 작성에 쓰던 시간을 AI로 줄이려다, QA의 일을 다시 나누게 된 9개월의 기록",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/0402806e36911fef.jpg",
+      "firstSeen": "2026-11-03T23:37:57.812488+00:00"
+    },
+    {
+      "source": "woowahan",
+      "sourceName": "배달의민족",
+      "color": "#2AC1BC",
+      "title": "아이폰 카메라로 B마트 상품을 찾는다고?",
+      "url": "https://techblog.woowahan.com/27810/",
+      "date": "2026-11-03T04:51:03+00:00",
+      "summary": "2026년 8월 배민 앱에 Visual Intelligence를 연동했습니다. 이제 아이폰에서 Visual Intelligence를 실행하면, 검색 결과에서 비슷한 B마트 상품을 바로 확인하실 수 있습니다. 이 글에서는 먼저 Visual Intelligence가 어떤 기능인지 소개하고, 배민 앱에 연동한 과정을 살펴보겠습니다. 이어서 AI 에이전트를 활용해 이미지 검색을 구성한 이야기를 나눠 보겠습니다. Visual Intelligence 알아보고 연동하기 Visual Intelligence란? ",
+      "author": "",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "/wp-content/uploads/2026/10/fig01.png",
+      "firstSeen": "2026-11-03T23:37:57.812488+00:00"
+    },
+    {
+      "source": "kurly",
+      "sourceName": "컬리",
+      "color": "#5F0080",
+      "title": "Argo Workflows와 SageMaker로 추천 ML 파이프라인 구축기",
+      "url": "https://helloworld.kurly.com/blog/recommend-ml-pipeline/",
+      "date": "2026-11-03T01:00:00+00:00",
+      "summary": "추천 모델과 임베딩, 검색 인덱스를 한 세대로 묶어 매일 안전하게 교체하는 파이프라인 구축기",
+      "author": "",
+      "tags": [
+        "머신러닝",
+        "임베딩"
+      ],
+      "image": "thumbs/8e7aae21a49234eb.jpg",
+      "firstSeen": "2026-11-03T23:37:57.812488+00:00"
+    },
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "예측을 넘어 결정과 발견으로: DeciML과 NeXA를 만든 이유",
+      "url": "https://techblog.musinsa.com/%EC%98%88%EC%B8%A1%EC%9D%84-%EB%84%98%EC%96%B4-%EA%B2%B0%EC%A0%95%EA%B3%BC-%EB%B0%9C%EA%B2%AC%EC%9C%BC%EB%A1%9C-deciml%EA%B3%BC-nexa%EB%A5%BC-%EB%A7%8C%EB%93%A0-%EC%9D%B4%EC%9C%A0-9313debb2a4f?source=rss----f107b03c406e---4",
+      "date": "2026-11-03T00:20:59+00:00",
+      "summary": "안녕하세요. 무신사에서 ML Engineer로서 추천, CRM, 유저 속성, ML 플랫폼 등을 담당하고 있는 Core-E Personalization 팀의 김윤태입니다. 저희 팀에서는 개인화와 관련된 여러 문제를 풀고 그 문제를 서비스에 전달하기 위한 플랫폼을 만들어 가면서 개인화가 앞으로 어떤 방향으로 확장될 수 있을지 고민해 왔습니다. 개인화의 범위가 넓어질수록 ML로 풀어야 하는 문제도 달라집니다. 커머스의 검색과 추천, 광고, 앱 푸시, 쿠폰, 배너 등 다양한 채널이 각각 다른 목적에서 출",
+      "author": "Yuntae Kim",
+      "tags": [
+        "MLOps",
+        "머신러닝",
+        "추천"
+      ],
+      "image": "thumbs/2c71fe1f4f460d83.jpg",
+      "firstSeen": "2026-11-03T23:37:57.812488+00:00"
+    },
     {
       "source": "scatterlab",
       "sourceName": "스캐터랩",
