@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T23:35:52.544932+00:00",
+  "generatedAt": "2026-11-06T23:35:06.889484+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,38 @@
     }
   ],
   "posts": [
+    {
+      "source": "banksalad",
+      "sourceName": "뱅크샐러드",
+      "color": "#536DFE",
+      "title": "뱅크샐러드 '저금리 대출 대리조회' 금융위 혁신금융서비스 지정",
+      "url": "https://corp.banksalad.com/blog/news/bs1501/",
+      "date": "2026-11-06T00:00:00+00:00",
+      "summary": "- 고객 대신 대출 가심사 신청하고 결과 안내…더 유리한 금리·한도 탐색 지원- 마이데이터 기반 대출 AI 에이전트 고도화…중·저신용자 금리 단층 완화 기대 뱅크샐러드(대표 김태훈)는 ‘저금리 대출 대리조회’ 서비스가 금융위원회 혁신금융서비스로 지정됐다고 밝혔다. 금융위원회는 지난 2…",
+      "author": "",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-06T23:35:06.889484+00:00"
+    },
+    {
+      "source": "banksalad",
+      "sourceName": "뱅크샐러드",
+      "color": "#536DFE",
+      "title": "뱅크샐러드, AI 에이전트 판단·실행 제어 기술 특허 출원",
+      "url": "https://corp.banksalad.com/blog/news/bs1502/",
+      "date": "2026-11-06T00:00:00+00:00",
+      "summary": "- AI 에이전트 판단·실행 제어 기술…고객 안전망 구축 초점- 금융 정보∙계산 등 검증 이어가…AI 에이전트 신뢰도 제고 뱅크샐러드가 AI 에이전트(AI agent)의 판단과 실행을 제어하는 기술을 개발했다. AI 에이전트가 금융 서비스를 제공하는 과정에서 발생할 수 있는 오류를 통…",
+      "author": "",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-06T23:35:06.889484+00:00"
+    },
     {
       "source": "kakao",
       "sourceName": "카카오",
@@ -437,6 +469,21 @@
       ],
       "image": "thumbs/7ff995ba73d7270c.jpg",
       "firstSeen": "2026-10-16T15:13:41.847126+00:00"
+    },
+    {
+      "source": "banksalad",
+      "sourceName": "뱅크샐러드",
+      "color": "#536DFE",
+      "title": "AI 코딩 시대, DDD가 더 필요해진 이유",
+      "url": "https://corp.banksalad.com/blog/tech/banksalad-ddd-in-ai-era/",
+      "date": "2026-10-15T00:00:00+00:00",
+      "summary": "Go 서비스에 DDD-lite와 Clean Architecture를 적용하면 뭐가 다를까? 안녕하세요, 금융쇼핑 PA 서버 Tech Lead 김지원입니다. 뱅크샐러드 서버는 대부분 Go로 만든 마이크로서비스입니다. 제가 입사하기 전 얘기라 정확하진 않은데, 마이크로서비스니까 각 서비스…",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-06T23:35:06.889484+00:00"
     },
     {
       "source": "toss",
@@ -2841,6 +2888,22 @@
       ],
       "image": "thumbs/dcd6dd203f2008cb.jpg",
       "firstSeen": "2025-12-20T00:00:00+00:00"
+    },
+    {
+      "source": "banksalad",
+      "sourceName": "뱅크샐러드",
+      "color": "#536DFE",
+      "title": "뱅크샐러드가 선보인 AI 에이전트 비전은? 2025 핀테크 위크로 돌아보기!",
+      "url": "https://corp.banksalad.com/blog/culture/fintechweek-2025/",
+      "date": "2025-12-20T00:00:00+00:00",
+      "summary": "뱅크샐러드가 11월 말 양재 aT센터에서 열린 ‘코리아 핀테크 위크 2025’에 독립부스로 참여했습니다! 핀테크 위크는 금융위원회가 주최하는 핀테크 축제로, 핀테크 업권·금융권·정부·언론, 그리고 핀테크 이슈에 관심 있는 많은 분들이 모여 시장에 대한 인사이트를 쌓는 자리입니다. 뱅크…",
+      "author": "",
+      "tags": [
+        "AI",
+        "AI 에이전트"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-06T23:35:06.889484+00:00"
     },
     {
       "source": "naver",
