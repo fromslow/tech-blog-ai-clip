@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T23:37:57.812488+00:00",
+  "generatedAt": "2026-11-05T23:35:52.544932+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,53 @@
     }
   ],
   "posts": [
+    {
+      "source": "kakao",
+      "sourceName": "카카오",
+      "color": "#FFB900",
+      "title": "AI 에이전트를 위한 멀티모달 의사결정 모델 ‘Kanana-2-v-decide’ 오픈소스 공개",
+      "url": "https://tech.kakao.com/posts/846",
+      "date": "2026-11-05T15:00:00+00:00",
+      "summary": "안녕하세요, 카카오 Applied AI Model팀의 Shawn(정성효), Michael(이주영)입니다. 고객 문의를 분류하고, 상품 사진을 확인하고, 에이전트가 다음 작업에 사용할 도구를 고르는 일. 서비스에는 긴 답변보다 명확한 판단이 필요한 순간이 많습니다. 특히 AI 에이전트는 하나의 요청을 처리하는 동안 이러한 판단을 여러 차례 반복합니다. Agentic AI 시대에 각 단계에서 필요한 판단 결과를 빠르게 얻고, 이를 서비스의 다음 동작으로 ...",
+      "author": "shawn.hyo / michael.l22",
+      "tags": [
+        "AI",
+        "AI 에이전트",
+        "멀티모달"
+      ],
+      "image": "thumbs/35c167a878632f7e.jpg",
+      "firstSeen": "2026-11-05T23:35:52.544932+00:00"
+    },
+    {
+      "source": "naver",
+      "sourceName": "네이버",
+      "color": "#03C75A",
+      "title": "worklog-system 주간보고 자동화 구축 경험기",
+      "url": "https://d2.naver.com/helloworld/5037598",
+      "date": "2026-11-05T04:50:54+00:00",
+      "summary": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 10th 에서 발표되었던 세션을 공개합니다. worklog-system 주간보고 자동화 구축 경험기 NAVER D2 | worklog-system 주간보고 자동화 구축 경험기 naver.me 발표 내용 대 AI 시대에 본인의 업무 기록을 수집하고 TODO 및 회의록을 기록하는 시스템을 소개합니다. 이 도구를 만들며 부딪힌 세 가지 문제를 차례로 다룹니다. 기억이 아니라 기록에서 주간보고",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-05T23:35:52.544932+00:00"
+    },
+    {
+      "source": "naver",
+      "sourceName": "네이버",
+      "color": "#03C75A",
+      "title": "크림에서 통합 임베딩(Universal Embedding)은 어떻게 쓰일까?",
+      "url": "https://d2.naver.com/helloworld/7134499",
+      "date": "2026-11-04T04:54:08+00:00",
+      "summary": "네이버 사내 기술 교류 행사인 NAVER Engineering Day 10th 에서 발표되었던 세션을 공개합니다. 크림에서 통합 임베딩(Universal Embedding)은 어떻게 쓰일까? NAVER D2 | 크림에서 통합 임베딩(Universal Embedding)은 어떻게 쓰일까? naver.me 발표 내용 여러 엔티티를 한 공간에 담은 통합 임베딩과 범용 리트리벌이 크림 추천 곳곳에 쓰이는 방식, 운영하며 드러난 한계를 v2에서 해결한 과정, 그리",
+      "author": "",
+      "tags": [
+        "임베딩"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-05T23:35:52.544932+00:00"
+    },
     {
       "source": "daangn",
       "sourceName": "당근",
