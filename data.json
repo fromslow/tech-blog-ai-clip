@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T23:33:42.384078+00:00",
+  "generatedAt": "2026-11-09T23:34:28.846233+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,66 @@
     }
   ],
   "posts": [
+    {
+      "source": "musinsa",
+      "sourceName": "무신사",
+      "color": "#1A1A1A",
+      "title": "캠페인 메타엔진 — 무진장 많은 콘텐츠를 하나의 캠페인 구조로 통합하다",
+      "url": "https://techblog.musinsa.com/%EC%BA%A0%ED%8E%98%EC%9D%B8-%EB%A9%94%ED%83%80%EC%97%94%EC%A7%84-%EB%AC%B4%EC%A7%84%EC%9E%A5-%EB%A7%8E%EC%9D%80-%EC%BD%98%ED%85%90%EC%B8%A0%EB%A5%BC-%ED%95%98%EB%82%98%EC%9D%98-%EC%BA%A0%ED%8E%98%EC%9D%B8-%EA%B5%AC%EC%A1%B0%EB%A1%9C-%ED%86%B5%ED%95%A9%ED%95%98%EB%8B%A4-a29ece6ae6d9?source=rss----f107b03c406e---4",
+      "date": "2026-11-09T22:01:01+00:00",
+      "summary": "1편: MATCH란 무엇인가 2편: MATCH Console & MAI 3편: 통합임베딩으로 개인화 푸시 4편: 캠페인 메타엔진 안녕하세요. 무신사 Core-P Customer Growth팀에서 MATCH 플랫폼을 기획하는 김경민, Core-E Personalization팀에서 플랫폼을 설계하고 개발하는 김건희입니다. 지난 글에서 소개한 Layer 0(통합 임베딩)가 ‘이 유저는 무엇을 좋아하는가’를 정의하는 공통 언어였다면, 이번 글은 시스템이 고객에게 전달할 콘텐츠와 캠페인을 어떻게 동일한 기",
+      "author": "Kunhee Kim(kukim, 김건희)",
+      "tags": [
+        "임베딩"
+      ],
+      "image": "thumbs/807434f300a11dfd.jpg",
+      "firstSeen": "2026-11-09T23:34:28.846233+00:00"
+    },
+    {
+      "source": "devocean",
+      "sourceName": "데보션",
+      "color": "#5C7CFA",
+      "title": "꿈꾸던 AI가 되었어요 - Anthropic 꿈꾸기(dreaming) 글을 우리 개발 환경에 적용하기",
+      "url": "http://devocean.sk.com/blog/techBoardDetail.do?id=168600&boardType=techBlog&isShared=Y",
+      "date": "2026-11-09T18:49:01+00:00",
+      "summary": "11월 6일 Anthropic이 에이전트 메모리를 다룬 글 「The components of agent memory」를 올렸습니다. 글 후반에 ＇꿈꾸기(dreaming)＇라는 정리 작업이 나오는데, Claude Co...",
+      "author": "꼬마집사",
+      "tags": [
+        "LLM"
+      ],
+      "image": "thumbs/972434ca19ae97a7.jpg",
+      "firstSeen": "2026-11-09T23:34:28.846233+00:00"
+    },
+    {
+      "source": "toss",
+      "sourceName": "토스",
+      "color": "#3182F6",
+      "title": "TASTE, 토스의 추천 파운데이션 플랫폼",
+      "url": "https://toss.tech/article/taste",
+      "date": "2026-11-09T06:54:00+00:00",
+      "summary": "공동학습과 지식 전이로 추천 파운데이션 모델의 초석 놓기",
+      "author": "",
+      "tags": [
+        "파운데이션 모델"
+      ],
+      "image": "thumbs/2ebbd0a4e2e7f174.jpg",
+      "firstSeen": "2026-11-09T23:34:28.846233+00:00"
+    },
+    {
+      "source": "banksalad",
+      "sourceName": "뱅크샐러드",
+      "color": "#536DFE",
+      "title": "망분리 환경에서도 한 달 만에 AX로 생산성을 높인 방법",
+      "url": "https://corp.banksalad.com/blog/tech/banksalad-ax-workflow-automation/",
+      "date": "2026-11-09T00:00:00+00:00",
+      "summary": "안녕하세요, 금융쇼핑 PA 백엔드 Tech Lead이자 AI Partner로서 AX 업무를 맡고 있는 김지원, 그리고 인턴 이서영입니다. 환경을 갖춘 지 한 달만에 두 팀의 반복 업무가 자동화됐습니다. 담당자 한 명당 매일 30분 ~ 1시간의 업무 시간이 절약되었습니다. 이 글은 망분…",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-09T23:34:28.846233+00:00"
+    },
     {
       "source": "naver",
       "sourceName": "네이버",
