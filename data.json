@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T23:34:28.846233+00:00",
+  "generatedAt": "2026-11-10T23:34:05.245240+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -107,6 +107,38 @@
   ],
   "posts": [
     {
+      "source": "naver",
+      "sourceName": "네이버",
+      "color": "#03C75A",
+      "title": "AI 스킬 만들기 10계명: Figma→Code 자동화 실전기",
+      "url": "https://d2.naver.com/helloworld/8562180",
+      "date": "2026-11-10T10:27:18+00:00",
+      "summary": "이 글에서 예로 든 스킬은 naver/design-to-ui라는 이름의 오픈 소스로 공개되어 있습니다. 들어가며: 같은 모델, 다른 결과 AI 코딩 도구를 쓰다 보면 프롬프트에서 같은 설명을 매번 반복하게 됩니다. \"이건 아이콘이니까 에셋으로 받아\", \"이건 그래프니까 Canvas로 그려\", \"색상은 하드코딩하지 말고 디자인 토큰을 써\" 같은 설명이 그렇습니다. Figma 디자인을 Android 코드로 옮길 때도 마찬가지였습니다. 그래서 Claude의 스",
+      "author": "",
+      "tags": [
+        "AI",
+        "프롬프트",
+        "LLM"
+      ],
+      "image": "",
+      "firstSeen": "2026-11-10T23:34:05.245240+00:00"
+    },
+    {
+      "source": "banksalad",
+      "sourceName": "뱅크샐러드",
+      "color": "#536DFE",
+      "title": "AI가 바꾼 보험 영업의 방식, AI-Native Sales",
+      "url": "https://corp.banksalad.com/blog/culture/bfs-ai-native-sales/",
+      "date": "2026-11-10T00:00:00+00:00",
+      "summary": "‘보험 영업’이라고 하면 흔히 상상하는 장면이 있습니다. 말을 잘하고, 낯을 가리지 않고, 지인에게도 자연스럽게 상품 얘기를 꺼내는 사람. 연락처에 저장된 이름의 수가 실력이 되는 일. 하지만 뱅크샐러드금융서비스의 보험 영업은 완전히 다릅니다. 오늘 누구에게 연락할지 고민하지 않아…",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/13459abb4d0d6ff4.jpg",
+      "firstSeen": "2026-11-10T23:34:05.245240+00:00"
+    },
+    {
       "source": "musinsa",
       "sourceName": "무신사",
       "color": "#1A1A1A",
@@ -163,8 +195,24 @@
       "tags": [
         "AI"
       ],
-      "image": "",
+      "image": "thumbs/8c739c269dcbddc3.jpg",
       "firstSeen": "2026-11-09T23:34:28.846233+00:00"
+    },
+    {
+      "source": "woowahan",
+      "sourceName": "배달의민족",
+      "color": "#2AC1BC",
+      "title": "우아한형제들의 AI 거버넌스, 플랫폼에 담다",
+      "url": "https://techblog.woowahan.com/27890/",
+      "date": "2026-11-06T05:00:13+00:00",
+      "summary": "우아한형제들은 여러 Provider의 LLM을 같은 방식으로 호출할 수 있도록 AI Gateway를 운영해 왔습니다. 처음에는 대체 모델, Langfuse(LLM 호출의 트레이스를 기록하고 보는 도구) 연동, 비용 집계가 필요한 과제나, PoC(proof of concept, 개념 검증)를 위해 공용 크레덴셜을 사용하는 과제가 주로 이용했습니다. 그런데 AI를 사용하는 과제가 늘고 Agent가 LLM과 도구를 반복해서 호출하기 시작하면서, 모델 호출을 지원하는 것만으로는 부족해졌습니다. […]",
+      "author": "",
+      "tags": [
+        "AI",
+        "LLM"
+      ],
+      "image": "thumbs/1e3187d62f3504e2.jpg",
+      "firstSeen": "2026-11-10T23:34:05.245240+00:00"
     },
     {
       "source": "naver",
