@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T23:33:38.848186+00:00",
+  "generatedAt": "2026-11-13T23:33:41.425651+00:00",
   "backfillWindowDays": 365,
   "sources": [
     {
@@ -106,6 +106,21 @@
     }
   ],
   "posts": [
+    {
+      "source": "woowahan",
+      "sourceName": "배달의민족",
+      "color": "#2AC1BC",
+      "title": "옆자리 동료에게 AI를 알려주지 않기로 했다",
+      "url": "https://techblog.woowahan.com/28497/",
+      "date": "2026-11-13T05:00:20+00:00",
+      "summary": "저는 2025년까지 소프트 스킬 교육을 하던 교육자였습니다. 알려주는 게 본업이던 사람이 2026년부터는 AX(AI transformation, AI 전환)를 맡고 있습니다. 그런 제가 이번에는 알려주지 않기로 한 이야기를 하려고 합니다. 옆자리 동료에게 AI를 알려줘 본 적 있으신가요? 옆에서 헤매는 모습을 그냥 보고 있기는 어렵습니다. 돕고 싶은 마음에 처음부터 끝까지 친절하게 알려주고 그러다 막히면 아예 대신 해주기도 합니다. 그런데 […]",
+      "author": "",
+      "tags": [
+        "AI"
+      ],
+      "image": "thumbs/39e8a44a9347cc93.jpg",
+      "firstSeen": "2026-11-13T23:33:41.425651+00:00"
+    },
     {
       "source": "woowahan",
       "sourceName": "배달의민족",
